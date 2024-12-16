@@ -1,0 +1,23 @@
+Device ID                 : 19
+Device Revision           : 3
+Firmware Revision         : 2.72
+IPMI Version              : 2.0
+Manufacturer ID           : 47196
+Manufacturer Name         : Unknown (0xB85C)
+Product ID                : 8192 (0x2000)
+Product Name              : Unknown (0x2000)
+Device Available          : yes
+Provides Device SDRs      : no
+Additional Device Support :
+    Sensor Device
+    SDR Repository Device
+    SEL Device
+    FRU Inventory Device
+    IPMB Event Receiver
+    Chassis Device
+Aux Firmware Rev Info     : 
+    0x00
+    0x00
+    0x00
+    0x00
+

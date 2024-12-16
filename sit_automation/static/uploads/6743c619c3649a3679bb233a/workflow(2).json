@@ -1,0 +1,17 @@
+[
+  {
+    "category": "OS",
+    "sub_category": "Linux",
+    "function": "Get CPU Info."
+  },
+  {
+    "category": "OS",
+    "sub_category": "Linux",
+    "function": "Get Memory Info. by meminfo"
+  },
+  {
+    "category": "OS",
+    "sub_category": "Linux",
+    "function": "Get USB device"
+  }
+]

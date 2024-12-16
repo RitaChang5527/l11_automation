@@ -1,0 +1,619 @@
+{% extends 'codebyte/elements/layouts/overflow-visible.html' %}
+
+        
+{% block additional_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename=  'codebyte/vendor/star-rating/star-rating-svg.css')}}">
+<link rel="stylesheet" href="{{ url_for('static', filename=  'codebyte/vendor/nouislider/nouislider.min.css')}}">
+{% endblock %}
+        
+{% block content %}
+<div class="content-body">
+    <div class="container-fluid">
+        <div class="page-titles">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="javascript:void(0)">Shop</a></li>
+                <li class="breadcrumb-item active"><a href="javascript:void(0)">Product List</a></li>
+            </ol>
+        </div>
+        <div class="row">
+            <div class="col-xl-2 col-xxl-3 col-md-4 mail-left-body border-end-0">
+                <div class=" filter-sidebar ">
+                    <div class="card">
+                        <div class="card-header p-4 border-0 pb-0">
+                            <h5 class="mb-0"><i class="flaticon-filter me-2"></i>Filters</h5>
+                            <a href="javascript:void(0);" class="text-primary">Clear All</a>
+                        </div>
+                        <div class="card-body p-0">
+                            <div class="px-4 mb-3 pt-3">
+                                <h6 class="ft-title">Categories</h6>
+                                    <div class="form-check  check-xs">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                        <label class="form-check-label" for="flexCheckDefault">
+                                        Shop
+                                        </label><span class="badge badge-xs badge-light float-end">2,712</span>
+                                     </div>
+                                    <div class="form-check check-xs">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault-1">
+                                        <label class="form-check-label" for="flexCheckDefault-1">
+                                        Watch
+                                        </label><span class="badge badge-xs  badge-light float-end">530</span>
+                                    </div>
+                                    <div class="form-check  check-xs">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault-3">
+                                        <label class="form-check-label" for="flexCheckDefault-3">
+                                        Dresss
+                                        </label><span class="badge badge-xs  badge-light float-end">250</span>
+                                    </div>
+                            </div>
+                            <div class="px-4 mb-3">
+                                <h6 class="ft-title">Price</h6>
+                                    <div class="form-check  check-xs">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault-4">
+                                        <label class="form-check-label" for="flexCheckDefault-4">
+                                            $0 - $599 
+                                        </label>
+                                     </div>
+                                    <div class="form-check check-xs">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault-5">
+                                        <label class="form-check-label" for="flexCheckDefault-5">
+                                            $0 - $599 
+                                        </label>
+                                    </div>
+                                    <div class="form-check check-xs">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault-6">
+                                        <label class="form-check-label" for="flexCheckDefault-6">
+                                            $0 - $599 
+                                        </label>
+                                    </div>
+                            </div>
+                            <div class="px-4 mb-3">
+                                    <h6 class="ft-title">Price Range</h6>
+                                     <div class="price-slide range-slider mt-3">
+                                        <div class="price">
+                                            <div class="range-slider style-1">
+                                            <div id="slider-tooltips-product" class="mb-3"></div>
+                                            <span class="example-val" id="slider-margin-value-min"></span>
+                                            <span class="example-val" id="slider-margin-value-max"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="px-4 mb-3">
+                                <h6 class="ft-title">Discount</h6>
+                             
+                                    <div class="form-check check-xs">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault-7">
+                                        <label class="form-check-label" for="flexCheckDefault-7">
+                                            0% - 20% 
+                                        </label>
+                                      </div>
+                                 
+                                
+                                    <div class="form-check check-xs">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault-8">
+                                        <label class="form-check-label" for="flexCheckDefault-8">
+                                            40% - 60% 
+                                        </label>
+                                      </div>
+                                      <div class="form-check check-xs">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault-9">
+                                        <label class="form-check-label" for="flexCheckDefault-9">
+                                            0% - 20% 
+                                        </label>
+                                      </div>
+                                 
+                                
+                                    <div class="form-check check-xs">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault-10">
+                                        <label class="form-check-label" for="flexCheckDefault-10">
+                                            40% - 60% 
+                                        </label>
+                                      </div>
+                                
+                            </div>
+                        
+                        </div>
+                    </div>
+
+                </div>
+                
+            </div>
+            <div class="d-md-none d-flex align-items-center">
+                <h4 class="card-title--medium mb-0">Filter</h4>
+                <div class="email-tools-box p-0">
+                    <i class="flaticon-filter"></i>
+                </div>
+            </div>
+            <div class="col-xl-10 col-xxl-9 col-md-8">
+                <div class="row">
+                    <div class="col-xl-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row m-b-30">
+                                    <div class="col-xl-4 col-xxl-12">
+                                        <div class="new-arrival-product mb-4 mb-xxl-4">
+                                            <div class="new-arrivals-img-contnent">
+                                                <img class="img-fluid" src="{{ url_for('static', filename=  'codebyte/images/product/2.jpg')}}" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-8 col-xxl-12">
+                                        <div class="position-relative d-flex align-items-center mb-3">
+                                            <div>
+                                                <a href="/ecom-product-detail">
+                                                    <h5 class="font-w500 mb-0">Smart Watch for Codebyte</h5>
+                                                </a>
+                                                <span>Accessories,
+                                                    Clocks</span>
+                                            </div>
+                                            <div class="star-rating ms-auto">
+                                                <ul>
+                                                    <li><i class="fa fa-star"></i></li>
+                                                    <li><i class="fa fa-star"></i></li>
+                                                    <li><i class="fa fa-star"></i></li>
+                                                    <li><i class="fa-solid fa-star-half-stroke"></i></li>
+                                                </ul>
+                                                <span>34 Review</span>
+                                            </div>
+                                        </div>
+                                        <p>There are many variations of passages of Lorem Ipsum available, but
+                                            the majority have suffered alteration in some form</p>
+                                        <div class="rate">
+                                            <div class="d-flex align-items-center mb-xl-3 mb-2">
+                                                <div>
+                                                    <h6>Price</h6>
+                                                    <span class="price-num">$40.00</span>
+                                                </div>
+                                                <div class="meta-content">
+                                                    <h6>Color</h6>
+                                                    <div class="d-flex align-items-center color-filter">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio"
+                                                                name="radioNoLabel" id="radioNoLabel11"
+                                                                value="#24262B" aria-label="..." checked="">
+                                                            <span
+                                                                style="background-color: rgb(208, 237, 255);"></span>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio"
+                                                                name="radioNoLabel" id="radioNoLabel12"
+                                                                value="#8CB2D1" aria-label="...">
+                                                            <span
+                                                                style="background-color: rgb(241, 231, 230);"></span>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio"
+                                                                name="radioNoLabel" id="radioNoLabel13"
+                                                                value="#0D775E" aria-label="...">
+                                                            <span
+                                                                style="background-color: rgb(91, 191, 191);"></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="ms-auto">
+                                                    <a href="/ecom-product-detail" class="btn btn-primary btn-sm">Add
+                                                        to cart</a>
+
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row m-b-30">
+                                    <div class="col-xl-4 col-xxl-12">
+                                        <div class="new-arrival-product mb-4 mb-xxl-4">
+                                            <div class="new-arrivals-img-contnent">
+                                                <img class="img-fluid" src="{{ url_for('static', filename=  'codebyte/images/product/3.jpg')}}" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-8 col-xxl-12">
+                                        <div class="position-relative d-flex align-items-center mb-3">
+                                            <div>
+                                                <a href="/ecom-product-detail">
+                                                    <h5 class="font-w500 mb-0">Smart Headphone for Codebyte</h5>
+                                                </a>
+                                                <span>Accessories,
+                                                    Clocks</span>
+                                            </div>
+                                            <div class="star-rating ms-auto">
+                                                <ul>
+                                                    <li><i class="fa fa-star"></i></li>
+                                                    <li><i class="fa fa-star"></i></li>
+                                                    <li><i class="fa fa-star"></i></li>
+                                                    <li><i class="fa-solid fa-star-half-stroke"></i></li>
+                                                </ul>
+                                                <span>34 Review</span>
+                                            </div>
+                                        </div>
+                                        <p>There are many variations of passages of Lorem Ipsum available, but
+                                            the majority have suffered alteration in some form</p>
+                                        <div class="rate">
+                                            <div class="d-flex align-items-center mb-xl-3 mb-2">
+                                                <div>
+                                                    <h6>Price</h6>
+                                                    <span class="price-num">$40.00</span>
+                                                </div>
+                                                <div class="meta-content">
+                                                    <h6>Color</h6>
+                                                    <div class="d-flex align-items-center color-filter">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio"
+                                                                name="radioNoLabel" id="radioNoLabe114"
+                                                                value="#24262B" aria-label="..." checked="">
+                                                            <span
+                                                                style="background-color: rgb(208, 237, 255);"></span>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio"
+                                                                name="radioNoLabel" id="radioNoLabel15"
+                                                                value="#8CB2D1" aria-label="...">
+                                                            <span
+                                                                style="background-color: rgb(241, 231, 230);"></span>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio"
+                                                                name="radioNoLabel" id="radioNoLabel16"
+                                                                value="#0D775E" aria-label="...">
+                                                            <span
+                                                                style="background-color: rgb(91, 191, 191);"></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="ms-auto">
+                                                    <a href="/ecom-product-detail" class="btn btn-primary btn-sm">Add
+                                                        to cart</a>
+
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row m-b-30">
+                                    <div class="col-xl-4 col-xxl-12">
+                                        <div class="new-arrival-product mb-4 mb-xxl-4">
+                                            <div class="new-arrivals-img-contnent">
+                                                <img class="img-fluid" src="{{ url_for('static', filename=  'codebyte/images/product/3.jpg')}}" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-8 col-xxl-12">
+                                        <div class="position-relative d-flex align-items-center mb-3">
+                                            <div>
+                                                <a href="/ecom-product-detail">
+                                                    <h5 class="font-w500 mb-0">Smart Headphone for Codebyte</h5>
+                                                </a>
+                                                <span>Accessories,
+                                                    Clocks</span>
+                                            </div>
+                                            <div class="star-rating ms-auto">
+                                                <ul>
+                                                    <li><i class="fa fa-star"></i></li>
+                                                    <li><i class="fa fa-star"></i></li>
+                                                    <li><i class="fa fa-star"></i></li>
+                                                    <li><i class="fa-solid fa-star-half-stroke"></i></li>
+                                                </ul>
+                                                <span>34 Review</span>
+                                            </div>
+                                        </div>
+                                        <p>There are many variations of passages of Lorem Ipsum available, but
+                                            the majority have suffered alteration in some form</p>
+                                        <div class="rate">
+                                            <div class="d-flex align-items-center mb-xl-3 mb-2">
+                                                <div>
+                                                    <h6>Price</h6>
+                                                    <span class="price-num">$40.00</span>
+                                                </div>
+                                                <div class="meta-content">
+                                                    <h6>Color</h6>
+                                                    <div class="d-flex align-items-center color-filter">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio"
+                                                                name="radioNoLabel" id="radioNoLabel17"
+                                                                value="#24262B" aria-label="..." checked="">
+                                                            <span
+                                                                style="background-color: rgb(208, 237, 255);"></span>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio"
+                                                                name="radioNoLabel" id="radioNoLabel18"
+                                                                value="#8CB2D1" aria-label="...">
+                                                            <span
+                                                                style="background-color: rgb(241, 231, 230);"></span>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio"
+                                                                name="radioNoLabel" id="radioNoLabel19"
+                                                                value="#0D775E" aria-label="...">
+                                                            <span
+                                                                style="background-color: rgb(91, 191, 191);"></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="ms-auto">
+                                                    <a href="/ecom-product-detail" class="btn btn-primary btn-sm">Add
+                                                        to cart</a>
+
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row m-b-30">
+                                    <div class="col-xl-4 col-xxl-12">
+                                        <div class="new-arrival-product mb-4 mb-xxl-4">
+                                            <div class="new-arrivals-img-contnent">
+                                                <img class="img-fluid" src="{{ url_for('static', filename=  'codebyte/images/product/7.jpg')}}" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-8 col-xxl-12">
+                                        <div class="position-relative d-flex align-items-center mb-3">
+                                            <div>
+                                                <a href="/ecom-product-detail">
+                                                    <h5 class="font-w500 mb-0">Smart Charger for Codebyte</h5>
+                                                </a>
+                                                <span>Accessories,
+                                                    Clocks</span>
+                                            </div>
+                                            <div class="star-rating ms-auto">
+                                                <ul>
+                                                    <li><i class="fa fa-star"></i></li>
+                                                    <li><i class="fa fa-star"></i></li>
+                                                    <li><i class="fa fa-star"></i></li>
+                                                    <li><i class="fa-solid fa-star-half-stroke"></i></li>
+                                                </ul>
+                                                <span>34 Review</span>
+                                            </div>
+                                        </div>
+                                        <p>There are many variations of passages of Lorem Ipsum available, but
+                                            the majority have suffered alteration in some form</p>
+                                        <div class="rate">
+                                            <div class="d-flex align-items-center mb-xl-3 mb-2">
+                                                <div>
+                                                    <h6>Price</h6>
+                                                    <span class="price-num">$40.00</span>
+                                                </div>
+                                                <div class="meta-content">
+                                                    <h6>Color</h6>
+                                                    <div class="d-flex align-items-center color-filter">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio"
+                                                                name="radioNoLabel" id="radioNoLabel110"
+                                                                value="#24262B" aria-label="..." checked="">
+                                                            <span
+                                                                style="background-color: rgb(208, 237, 255);"></span>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio"
+                                                                name="radioNoLabel" id="radioNoLabel111"
+                                                                value="#8CB2D1" aria-label="...">
+                                                            <span
+                                                                style="background-color: rgb(241, 231, 230);"></span>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio"
+                                                                name="radioNoLabel" id="radioNoLabel112"
+                                                                value="#0D775E" aria-label="...">
+                                                            <span
+                                                                style="background-color: rgb(91, 191, 191);"></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="ms-auto">
+                                                    <a href="/ecom-product-detail" class="btn btn-primary btn-sm">Add
+                                                        to cart</a>
+
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-xl-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row m-b-30">
+                                    <div class="col-xl-4 col-xxl-12">
+                                        <div class="new-arrival-product mb-4 mb-xxl-4">
+                                            <div class="new-arrivals-img-contnent">
+                                                <img class="img-fluid" src="{{ url_for('static', filename=  'codebyte/images/product/6.jpg')}}" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-8 col-xxl-12">
+                                        <div class="position-relative d-flex align-items-center mb-3">
+                                            <div>
+                                                <a href="/ecom-product-detail">
+                                                    <h5 class="font-w500 mb-0">Smart Wallet for Codebyte</h5>
+                                                </a>
+                                                <span>Accessories,
+                                                    Clocks</span>
+                                            </div>
+                                            <div class="star-rating ms-auto">
+                                                <ul>
+                                                    <li><i class="fa fa-star"></i></li>
+                                                    <li><i class="fa fa-star"></i></li>
+                                                    <li><i class="fa fa-star"></i></li>
+                                                    <li><i class="fa-solid fa-star-half-stroke"></i></li>
+                                                </ul>
+                                                <span>34 Review</span>
+                                            </div>
+                                        </div>
+                                        <p>There are many variations of passages of Lorem Ipsum available, but
+                                            the majority have suffered alteration in some form</p>
+                                        <div class="rate">
+                                            <div class="d-flex align-items-center mb-xl-3 mb-2">
+                                                <div>
+                                                    <h6>Price</h6>
+                                                    <span class="price-num">$40.00</span>
+                                                </div>
+                                                <div class="meta-content">
+                                                    <h6>Color</h6>
+                                                    <div class="d-flex align-items-center color-filter">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio"
+                                                                name="radioNoLabel" id="radioNoLabel113"
+                                                                value="#24262B" aria-label="..." checked="">
+                                                            <span
+                                                                style="background-color: rgb(208, 237, 255);"></span>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio"
+                                                                name="radioNoLabel" id="radioNoLabel114"
+                                                                value="#8CB2D1" aria-label="...">
+                                                            <span
+                                                                style="background-color: rgb(241, 231, 230);"></span>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio"
+                                                                name="radioNoLabel" id="radioNoLabel115"
+                                                                value="#0D775E" aria-label="...">
+                                                            <span
+                                                                style="background-color: rgb(91, 191, 191);"></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="ms-auto">
+                                                    <a href="/ecom-product-detail" class="btn btn-primary btn-sm">Add
+                                                        to cart</a>
+
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row m-b-30">
+                                    <div class=" col-xl-4 col-xxl-12">
+                                        <div class="new-arrival-product mb-4 mb-xxl-4">
+                                            <div class="new-arrivals-img-contnent">
+                                                <img class="img-fluid" src="{{ url_for('static', filename=  'codebyte/images/product/4.jpg')}}" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class=" col-xl-8 col-xxl-12">
+                                        <div class="position-relative d-flex align-items-center mb-3">
+                                            <div>
+                                                <a href="/ecom-product-detail">
+                                                    <h5 class="font-w500 mb-0">Smart Earbuds for Codebyte</h5>
+                                                </a>
+                                                <span>Accessories,
+                                                    Clocks</span>
+                                            </div>
+                                            <div class="star-rating ms-auto">
+                                                <ul>
+                                                    <li><i class="fa fa-star"></i></li>
+                                                    <li><i class="fa fa-star"></i></li>
+                                                    <li><i class="fa fa-star"></i></li>
+                                                    <li><i class="fa-solid fa-star-half-stroke"></i></li>
+                                                </ul>
+                                                <span>34 Review</span>
+                                            </div>
+                                        </div>
+                                        <p>There are many variations of passages of Lorem Ipsum available, but
+                                            the majority have suffered alteration in some form
+                                        
+                                        
+                                        </p>
+                                        <div class="rate">
+                                            <div class="d-flex align-items-center mb-xl-3 mb-2">
+                                                <div>
+                                                    <h6>Price</h6>
+                                                    <span class="price-num">$40.00</span>
+                                                </div>
+                                                <div class="meta-content">
+                                                    <h6>Color</h6>
+                                                    <div class="d-flex align-items-center color-filter">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio"
+                                                                name="radioNoLabel" id="radioNoLabel116"
+                                                                value="#24262B" aria-label="..." checked="">
+                                                            <span
+                                                                style="background-color: rgb(208, 237, 255);"></span>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio"
+                                                                name="radioNoLabel" id="radioNoLabel117"
+                                                                value="#8CB2D1" aria-label="...">
+                                                            <span
+                                                                style="background-color: rgb(241, 231, 230);"></span>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="radio"
+                                                                name="radioNoLabel" id="radioNoLabel118"
+                                                                value="#0D775E" aria-label="...">
+                                                            <span
+                                                                style="background-color: rgb(91, 191, 191);"></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="ms-auto">
+                                                    <a href="/ecom-product-detail" class="btn btn-primary btn-sm">Add
+                                                        to cart</a>
+
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block additional_js %}
+<script src="{{ url_for('static', filename='codebyte/vendor/star-rating/jquery.star-rating-svg.js')}}"></script>
+<script src="{{ url_for('static', filename='codebyte/vendor/nouislider/nouislider.min.js')}}"></script>
+<script src="{{ url_for('static', filename='codebyte/vendor/wnumb/wNumb.js')}}"></script>
+<script>
+    $(".email-tools-box").on('click', function () {
+        $(' .mail-left-body ,.email-tools-box').toggleClass("active");
+    });
+</script>
+{% endblock %}

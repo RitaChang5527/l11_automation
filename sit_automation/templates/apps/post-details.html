@@ -1,0 +1,539 @@
+{% extends 'codebyte/elements/layouts/admin.html' %}
+        
+{% block additional_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename=  'codebyte/vendor/lightgallery/dist/css/lightgallery.css')}}">
+<link rel="stylesheet" href="{{ url_for('static', filename=  'codebyte/vendor/lightgallery/dist/css/lg-thumbnail.css')}}">
+<link rel="stylesheet" href="{{ url_for('static', filename=  'codebyte/vendor/lightgallery/dist/css/lg-zoom.css')}}">
+{% endblock %}
+        
+{% block content %}
+<div class="content-body">
+	<div class="container-fluid">	
+		<div class="row page-titles">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item"><a href="javascript:void(0)">App</a></li>
+				<li class="breadcrumb-item active"><a href="javascript:void(0)">Post Details</a></li>
+			</ol>
+		</div>
+		<!-- row -->
+		<div class="row">
+			<div class="col-xl-9 col-xxl-8">
+				<div class="row">
+					<div class="col-xl-12">
+						<div class="profile card card-body p-0">
+							<div class="profile-head">
+								<div class="photo-content">
+									<div class="photo-btn">
+										<a href="/edit-profile" class="btn bgl-light text-white"><i class="flaticon-editing me-2"></i>Edit</a>
+									</div>
+									<div class="cover-photo"></div>
+								</div>
+								<div class="profile-info">
+									<div class="profile-photo">
+										<img src="{{ url_for('static', filename=  'codebyte/images/profile/profile.png')}}" class="img-fluid" alt="">
+									</div>
+									<div class="profile-details">
+										<div class="profile-name px-3 pt-2">
+											<h4 class="text-white  mb-0 fs-23">Yatin xarma</h4>
+											<p class="text-white">Frentend Developer</p>
+										</div>
+										
+									</div>
+									
+								</div>
+								<div class="profile-info-1">
+									<div class="row">
+										<div class="col-xl-6 col-xxl-7 col-lg-7">
+											<div class="social-bx">
+												<div class="row gx-2">
+													<div class="col-4">
+														<div class="text-center">	
+															<h4 class="font-w600 counter mb-0">248</h4>
+															<p class="mb-0 text-dark">Project</p>
+														</div>
+														
+													</div>
+													<div class="col-4">
+														<div class="text-center">	
+															<h4 class="font-w600 counter text-success mb-0">5,200</h4>
+															<p class="mb-0 text-dark">$ Earnings</p>
+														</div>
+														
+													</div>
+													<div class="col-4">
+														<div class="text-center">	
+															<h4 class="font-w600 counter text-danger mb-0">20</h4>
+															<p class="mb-0 text-dark">% Rate</p>
+														</div>
+														
+													</div>
+
+												</div>
+											</div>
+											
+										</div>
+										<div class="col-xl-6 col-xxl-5 col-lg-5">
+											<div class="float-lg-end float-strat">
+												<a href="javascript:void(0);" class="btn btn-primary me-3">Follow</a>
+												<a href="javascript:void(0);" class="btn btn-outline-primary">Contact</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-xl-12">
+
+						<div class="card">
+							<div class="card-body">
+								<div class="post-details">
+									<h3 class="mb-2 text-black">Market Analysis and Competitive Intelligence</h3>
+									<ul class="mb-4 post-meta d-flex flex-wrap">
+										<li class="post-author me-3">By Admin</li>
+										<li class="post-date me-3"><i class="far fa-calendar-plus me-2"></i>18 Nov 2020</li>
+										<li class="post-comment"><i class="far fa-comment me-2"></i>28</li>
+									</ul>
+									<img src="{{ url_for('static', filename=  'codebyte/images/post/post1.jpg')}}" class="w-100 rounded" alt="">
+									<p class="mt-3">A wonderful serenity has take possession of my entire soul like these sweet morning of spare which enjoy whole heart.A wonderful serenity has take possession of my entire soul like these sweet morning of spare which enjoy whole heart.</p>
+									<p>A collection of textile samples lay spread out on the table - Samsa was a travelling salesman - and above it there hung a picture that he had recently cut out of an illustrated magazine and housed in a nice, gilded frame.</p>
+									<blockquote>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Has been the industry's standard text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimencenturies.</blockquote>
+									<p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence was created for the bliss of souls like mine.I am so happy, my dear friend, so absorbed in the exquisite sense of mere tranquil existence, that I neglect my talents.</p>
+									<div class="profile-skills mt-5 mb-5">
+										<h4 class="text-primary mb-2">Skills</h4>
+										<a href="javascript:void();;" class="btn btn-primary light btn-xs mb-1">Admin</a>
+										<a href="javascript:void();;" class="btn btn-primary light btn-xs mb-1">Dashboard</a>
+										<a href="javascript:void();;" class="btn btn-primary light btn-xs mb-1">Photoshop</a>
+										<a href="javascript:void();;" class="btn btn-primary light btn-xs mb-1">Bootstrap</a>
+										<a href="javascript:void();;" class="btn btn-primary light btn-xs mb-1">Responsive</a>
+										<a href="javascript:void();;" class="btn btn-primary light btn-xs mb-1">Crypto</a>
+									</div>
+									<div class="comment-respond" id="respond">
+										<h4 class="comment-reply-title text-primary mb-3" id="reply-title">Leave a Reply </h4>
+										<form class="comment-form" id="commentform" method="">
+											<div class="row"> 
+												<div class="col-lg-6">
+													<div class="mb-3">
+														<label for="author" class="text-black font-w600 form-label required">Name</label>
+														<input type="text" class="form-control" value="Author" name="Author" placeholder="Author" id="author">
+													</div>
+												</div>
+												<div class="col-lg-6">
+													<div class="mb-3">
+														<label for="email" class="text-black font-w600 form-label required">Email</label>
+														<input type="text" class="form-control" value="Email" placeholder="Email" name="Email" id="email">
+													</div>
+												</div>
+												<div class="col-lg-12">
+													<div class="mb-3">
+														<label for="comment" class="text-black font-w600 form-label">Comment</label>
+														<textarea rows="6" class="form-control h-100" name="comment" placeholder="Comment" id="comment"></textarea>
+													</div>
+												</div>
+												<div class="col-lg-12">
+													<div class="mb-3">
+														<input type="submit" value="Post Comment" class="submit btn btn-primary" id="submit" name="submit">
+													</div>
+												</div>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+			<div class="col-xl-3 col-xxl-4">
+				<div class="card h-auto">
+					<div class="card-header pb-0 border-0">
+						<h4 class="card-title--medium mb-0">
+							Biography
+						</h4>
+						<div class="dropdown c-pointer ">
+							<div class="btn-link" data-bs-toggle="dropdown">
+								<svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<circle cx="12.4999" cy="3.5" r="2.5" fill="#A5A5A5"></circle>
+									<circle cx="12.4999" cy="11.5" r="2.5" fill="#A5A5A5"></circle>
+									<circle cx="12.4999" cy="19.5" r="2.5" fill="#A5A5A5"></circle>
+								</svg>
+							</div>
+							<div class="dropdown-menu dropdown-menu-right">
+								<a class="dropdown-item" href="javascript:void(0)">Delete</a>
+								<a class="dropdown-item" href="javascript:void(0)">Edit</a>
+							</div>
+						</div>
+					</div>
+					<div class="card-body pt-3">
+						<p class="text-dark">My Name is Yatin I Am Frentend Developer and I Can Do Anything in Software Field.</p>
+						<div class="adrees-bx">
+							<ul>
+								<li class="mb-3"><a href=""><i class="flaticon-location"></i>
+								</a>Rama Krishina Purum Kota</li>
+								<li class="mb-3"><a href=""><i class="flaticon-cake"></i>
+								</a>December 21, 2001</li>
+								<li class="mb-3"><a href=""><i class="flaticon-business-and-trade"></i>
+								</a>W3ITEXPERTS - Software Company</li>
+							</ul>
+						</div>
+						<div class="proile-social-bx adrees-bx mt-3">
+							<h4 class="card-title--medium mb-3">Social</h4>
+							<ul class="d-flex align-items-center flex-wrap">
+								<li class="mb-3"><a href=""><i class="flaticon-facebook"></i>
+								</a></li>
+								<li class="mb-3"><a href=""><i class="flaticon-instagram"></i>
+								</a></li>
+								<li class="mb-3"><a href=""><i class="flaticon-twitter"></i>
+								</a></li>
+								<li class="mb-3"><a href=""><i class="flaticon-linkedin"></i>
+								</a></li>
+								<li class="mb-3"><a href=""><i class="flaticon-dribble-big-logo"></i>
+								</a></li>
+								<li class="mb-3"><a href=""><i class="flaticon-behance"></i>
+								</a></li>
+							</ul>
+						</div>
+						<div class="mt-3">
+							<h4 class="card-title--medium mb-3">Skills</h4>
+							<ul class="d-flex align-items-center flex-wrap">
+								<li class="mb-3"><a href="" class="badge badge-light me-2">Html</a></li>
+								<li class="mb-3"><a href="" class="badge badge-light me-2">Css</a></li>
+								<li class="mb-3"><a href="" class="badge badge-light me-2">Figma</a></li>
+								<li class="mb-3"><a href="" class="badge badge-light me-2">React</a></li>
+								<li class="mb-3"><a href="" class="badge badge-light me-2">Scss</a></li>
+								<li class="mb-3"><a href="" class="badge badge-light me-2">Tailwand css</a></li>
+								<li class="mb-3"><a href="" class="badge badge-light">React Native</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="card h-auto">
+					<div class="card-header pb-0 border-0">
+						<h4 class="card-title--medium mb-0">
+							Prople you know
+						</h4>
+						<div class="dropdown c-pointer ">
+							<div class="btn-link" data-bs-toggle="dropdown">
+								<svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<circle cx="12.4999" cy="3.5" r="2.5" fill="#A5A5A5"></circle>
+									<circle cx="12.4999" cy="11.5" r="2.5" fill="#A5A5A5"></circle>
+									<circle cx="12.4999" cy="19.5" r="2.5" fill="#A5A5A5"></circle>
+								</svg>
+							</div>
+							<div class="dropdown-menu dropdown-menu-right">
+								<a class="dropdown-item" href="javascript:void(0)">Delete</a>
+								<a class="dropdown-item" href="javascript:void(0)">Edit</a>
+							</div>
+						</div>
+					</div>
+					<div class="card-body  py-3 ic-scroll height250"  id="RecentActivityContent">
+						<div class="products pt-0">
+							<img src="{{ url_for('static', filename=  'codebyte/images/contacts/pic2.jpg')}}" class="avatar avatar-md" alt="">
+							<div>
+								<a href="javascript:void(0)"><h6 class="mb-0">Liam Antony</h6></a>
+								<small>Web Doveloper</small>	
+							</div>	
+							<div class="ms-auto app-icon">
+								<i class="fa-solid fa-user-plus"></i>
+							</div>
+						</div>
+						<div class="products">
+							<img src="{{ url_for('static', filename=  'codebyte/images/contacts/pic3.jpg')}}" class="avatar avatar-md" alt="">
+							<div>
+								<a href="javascript:void(0)"><h6 class="mb-0">Liam Antony</h6></a>
+								<small>Web Doveloper</small>	
+							</div>	
+							<div class="ms-auto app-icon">
+								<i class="fa-solid fa-user-plus"></i>
+							</div>
+						</div>
+						<div class="products">
+							<img src="{{ url_for('static', filename=  'codebyte/images/contacts/pic1.jpg')}}" class="avatar avatar-md" alt="">
+							<div>
+								<a href="javascript:void(0)"><h6 class="mb-0">Liam Antony</h6></a>
+								<small>Web Doveloper</small>	
+							</div>	
+							<div class="ms-auto app-icon">
+								<i class="fa-solid fa-user-plus"></i>
+							</div>
+						</div>
+						
+					</div>
+					<div class="text-center card-footer pt-0 border-0">
+						<a href="" class="btn btn-outline-primary btn-block btn-sm ic-load-more" id="RecentActivity" rel="/static/codebyte/ajax/contacts.html">Load More</a>
+					</div>
+				</div>
+				<div class="card h-auto">
+					<div class="card-header pb-0 border-0">
+						<h4 class="card-title--medium mb-0">
+							Interest
+						</h4>
+						<div class="dropdown c-pointer ">
+							<div class="btn-link" data-bs-toggle="dropdown">
+								<svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<circle cx="12.4999" cy="3.5" r="2.5" fill="#A5A5A5"></circle>
+									<circle cx="12.4999" cy="11.5" r="2.5" fill="#A5A5A5"></circle>
+									<circle cx="12.4999" cy="19.5" r="2.5" fill="#A5A5A5"></circle>
+								</svg>
+							</div>
+							<div class="dropdown-menu dropdown-menu-right">
+								<a class="dropdown-item" href="javascript:void(0)">Delete</a>
+								<a class="dropdown-item" href="javascript:void(0)">Edit</a>
+							</div>
+						</div>
+					</div>
+					<div class="card-body py-3">
+						<div class="profile-interest">
+							<div class="row mt-4 sp4" id="lightgallery">
+								<a href="{{ url_for('static', filename=  'codebyte/images/profile/2.jpg')}}" data-exthumbimage="{{ url_for('static', filename=  'codebyte/images/profile/2.jpg')}}" data-src="{{ url_for('static', filename=  'codebyte/images/profile/2.jpg')}}" class="lg-item mb-1 col-lg-4 col-xl-4 col-sm-4 col-6">
+									<img src="{{ url_for('static', filename=  'codebyte/images/profile/2.jpg')}}" alt="" class="img-fluid rounded">
+								</a>
+								<a href="{{ url_for('static', filename=  'codebyte/images/profile/3.jpg')}}" data-exthumbimage="{{ url_for('static', filename=  'codebyte/images/profile/3.jpg')}}" data-src="{{ url_for('static', filename=  'codebyte/images/profile/3.jpg')}}" class="lg-item mb-1 col-lg-4 col-xl-4 col-sm-4 col-6">
+									<img src="{{ url_for('static', filename=  'codebyte/images/profile/3.jpg')}}" alt="" class="img-fluid rounded">
+								</a>
+								<a href="{{ url_for('static', filename=  'codebyte/images/profile/4.jpg')}}" data-exthumbimage="{{ url_for('static', filename=  'codebyte/images/profile/4.jpg')}}" data-src="{{ url_for('static', filename=  'codebyte/images/profile/4.jpg')}}" class="lg-item mb-1 col-lg-4 col-xl-4 col-sm-4 col-6">
+									<img src="{{ url_for('static', filename=  'codebyte/images/profile/4.jpg')}}" alt="" class="img-fluid rounded">
+								</a>
+								<a href="{{ url_for('static', filename=  'codebyte/images/profile/3.jpg')}}" data-exthumbimage="{{ url_for('static', filename=  'codebyte/images/profile/3.jpg')}}" data-src="{{ url_for('static', filename=  'codebyte/images/profile/3.jpg')}}" class="lg-item mb-1 col-lg-4 col-xl-4 col-sm-4 col-6">
+									<img src="{{ url_for('static', filename=  'codebyte/images/profile/3.jpg')}}" alt="" class="img-fluid rounded">
+								</a>
+								<a href="{{ url_for('static', filename=  'codebyte/images/profile/4.jpg')}}" data-exthumbimage="{{ url_for('static', filename=  'codebyte/images/profile/4.jpg')}}" data-src="{{ url_for('static', filename=  'codebyte/images/profile/4.jpg')}}" class="lg-item mb-1 col-lg-4 col-xl-4 col-sm-4 col-6">
+									<img src="{{ url_for('static', filename=  'codebyte/images/profile/4.jpg')}}" alt="" class="img-fluid rounded">
+								</a>
+								<a href="{{ url_for('static', filename=  'codebyte/images/profile/2.jpg')}}" data-exthumbimage="{{ url_for('static', filename=  'codebyte/images/profile/2.jpg')}}" data-src="{{ url_for('static', filename=  'codebyte/images/profile/2.jpg')}}" class="lg-item mb-1 col-lg-4 col-xl-4 col-sm-4 col-6">
+									<img src="{{ url_for('static', filename=  'codebyte/images/profile/2.jpg')}}" alt="" class="img-fluid rounded">
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="card h-auto">
+					<div class="card-header pb-0 border-0">
+						<h4 class="card-title--medium mb-0">
+							Our Latest News
+						</h4>
+						<div class="dropdown c-pointer ">
+							<div class="btn-link" data-bs-toggle="dropdown">
+								<svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<circle cx="12.4999" cy="3.5" r="2.5" fill="#A5A5A5"></circle>
+									<circle cx="12.4999" cy="11.5" r="2.5" fill="#A5A5A5"></circle>
+									<circle cx="12.4999" cy="19.5" r="2.5" fill="#A5A5A5"></circle>
+								</svg>
+							</div>
+							<div class="dropdown-menu dropdown-menu-right">
+								<a class="dropdown-item" href="javascript:void(0)">Delete</a>
+								<a class="dropdown-item" href="javascript:void(0)">Edit</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="card-body py-3">
+						<div class="profile-news">
+							<div class="media pt-0 pb-3">
+								<img src="{{ url_for('static', filename=  'codebyte/images/profile/5.jpg')}}" alt="image" class="me-3 rounded" width="75">
+								<div class="media-body">
+									<h5 class="m-b-5"><a href="/post-details" class="text-dark">Innovations in Event Ticketing</a></h5>
+									<p class="mb-0">I shared this on my fb wall.</p>
+								</div>
+							</div>
+							<div class="media pt-3 pb-3">
+								<img src="{{ url_for('static', filename=  'codebyte/images/profile/6.jpg')}}" alt="image" class="me-3 rounded" width="75">
+								<div class="media-body">
+									<h5 class="m-b-5"><a href="/post-details" class="text-dark">Getting More for Your Money</a></h5>
+									<p class="mb-0">I shared this on my fb wall.</p>
+								</div>
+							</div>
+							
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>
+<div class="modal fade" id="addCloseFriendModal">
+	<div class="modal-dialog modal-dialog-centered" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title">Add to close friends</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+			</div>
+			<div class="modal-body">
+				<form>
+					<div class="mb-3">
+						<input class="form-control" placeholder="search here...">
+					</div>
+					<ul class="user-media-list">
+						<li class="mb-2 border-bottom pb-2">
+							<div class="d-flex align-items-center">
+								<div class="img_cont me-2">
+									<img src="{{ url_for('static', filename=  'codebyte/images/avatar/1.jpg')}}" height="45" width="45" class="rounded-circle user_img" alt="">
+								</div>
+								<div class="user_info">
+									<h6 class="mb-0">Archie Parker</h6>
+									<p class="mb-0">Kalid is online</p>
+								</div>
+							</div>
+						</li>
+						<li class="mb-2 border-bottom pb-2">
+							<div class="d-flex align-items-center">
+								<div class="img_cont me-2">
+									<img src="{{ url_for('static', filename=  'codebyte/images/avatar/2.jpg')}}" height="45" width="45" class="rounded-circle user_img" alt="">
+								</div>
+								<div class="user_info">
+									<h6 class="mb-0">Alfie Mason</h6>
+									<p class="mb-0">Kalid is online</p>
+								</div>
+							</div>
+						</li>
+						<li class="mb-2 border-bottom pb-2">
+							<div class="d-flex align-items-center">
+								<div class="img_cont me-2">
+									<img src="{{ url_for('static', filename=  'codebyte/images/avatar/3.jpg')}}" height="45" width="45" class="rounded-circle user_img" alt="">
+								</div>
+								<div class="user_info">
+									<h6 class="mb-0">Bashid Samim</h6>
+									<p class="mb-0">Kalid is online</p>
+								</div>
+							</div>
+						</li>
+						<li class="mb-2 border-bottom pb-2">
+							<div class="d-flex align-items-center">
+								<div class="img_cont me-2">
+									<img src="{{ url_for('static', filename=  'codebyte/images/avatar/4.jpg')}}" height="45" width="45" class="rounded-circle user_img" alt="">
+								</div>
+								<div class="user_info">
+									<h6 class="mb-0">Jack Ronan</h6>
+									<p class="mb-0">Kalid is online</p>
+								</div>
+							</div>
+						</li>
+						<li class="mb-2 pb-2">
+							<div class="d-flex align-items-center">
+								<div class="img_cont me-2">
+									<img src="{{ url_for('static', filename=  'codebyte/images/avatar/5.jpg')}}" height="45" width="45" class="rounded-circle user_img" alt="">
+								</div>
+								<div class="user_info">
+									<h6 class="mb-0">Oliver Acker</h6>
+									<p class="mb-0">Kalid is online</p>
+								</div>
+							</div>
+						</li>
+					</ul>
+					<input type="submit" value="Done" class="submit btn btn-primary w-100" name="submit">
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="createGroupModal">
+	<div class="modal-dialog modal-dialog-centered" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title">Create Group</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+			</div>
+			<div class="modal-body">
+				<form>
+					<div class="mb-3">
+						<label class="form-label">Name</label>
+						<input class="form-control" placeholder="Enter group name">
+					</div>
+					<div class="mb-3">
+						<label class="form-label">Select Friends</label>
+						<input class="form-control" placeholder="search here...">
+					</div>
+					<ul class="user-media-list">
+						<li class="mb-2 border-bottom pb-2">
+							<div class="d-flex align-items-center">
+								<div class="img_cont me-2">
+									<img src="{{ url_for('static', filename=  'codebyte/images/avatar/1.jpg')}}" height="45" width="45" class="rounded-circle user_img" alt="">
+								</div>
+								<div class="user_info">
+									<h6 class="mb-0">Archie Parker</h6>
+									<p class="mb-0">Kalid is online</p>
+								</div>
+							</div>
+						</li>
+						<li class="mb-2 border-bottom pb-2">
+							<div class="d-flex align-items-center">
+								<div class="img_cont me-2">
+									<img src="{{ url_for('static', filename=  'codebyte/images/avatar/2.jpg')}}" height="45" width="45" class="rounded-circle user_img" alt="">
+								</div>
+								<div class="user_info">
+									<h6 class="mb-0">Alfie Mason</h6>
+									<p class="mb-0">Kalid is online</p>
+								</div>
+							</div>
+						</li>
+						<li class="mb-2 pb-2">
+							<div class="d-flex align-items-center">
+								<div class="img_cont me-2">
+									<img src="{{ url_for('static', filename=  'codebyte/images/avatar/5.jpg')}}" height="45" width="45" class="rounded-circle user_img" alt="">
+								</div>
+								<div class="user_info">
+									<h6 class="mb-0">Oliver Acker</h6>
+									<p class="mb-0">Kalid is online</p>
+								</div>
+							</div>
+						</li>
+					</ul>
+					<input type="submit" value="Create" class="submit btn btn-primary w-100" name="submit">
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="sendMessageModal">
+	<div class="modal-dialog modal-dialog-centered" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title">Send Message</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+			</div>
+			<div class="modal-body">
+				<form class="comment-form">
+					<div class="row"> 
+						<div class="col-lg-6">
+							<div class="mb-3">
+								<label class="text-black font-w600 form-label required">Name </label>
+								<input type="text" class="form-control" value="Author" name="Author" placeholder="Author">
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<div class="mb-3">
+								<label class="text-black font-w600 form-label required">Email</label>
+								<input type="text" class="form-control" value="Email" placeholder="Email" name="Email">
+							</div>
+						</div>
+						<div class="col-lg-12">
+							<div class="mb-3">
+								<label class="text-black font-w600 form-label">Comment</label>
+								<textarea rows="8" class="form-control" name="comment" placeholder="Comment"></textarea>
+							</div>
+						</div>
+						<div class="col-lg-12">
+							<div class="mb-3 mb-0">
+								<input type="submit" value="Post Comment" class="submit btn btn-primary" name="submit">
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}
+
+{% block additional_js %}
+<script src="{{ url_for('static', filename='codebyte/vendor/counter/counter.min.js')}}"></script>
+<script src="{{ url_for('static', filename='codebyte/vendor/counter/waypoint.min.js')}}"></script>
+<script src="{{ url_for('static', filename='codebyte/vendor/lightgallery/dist/lightgallery.min.js')}}"></script>
+<script src="{{ url_for('static', filename='codebyte/vendor/lightgallery/dist/plugins/thumbnail/lg-thumbnail.min.js')}}"></script>
+<script src="{{ url_for('static', filename='codebyte/vendor/lightgallery/dist/plugins/zoom/lg-zoom.min.js')}}"></script>
+{% endblock %}

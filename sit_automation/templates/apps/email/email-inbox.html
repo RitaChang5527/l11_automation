@@ -1,0 +1,566 @@
+{% extends 'codebyte/elements/layouts/admin.html' %}
+        
+{% block additional_css %}
+{% endblock %}
+        
+{% block content %}
+<div class="content-body">
+	<div class="container-fluid">
+		<div class="row page-titles">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item"><a href="javascript:void(0)">Email</a></li>
+				<li class="breadcrumb-item active"><a href="javascript:void(0)">Inbox</a></li>
+			</ol>
+		</div>
+		<!-- row -->
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="card">
+					<div class="card-body p-0">
+						<div class="row g-0">
+							<div class="col-xl-2 col-xxl-3">
+								<div class="mail-left-body">
+								<div class=" ps-4 pe-3 py-4 ic-scroll height800">
+									<div class="mb-3 mt-4 mt-sm-0 email-left-box">
+										<div class="p-0">
+											<a href="/email-compose"
+												class="btn btn-primary btn-sm btn-block">Compose</a>
+										</div>
+
+										<div class="mail-list">
+											<p class="text-primary font-w500 mb-2"> MAILBOXES </p>
+											<a href="/email-inbox" class="list-group-item active"><i
+													class="fa-regular fa-envelope align-middle"></i>Inbox <span
+													class="badge badge-purple badge-sm float-end">2</span> </a>
+											<a href="javascript:void(0);" class="list-group-item"><i
+													class="fa-regular fa-paper-plane align-middle"></i>Sent</a>
+											<a href="javascript:void(0);" class="list-group-item"><i
+													class="fa-regular fa-star align-middle"></i>Favorite </a>
+											<a href="javascript:void(0);" class="list-group-item"><i
+													class="fa-regular fa-file align-middle"></i>Draft</a>
+											<a href="javascript:void(0);" class="list-group-item ">
+												<svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+													xmlns="http://www.w3.org/2000/svg">
+													<path d="M15.4425 10.0575L10.065 15.435C9.92569 15.5745 9.76026 15.6851 9.57816 15.7606C9.39606 15.8361
+													9.20087 15.8749 9.00375 15.8749C8.80663 15.8749 8.61144 15.8361 8.42934 15.7606C8.24724 15.6851 8.08181 15.5745 7.9425 15.435L1.5 9V1.5H9L15.4425
+													7.9425C15.7219 8.22354 15.8787 8.60372 15.8787 9C15.8787 9.39628 15.7219 9.77646 15.4425 10.0575Z"
+														stroke="#666666" stroke-width="2" stroke-linecap="round"
+														stroke-linejoin="round"></path>
+													<path d="M5.25 5.25H5.268" stroke="#666666" stroke-width="2"
+														stroke-linecap="round" stroke-linejoin="round"></path>
+												</svg>Important</a>
+											<a href="javascript:void(0);" class="list-group-item"><i
+													class="fa-regular fa-clock align-middle"></i> Scheduled</a>
+
+
+											<a href="javascript:void(0);" class="list-group-item">
+												<svg width="15" height="15" viewBox="0 0 22 22" fill="none"
+													xmlns="http://www.w3.org/2000/svg">
+													<path d="M5.5 8.25L11 13.75L16.5 8.25" stroke="#666666"
+														stroke-width="2" stroke-linecap="round"
+														stroke-linejoin="round"></path>
+												</svg>
+												Move
+											</a>
+										</div>
+										<div class="mail-list">
+											<p class="text-secondary mb-2 font-w500"> Filter </p>
+											<a href="/email-inbox" class="list-group-item"><i
+													class="fa-regular fa-star"></i> Starred </a>
+											<a href="javascript:void(0);" class="list-group-item ">
+												<svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+													xmlns="http://www.w3.org/2000/svg">
+													<path d="M15.4425 10.0575L10.065 15.435C9.92569 15.5745 9.76026 15.6851 9.57816 15.7606C9.39606 15.8361
+													9.20087 15.8749 9.00375 15.8749C8.80663 15.8749 8.61144 15.8361 8.42934 15.7606C8.24724 15.6851 8.08181 15.5745 7.9425 15.435L1.5 9V1.5H9L15.4425
+													7.9425C15.7219 8.22354 15.8787 8.60372 15.8787 9C15.8787 9.39628 15.7219 9.77646 15.4425 10.0575Z"
+														stroke="#666666" stroke-width="2" stroke-linecap="round"
+														stroke-linejoin="round"></path>
+													<path d="M5.25 5.25H5.268" stroke="#666666" stroke-width="2"
+														stroke-linecap="round" stroke-linejoin="round"></path>
+												</svg>Important</a>
+
+
+
+
+										</div>
+										<div class="mail-list">
+											<p class="text-success mb-2 font-w500"> LABELS </p>
+											<a href="javascript:void(0);" class="list-group-item ">
+												<svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+													xmlns="http://www.w3.org/2000/svg">
+													<path d="M15.4425 10.0575L10.065 15.435C9.92569 15.5745 9.76026 15.6851 9.57816 15.7606C9.39606 15.8361
+													9.20087 15.8749 9.00375 15.8749C8.80663 15.8749 8.61144 15.8361 8.42934 15.7606C8.24724 15.6851 8.08181 15.5745 7.9425 15.435L1.5 9V1.5H9L15.4425
+													7.9425C15.7219 8.22354 15.8787 8.60372 15.8787 9C15.8787 9.39628 15.7219 9.77646 15.4425 10.0575Z"
+														stroke="var(--primary)" stroke-width="2"
+														stroke-linecap="round" stroke-linejoin="round"></path>
+													<path d="M5.25 5.25H5.268" stroke="var(--primary)"
+														stroke-width="2" stroke-linecap="round"
+														stroke-linejoin="round"></path>
+												</svg> Personal </a>
+											<a href="javascript:void(0);" class="list-group-item ">
+												<svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+													xmlns="http://www.w3.org/2000/svg">
+													<path d="M15.4425 10.0575L10.065 15.435C9.92569 15.5745 9.76026 15.6851 9.57816 15.7606C9.39606 15.8361
+														9.20087 15.8749 9.00375 15.8749C8.80663 15.8749 8.61144 15.8361 8.42934 15.7606C8.24724 15.6851 8.08181 15.5745 7.9425 15.435L1.5 9V1.5H9L15.4425
+														7.9425C15.7219 8.22354 15.8787 8.60372 15.8787 9C15.8787 9.39628 15.7219 9.77646 15.4425 10.0575Z"
+														stroke="var(--secondary)" stroke-width="2"
+														stroke-linecap="round" stroke-linejoin="round"></path>
+													<path d="M5.25 5.25H5.268" stroke="var(--secondary)"
+														stroke-width="2" stroke-linecap="round"
+														stroke-linejoin="round"></path>
+												</svg> Work </a>
+
+											<a href="javascript:void(0);" class="list-group-item ">
+												<svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+													xmlns="http://www.w3.org/2000/svg">
+													<path d="M15.4425 10.0575L10.065 15.435C9.92569 15.5745 9.76026 15.6851 9.57816 15.7606C9.39606 15.8361
+															9.20087 15.8749 9.00375 15.8749C8.80663 15.8749 8.61144 15.8361 8.42934 15.7606C8.24724 15.6851 8.08181 15.5745 7.9425 15.435L1.5 9V1.5H9L15.4425
+															7.9425C15.7219 8.22354 15.8787 8.60372 15.8787 9C15.8787 9.39628 15.7219 9.77646 15.4425 10.0575Z"
+														stroke="#09BD3C" stroke-width="2" stroke-linecap="round"
+														stroke-linejoin="round"></path>
+													<path d="M5.25 5.25H5.268" stroke="#09BD3C" stroke-width="2"
+														stroke-linecap="round" stroke-linejoin="round"></path>
+												</svg> Accounts </a>
+
+										</div>
+
+									</div>
+								</div>
+								</div>
+
+
+
+							</div>
+							<div class="col-xl-10 col-xxl-9">
+								<div class="py-4">
+									<div role="toolbar"
+										class="email-toolbar">
+										<div class="btn-group mb-1">
+											<div class="form-check custom-checkbox">
+												<input type="checkbox" class="form-check-input" id="checkAll">
+												<label class="form-check-label" for="checkAll"></label>
+											</div>
+										</div>
+										<div class="btn-group mb-1">
+											<button class="btn btn-primary light px-3" type="button"><i
+													class="ti-reload"></i>
+											</button>
+										</div>
+										<div class="btn-group mb-1">
+											<button aria-expanded="false" data-bs-toggle="dropdown"
+												class="btn btn-primary px-3 light dropdown-toggle mx-2"
+												type="button">More <span class="caret"></span>
+											</button>
+											<div class="dropdown-menu"> <a href="javascript: void(0);"
+													class="dropdown-item">Mark as Unread</a> <a
+													href="javascript: void(0);" class="dropdown-item">Add to
+													Tasks</a>
+												<a href="javascript: void(0);" class="dropdown-item">Add
+													Star</a> <a href="javascript: void(0);"
+													class="dropdown-item">Mute</a>
+											</div>
+										</div>
+										<div class="email-tools-box">
+											<i class="fa-solid fa-list-ul"></i>
+										</div>
+										<form class=" d-none d-md-block ms-auto">
+											<div class="input-group ms-auto w-100 d-sm-inline-flex d-none">
+												<input type="text" class="form-control"
+													placeholder="Search here">
+												<span class="input-group-text"><a href="javascript:void(0)"><i class="flaticon-search-interface-symbol"></i></a></span>
+											</div>
+										</form>
+									</div>
+									<div class="email-list mt-3">
+										<div class="message">
+											<div>
+												<div class="d-flex message-single style-1">
+													<div class="ps-1 align-self-center">
+														<div class="form-check custom-checkbox">
+															<input type="checkbox" class="form-check-input"
+																id="checkbox2">
+															<label class="form-check-label"
+																for="checkbox2"></label>
+														</div>
+													</div>
+													<div class="ms-2">
+														<button
+															class="border-0 bg-transparent align-middle p-0"><i
+																class="fa fa-star"
+																aria-hidden="true"></i></button>
+													</div>
+												</div>
+												<a href="/email-read" class="col-mail col-mail-2">
+													<div class="subject">Ingredia Nutrisha, A collection of
+														textile samples lay spread out on the table - Samsa was
+														a travelling salesman - and above it there hung a
+														picture</div>
+													<div class="date">11:49 am</div>
+												</a>
+											</div>
+										</div>
+										<div class="message">
+											<div>
+												<div class="d-flex message-single">
+													<div class="ps-1 align-self-center">
+														<div class="form-check custom-checkbox">
+															<input type="checkbox" class="form-check-input"
+																id="checkbox3">
+															<label class="form-check-label"
+																for="checkbox3"></label>
+														</div>
+													</div>
+													<div class="ms-2">
+														<button
+															class="border-0 bg-transparent align-middle p-0"><i
+																class="fa fa-star"
+																aria-hidden="true"></i></button>
+													</div>
+												</div>
+												<a href="/email-read" class="col-mail col-mail-2">
+													<div class="subject">Almost unorthographic life One day
+														however a small line of blind text by the name of Lorem
+														Ipsum decided to leave for the far World of Grammar.
+													</div>
+													<div class="date">11:49 am</div>
+												</a>
+											</div>
+										</div>
+										<div class="message">
+											<div>
+												<div class="d-flex message-single style-2">
+													<div class="ps-1 align-self-center">
+														<div class="form-check custom-checkbox">
+															<input type="checkbox" class="form-check-input"
+																id="checkbox4">
+															<label class="form-check-label"
+																for="checkbox4"></label>
+														</div>
+													</div>
+													<div class="ms-2">
+														<button
+															class="border-0 bg-transparent align-middle p-0"><i
+																class="fa fa-star"
+																aria-hidden="true"></i></button>
+													</div>
+												</div>
+												<a href="/email-read" class="col-mail col-mail-2">
+													<div class="subject">Pointing has no control about the blind
+														texts it is an almost unorthographic life One day
+														however a small line of blind text by the name of</div>
+													<div class="date">11:49 am</div>
+												</a>
+											</div>
+										</div>
+										<div class="message">
+											<div>
+												<div class="d-flex message-single">
+													<div class="ps-1 align-self-center">
+														<div class="form-check custom-checkbox">
+															<input type="checkbox" class="form-check-input"
+																id="checkbox5">
+															<label class="form-check-label"
+																for="checkbox5"></label>
+														</div>
+													</div>
+													<div class="ms-2">
+														<button
+															class="border-0 bg-transparent align-middle p-0"><i
+																class="fa fa-star"
+																aria-hidden="true"></i></button>
+													</div>
+												</div>
+												<a href="/email-read" class="col-mail col-mail-2">
+													<div class="subject">Even the all-powerful Pointing has no
+														control about the blind texts it is an almost
+														unorthographic life One day however a small line of
+														blind text by the name of</div>
+													<div class="date">11:49 am</div>
+												</a>
+											</div>
+										</div>
+										<div class="message">
+											<div>
+												<div class="d-flex message-single style-3">
+													<div class="ps-1 align-self-center">
+														<div class="form-check custom-checkbox">
+															<input type="checkbox" class="form-check-input"
+																id="checkbox16">
+															<label class="form-check-label"
+																for="checkbox16"></label>
+														</div>
+													</div>
+													<div class="ms-2">
+														<button
+															class="border-0 bg-transparent align-middle p-0"><i
+																class="fa fa-star"
+																aria-hidden="true"></i></button>
+													</div>
+												</div>
+												<a href="/email-read" class="col-mail col-mail-2">
+													<div class="subject">Pointing has no control about the blind
+														texts it is an almost unorthographic life One day
+														however a small line of blind text by the name of</div>
+													<div class="date">11:49 am</div>
+												</a>
+											</div>
+										</div>
+										<div class="message">
+											<div>
+												<div class="d-flex message-single">
+													<div class="ps-1 align-self-center">
+														<div class="form-check custom-checkbox">
+															<input type="checkbox" class="form-check-input"
+																id="checkbox17">
+															<label class="form-check-label"
+																for="checkbox17"></label>
+														</div>
+													</div>
+													<div class="ms-2">
+														<button
+															class="border-0 bg-transparent align-middle p-0"><i
+																class="fa fa-star"
+																aria-hidden="true"></i></button>
+													</div>
+												</div>
+												<a href="/email-read" class="col-mail col-mail-2">
+													<div class="subject">Pointing has no control about the blind
+														texts it is an almost unorthographic life One day
+														however a small line of blind text by the name of</div>
+													<div class="date">11:49 am</div>
+												</a>
+											</div>
+										</div>
+										<div class="message">
+											<div>
+												<div class="d-flex message-single -4">
+													<div class="ps-1 align-self-center">
+														<div class="form-check custom-checkbox">
+															<input type="checkbox" class="form-check-input"
+																id="checkbox18">
+															<label class="form-check-label"
+																for="checkbox18"></label>
+														</div>
+													</div>
+													<div class="ms-2">
+														<button
+															class="border-0 bg-transparent align-middle p-0"><i
+																class="fa fa-star"
+																aria-hidden="true"></i></button>
+													</div>
+												</div>
+												<a href="/email-read" class="col-mail col-mail-2">
+													<div class="subject">Pointing has no control about the blind
+														texts it is an almost unorthographic life One day
+														however a small line of blind text by the name of</div>
+													<div class="date">11:49 am</div>
+												</a>
+											</div>
+										</div>
+										<div class="message">
+											<div>
+												<div class="d-flex message-single">
+													<div class="ps-1 align-self-center">
+														<div class="form-check custom-checkbox">
+															<input type="checkbox" class="form-check-input"
+																id="checkbox19">
+															<label class="form-check-label"
+																for="checkbox19"></label>
+														</div>
+													</div>
+													<div class="ms-2">
+														<button
+															class="border-0 bg-transparent align-middle p-0"><i
+																class="fa fa-star"
+																aria-hidden="true"></i></button>
+													</div>
+												</div>
+												<a href="/email-read" class="col-mail col-mail-2">
+													<div class="subject">Even the all-powerful Pointing has no
+														control about the blind texts it is an almost
+														unorthographic life One day however a small line of
+														blind text by the name of</div>
+													<div class="date">11:49 am</div>
+												</a>
+											</div>
+										</div>
+										<div class="message">
+											<div>
+												<div class="d-flex message-single">
+													<div class="ps-1 align-self-center">
+														<div class="form-check custom-checkbox">
+															<input type="checkbox" class="form-check-input"
+																id="checkbox20">
+															<label class="form-check-label"
+																for="checkbox20"></label>
+														</div>
+													</div>
+													<div class="ms-2">
+														<button
+															class="border-0 bg-transparent align-middle p-0"><i
+																class="fa fa-star"
+																aria-hidden="true"></i></button>
+													</div>
+												</div>
+												<a href="/email-read" class="col-mail col-mail-2">
+													<div class="subject">Pointing has no control about the blind
+														texts it is an almost unorthographic life One day
+														however a small line of blind text by the name of</div>
+													<div class="date">11:49 am</div>
+												</a>
+											</div>
+										</div>
+										<div class="message">
+											<div>
+												<div class="d-flex message-single">
+													<div class="ps-1 align-self-center">
+														<div class="form-check custom-checkbox">
+															<input type="checkbox" class="form-check-input"
+																id="checkbox21">
+															<label class="form-check-label"
+																for="checkbox21"></label>
+														</div>
+													</div>
+													<div class="ms-2">
+														<button
+															class="border-0 bg-transparent align-middle p-0"><i
+																class="fa fa-star"
+																aria-hidden="true"></i></button>
+													</div>
+												</div>
+												<a href="/email-read" class="col-mail col-mail-2">
+													<div class="subject">Ingredia Nutrisha, A collection of
+														textile samples lay spread out on the table - Samsa was
+														a travelling salesman - and above it there hung a
+														picture</div>
+													<div class="date">11:49 am</div>
+												</a>
+											</div>
+										</div>
+										<div class="message">
+											<div>
+												<div class="d-flex message-single">
+													<div class="ps-1 align-self-center">
+														<div class="form-check custom-checkbox">
+															<input type="checkbox" class="form-check-input"
+																id="checkbox22">
+															<label class="form-check-label"
+																for="checkbox22"></label>
+														</div>
+													</div>
+													<div class="ms-2">
+														<button
+															class="border-0 bg-transparent align-middle p-0"><i
+																class="fa fa-star"
+																aria-hidden="true"></i></button>
+													</div>
+												</div>
+												<a href="/email-read" class="col-mail col-mail-2">
+													<div class="subject">Almost unorthographic life One day
+														however a small line of blind text by the name of Lorem
+														Ipsum decided to leave for the far World of Grammar.
+													</div>
+													<div class="date">11:49 am</div>
+												</a>
+											</div>
+										</div>
+										<div class="message unread">
+											<div>
+												<div class="d-flex message-single">
+													<div class="ps-1 align-self-center">
+														<div class="form-check custom-checkbox">
+															<input type="checkbox" class="form-check-input"
+																id="checkbox23">
+															<label class="form-check-label"
+																for="checkbox23"></label>
+														</div>
+													</div>
+													<div class="ms-2">
+														<button
+															class="border-0 bg-transparent align-middle p-0"><i
+																class="fa fa-star"
+																aria-hidden="true"></i></button>
+													</div>
+												</div>
+												<a href="/email-read" class="col-mail col-mail-2">
+													<div class="subject">Pointing has no control about the blind
+														texts it is an almost unorthographic life One day
+														however a small line of blind text by the name of</div>
+													<div class="date">11:49 am</div>
+												</a>
+											</div>
+										</div>
+										<div class="message">
+											<div>
+												<div class="d-flex message-single">
+													<div class="ps-1 align-self-center">
+														<div class="form-check custom-checkbox">
+															<input type="checkbox" class="form-check-input"
+																id="checkbox24">
+															<label class="form-check-label"
+																for="checkbox24"></label>
+														</div>
+													</div>
+													<div class="ms-2">
+														<button
+															class="border-0 bg-transparent align-middle p-0"><i
+																class="fa fa-star"
+																aria-hidden="true"></i></button>
+													</div>
+												</div>
+												<a href="/email-read" class="col-mail col-mail-2">
+													<div class="subject">Even the all-powerful Pointing has no
+														control about the blind texts it is an almost
+														unorthographic life One day however a small line of
+														blind text by the name of</div>
+													<div class="date">11:49 am</div>
+												</a>
+											</div>
+										</div>
+									</div>
+									<!-- panel -->
+									<div class="row mt-4">
+										<div class="col-12 ps-3">
+											<nav>
+												<ul
+													class="pagination pagination-gutter ps-3 pagination-primary pagination-sm no-bg justify-content-center justify-content-xl-start ">
+													<li class="page-item page-indicator"><a class="page-link"
+															href="javascript:void(0);"><i
+																class="la la-angle-left"></i></a></li>
+													<li class="page-item "><a class="page-link"
+															href="javascript:void(0);">1</a></li>
+													<li class="page-item active"><a class="page-link"
+															href="javascript:void(0);">2</a></li>
+													<li class="page-item"><a class="page-link"
+															href="javascript:void(0);">3</a></li>
+													<li class="page-item"><a class="page-link"
+															href="javascript:void(0);">4</a></li>
+													<li class="page-item page-indicator"><a class="page-link"
+															href="javascript:void(0);"><i
+																class="la la-angle-right"></i></a></li>
+												</ul>
+											</nav>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+{% endblock %}
+
+{% block additional_js %}
+<script>
+	$(".fa.fa-star").click(function () {
+		$(this).toggleClass("yellow");
+	});
+	$(".email-tools-box").on('click', function () {
+		$(' .mail-left-body ,.email-tools-box').toggleClass("active");
+	});
+</script>
+{% endblock %}

@@ -1,0 +1,588 @@
+{% extends 'codebyte/elements/layouts/admin.html' %}
+        
+{% block additional_css %}
+{% endblock %}
+        
+{% block content %}
+<div class="content-body">
+    <!-- row -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-12 px-3">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-xl-7 col-xxl-6">
+                                <h3 class="font-w600">Codebytes Company Profile Websites</h3>
+                                <p>Created by <strong class="text-black">Codebyte</strong> on June 31, 2024</p>
+                                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, 
+                                    <a href="https://codebyte.dexignlab.com/" class="text-primary">codebyte.dexignlab.com</a>
+                                </p>
+
+                                <div class="d-flex  justify-content-end align-items-center w-sm-50 w-100">
+                                    <h6 class="me-3 mb-0">Total Progress 60%</h6>
+                                    <div class="progress default-progress flex-1">
+                                        <div class="progress-bar bg-gradient1 progress-animated" style="width: 45%; height:8px;" role="progressbar">
+                                            <span class="sr-only">45% Complete</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            <div class="col-xl-5 col-xxl-6">
+                                <div class="d-flex align-items-center mb-xl-4 mb-0 pb-3 justify-content-xl-end justify-content-start flex-wrap mt-xl-0 mt-3">
+                                    <div class="me-3">
+                                        <h4>Codebytes Base</h4>
+                                        <p class="mb-0 text-xl-end text-start">Software House</p>
+                                    </div>
+                                    <div class="facebook-icon me-3">
+                                        <a href="javascript:void(0);"><svg width="32" height="35" viewBox="0 0 32 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M32.0005 33.7037C23.6894 34.5679 16.356 35 10.0005 35C6.97827 35 4.55604 34.1142 2.73382 32.3426C0.911599 30.571 0.000488281 28.2161 0.000488281 25.2778V10.3704C0.000488281 7.12963 0.933822 4.60185 2.80049 2.78704C4.7116 0.929011 7.33382 0 10.6672 0H32.0005V8.75H14.3338C12.556 8.75 11.6672 9.6142 11.6672 11.3426V23.9815C11.6672 24.6296 11.8894 25.1698 12.3338 25.6019C12.7783 26.034 13.3338 26.25 14.0005 26.25C18.0005 26.25 24.0005 25.9259 32.0005 25.2778V33.7037Z" fill="#1D3573"></path>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                    <div>
+                                        <div class="dropdown c-pointer">
+                                            <div class="btn-link" data-bs-toggle="dropdown">
+                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <circle cx="12.4999" cy="3.5" r="2.5" fill="#A5A5A5"/>
+                                                    <circle cx="12.4999" cy="11.5" r="2.5" fill="#A5A5A5"/>
+                                                    <circle cx="12.4999" cy="19.5" r="2.5" fill="#A5A5A5"/>
+                                                </svg>
+                                            </div>
+                                            <div class="dropdown-menu dropdown-menu-right">
+                                                <a class="dropdown-item" href="javascript:void(0)">Delete</a>
+                                                <a class="dropdown-item" href="javascript:void(0)">Edit</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center pt-sm-4 pt-0 flex-wrap justify-content-xl-end justify-content-start pe-3">
+                                    <div class="ms-0 my-3 my-sm-0 invite">
+                                        <a href="javascript:void(0);" class="btn btn-primary light  mb-sm-0 mb-2 me-2 btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fas fa-user-plus me-3 scale2"></i>Invite People</a>
+                                        <a href="javascript:void(0);" class="btn btn-primary light  btn-sm"><i class="far fa-comment-alt scale2 me-3"></i>45 Comments</a>
+                                    </div>
+                                    <ul class="kanbanimg1 ms-sm-3">
+                                        <li><img src="{{ url_for('static', filename=  'codebyte/images/profile/small/pic1.jpg')}}" alt=""></li>
+                                        <li><img src="{{ url_for('static', filename=  'codebyte/images/profile/small/pic2.jpg')}}" alt=""></li>
+                                        <li><img src="{{ url_for('static', filename=  'codebyte/images/profile/small/pic3.jpg')}}" alt=""></li>
+                                        <li><img src="{{ url_for('static', filename=  'codebyte/images/profile/small/pic4.jpg')}}" alt=""></li>
+                                        <li><img src="{{ url_for('static', filename=  'codebyte/images/profile/small/pic5.jpg')}}" alt=""></li>
+                                        <li><a href="javascript:void(0);">5+</a></li>
+                                    </ul>
+                                    
+                                </div>	
+                                
+                            </div>	
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>	
+        <div class="row kanban-bx px-3">
+            <div class="col-xl-3 col-md-6 px-0">
+                <div class="kanbanPreview-bx">
+                    <div class="draggable-zone dropzoneContainer">
+                        <div class="sub-card align-items-center d-flex justify-content-between mb-4">
+                            <div>
+                                <h4 class="mb-0">To-Do List (<span class="totalCount">24</span>)</h4>
+                            </div>
+                            <div class="plus-bx">
+                                <a href="javascript:void(0);"><i class="fas fa-plus"></i></a>
+                            </div>
+                        </div>
+                        <div class="card draggable-handle draggable">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span class="sub-title">
+                                        <svg class="me-2" width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <circle cx="5" cy="5" r="5" fill="#FFA7D7"/>
+                                        </svg>
+                                        Deisgner
+                                    </span>
+                                    <div class="dropdown c-pointer">
+                                        <div class="btn-link" data-bs-toggle="dropdown">
+                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <circle cx="3.5" cy="11.5" r="2.5" transform="rotate(-90 3.5 11.5)" fill="#717579"/>
+                                                <circle cx="11.5" cy="11.5" r="2.5" transform="rotate(-90 11.5 11.5)" fill="#717579"/>
+                                                <circle cx="19.5" cy="11.5" r="2.5" transform="rotate(-90 19.5 11.5)" fill="#717579"/>
+                                            </svg>
+                                        </div>
+                                        <div class="dropdown-menu dropdown-menu-right">
+                                            <a class="dropdown-item" href="javascript:void(0)">Delete</a>
+                                            <a class="dropdown-item" href="javascript:void(0)">Edit</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h5 class="mb-0"><a href="javascript:void(0);" class="text-black">Create wireframe for landing page phase 1</a></h5>
+                                <div class="progress default-progress my-4">
+                                    <div class="progress-bar bg-design progress-animated" style="width: 45%; height:7px;" role="progressbar">
+                                        <span class="sr-only">45% Complete</span>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-between align-items-center kanban-user">
+                                    <ul class="users col-6">
+                                        <li><img src="{{ url_for('static', filename=  'codebyte/images/contacts/pic11.jpg')}}" alt=""></li>
+                                        <li><img src="{{ url_for('static', filename=  'codebyte/images/contacts/pic22.jpg')}}" alt=""></li>
+                                        <li><img src="{{ url_for('static', filename=  'codebyte/images/contacts/pic33.jpg')}}" alt=""></li>
+                                    </ul>
+                                    <div class="col-6 d-flex justify-content-end">
+                                        <span class="fs-14"><i class="far fa-clock me-2"></i>Due in 4 days</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card draggable-handle draggable">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span class="text-warning">
+                                        <svg class="me-2" width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <circle cx="5" cy="5" r="5" fill="#FFCF6D"/>
+                                        </svg>
+                                        Important
+                                    </span>
+                                    <div class="dropdown c-pointer">
+                                        <div class="btn-link" data-bs-toggle="dropdown">
+                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <circle cx="3.5" cy="11.5" r="2.5" transform="rotate(-90 3.5 11.5)" fill="#717579"/>
+                                                <circle cx="11.5" cy="11.5" r="2.5" transform="rotate(-90 11.5 11.5)" fill="#717579"/>
+                                                <circle cx="19.5" cy="11.5" r="2.5" transform="rotate(-90 19.5 11.5)" fill="#717579"/>
+                                            </svg>
+                                        </div>
+                                        <div class="dropdown-menu dropdown-menu-right">
+                                            <a class="dropdown-item" href="javascript:void(0)">Delete</a>
+                                            <a class="dropdown-item" href="javascript:void(0)">Edit</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h5 class="mb-0"><a href="javascript:void(0);" class="text-black">Visual Graphic for Presentation to Client</a></h5>
+                                <div class="progress default-progress my-4">
+                                    <div class="progress-bar bg-warning progress-animated" style="width: 45%; height:7px;" role="progressbar">
+                                        <span class="sr-only">45% Complete</span>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-between align-items-center kanban-user">
+                                    <ul class="users col-6">
+                                        <li><img src="{{ url_for('static', filename=  'codebyte/images/contacts/pic11.jpg')}}" alt=""></li>
+                                        <li><img src="{{ url_for('static', filename=  'codebyte/images/contacts/pic22.jpg')}}" alt=""></li>
+                                        <li><img src="{{ url_for('static', filename=  'codebyte/images/contacts/pic33.jpg')}}" alt=""></li>
+                                        <li><img src="{{ url_for('static', filename=  'codebyte/images/contacts/pic222.jpg')}}" alt=""></li>
+                                    </ul>
+                                    <div class="col-6 d-flex justify-content-end">
+                                        <p class="mb-0"><i class="far fa-clock me-2"></i>Due in 4 days</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-xl-3 col-md-6 px-0">
+                <div class="kanbanPreview-bx">
+                    <div class="draggable-zone dropzoneContainer">
+                        <div class="sub-card align-items-center d-flex justify-content-between mb-4">
+                            <div>
+                                <h4 class="mb-0">Done(<span class="totalCount">3</span>)</h4>
+                            </div>
+                            <div class="plus-bx">
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fas fa-plus"></i></a>
+                            </div>
+                        </div>
+                        <div class="card draggable-handle draggable">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span class="text-danger">
+                                        <svg class="me-2" width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <circle cx="5" cy="5" r="5" fill="#FC2E53"/>
+                                        </svg>
+                                        BUGS FIXING
+                                    </span>
+                                    <div class="dropdown c-pointer">
+                                        <div class="btn-link" data-bs-toggle="dropdown">
+                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <circle cx="3.5" cy="11.5" r="2.5" transform="rotate(-90 3.5 11.5)" fill="#717579"/>
+                                                <circle cx="11.5" cy="11.5" r="2.5" transform="rotate(-90 11.5 11.5)" fill="#717579"/>
+                                                <circle cx="19.5" cy="11.5" r="2.5" transform="rotate(-90 19.5 11.5)" fill="#717579"/>
+                                            </svg>
+                                        </div>
+                                        <div class="dropdown-menu dropdown-menu-right">
+                                            <a class="dropdown-item" href="javascript:void(0)">Delete</a>
+                                            <a class="dropdown-item" href="javascript:void(0)">Edit</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h5 class="mb-0"><a href="javascript:void(0);" class="text-black">Update information in footer section</a></h5>
+                                <div class="progress default-progress my-4">
+                                    <div class="progress-bar bg-danger progress-animated" style="width: 45%; height:7px;" role="progressbar">
+                                        <span class="sr-only">45% Complete</span>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-between align-items-center kanban-user">
+                                    <ul class="users col-6">
+                                        <li><img src="{{ url_for('static', filename=  'codebyte/images/contacts/pic11.jpg')}}" alt=""></li>
+                                        <li><img src="{{ url_for('static', filename=  'codebyte/images/contacts/pic22.jpg')}}" alt=""></li>
+                                        <li><img src="{{ url_for('static', filename=  'codebyte/images/contacts/pic33.jpg')}}" alt=""></li>
+                                    </ul>
+                                    <div class="col-6 d-flex justify-content-end">
+                                        <p class="mb-0"><i class="far fa-clock me-2"></i>Due in 4 days</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card draggable-handle draggable">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span class="text-danger">
+                                        <svg class="me-2" width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <circle cx="5" cy="5" r="5" fill="#FC2E53"/>
+                                        </svg>
+                                        BUGS FIXING
+                                    </span>
+                                    <div class="dropdown c-pointer">
+                                        <div class="btn-link" data-bs-toggle="dropdown">
+                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <circle cx="3.5" cy="11.5" r="2.5" transform="rotate(-90 3.5 11.5)" fill="#717579"/>
+                                                <circle cx="11.5" cy="11.5" r="2.5" transform="rotate(-90 11.5 11.5)" fill="#717579"/>
+                                                <circle cx="19.5" cy="11.5" r="2.5" transform="rotate(-90 19.5 11.5)" fill="#717579"/>
+                                            </svg>
+                                        </div>
+                                        <div class="dropdown-menu dropdown-menu-right">
+                                            <a class="dropdown-item" href="javascript:void(0)">Delete</a>
+                                            <a class="dropdown-item" href="javascript:void(0)">Edit</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h5 class="mb-0"><a href="javascript:void(0);" class="text-black">Update information in footer section</a></h5>
+                                <div class="progress default-progress my-4">
+                                    <div class="progress-bar bg-danger progress-animated" style="width: 45%; height:7px;" role="progressbar">
+                                        <span class="sr-only">45% Complete</span>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-between align-items-center kanban-user">
+                                    <ul class="users col-6">
+                                        <li><img src="{{ url_for('static', filename=  'codebyte/images/contacts/pic11.jpg')}}" alt=""></li>
+                                        <li><img src="{{ url_for('static', filename=  'codebyte/images/contacts/pic22.jpg')}}" alt=""></li>
+                                        <li><img src="{{ url_for('static', filename=  'codebyte/images/contacts/pic33.jpg')}}" alt=""></li>
+                                    </ul>
+                                    <div class="col-6 d-flex justify-content-end">
+                                        <p class="mb-0"><i class="far fa-clock me-2"></i>Due in 4 days</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card draggable-handle draggable">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span class="sub-title">
+                                        <svg class="me-2" width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <circle cx="5" cy="5" r="5" fill="#FFA7D7"/>
+                                        </svg>
+                                        HTML
+                                    </span>
+                                    <div class="dropdown c-pointer">
+                                        <div class="btn-link" data-bs-toggle="dropdown">
+                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <circle cx="3.5" cy="11.5" r="2.5" transform="rotate(-90 3.5 11.5)" fill="#717579"/>
+                                                <circle cx="11.5" cy="11.5" r="2.5" transform="rotate(-90 11.5 11.5)" fill="#717579"/>
+                                                <circle cx="19.5" cy="11.5" r="2.5" transform="rotate(-90 19.5 11.5)" fill="#717579"/>
+                                            </svg>
+                                        </div>
+                                        <div class="dropdown-menu dropdown-menu-right">
+                                            <a class="dropdown-item" href="javascript:void(0)">Delete</a>
+                                            <a class="dropdown-item" href="javascript:void(0)">Edit</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h5 class="mb-0"><a href="javascript:void(0);" class="text-black">Create wireframe for landing page phase 1</a></h5>
+                                <div class="progress default-progress my-4">
+                                    <div class="progress-bar bg-design progress-animated" style="width: 45%; height:7px;" role="progressbar">
+                                        <span class="sr-only">45% Complete</span>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-between align-items-center kanban-user">
+                                    <ul class="users col-6">
+                                        <li><img src="{{ url_for('static', filename=  'codebyte/images/contacts/pic11.jpg')}}" alt=""></li>
+                                        <li><img src="{{ url_for('static', filename=  'codebyte/images/contacts/pic22.jpg')}}" alt=""></li>
+                                        <li><img src="{{ url_for('static', filename=  'codebyte/images/contacts/pic33.jpg')}}" alt=""></li>
+                                    </ul>
+                                    <div class="col-6 d-flex justify-content-end">
+                                        <p class="mb-0"><i class="far fa-clock me-2"></i>Due in 4 days</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-xl-3 col-md-6 px-0">
+                <div class="kanbanPreview-bx">
+                    <div class="draggable-zone dropzoneContainer">
+                        <div class="sub-card align-items-center d-flex justify-content-between mb-4">
+                            <div>
+                                <h4 class="mb-0">On Progress(<span class="totalCount">2</span>)</h4>
+                            </div>
+                            <div class="plus-bx">
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fas fa-plus"></i></a>
+                            </div>
+                        </div>
+                        <div class="card draggable-handle draggable">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span class="text-success">
+                                        <svg class="me-2" width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <circle cx="5" cy="5" r="5" fill="#09BD3C"/>
+                                        </svg>
+                                        UPDATE
+                                    </span>
+                                    <div class="dropdown c-pointer">
+                                        <div class="btn-link" data-bs-toggle="dropdown">
+                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <circle cx="3.5" cy="11.5" r="2.5" transform="rotate(-90 3.5 11.5)" fill="#717579"/>
+                                                <circle cx="11.5" cy="11.5" r="2.5" transform="rotate(-90 11.5 11.5)" fill="#717579"/>
+                                                <circle cx="19.5" cy="11.5" r="2.5" transform="rotate(-90 19.5 11.5)" fill="#717579"/>
+                                            </svg>
+                                        </div>
+                                        <div class="dropdown-menu dropdown-menu-right">
+                                            <a class="dropdown-item" href="javascript:void(0)">Delete</a>
+                                            <a class="dropdown-item" href="javascript:void(0)">Edit</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h5 class="mb-0"><a href="javascript:void(0);" class="text-black">Update information in footer section</a></h5>
+                                <div class="progress default-progress my-4">
+                                    <div class="progress-bar bg-success progress-animated" style="width: 45%; height:7px;" role="progressbar">
+                                        <span class="sr-only">45% Complete</span>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-between align-items-center kanban-user">
+                                    <ul class="users col-6">
+                                        <li><img src="{{ url_for('static', filename=  'codebyte/images/contacts/pic11.jpg')}}" alt=""></li>
+                                        <li><img src="{{ url_for('static', filename=  'codebyte/images/contacts/pic22.jpg')}}" alt=""></li>
+                                        <li><img src="{{ url_for('static', filename=  'codebyte/images/contacts/pic33.jpg')}}" alt=""></li>
+                                    </ul>
+                                    <div class="col-6 d-flex justify-content-end">
+                                        <p class="mb-0"><i class="far fa-clock me-2"></i>Due in 4 days</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card draggable-handle draggable">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span class="text-info">
+                                        <svg class="me-2" width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <circle cx="5" cy="5" r="5" fill="#D653C1"/>
+                                        </svg>
+                                        Video
+                                    </span>
+                                    <div class="dropdown c-pointer">
+                                        <div class="btn-link" data-bs-toggle="dropdown">
+                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <circle cx="3.5" cy="11.5" r="2.5" transform="rotate(-90 3.5 11.5)" fill="#717579"/>
+                                                <circle cx="11.5" cy="11.5" r="2.5" transform="rotate(-90 11.5 11.5)" fill="#717579"/>
+                                                <circle cx="19.5" cy="11.5" r="2.5" transform="rotate(-90 19.5 11.5)" fill="#717579"/>
+                                            </svg>
+                                        </div>
+                                        <div class="dropdown-menu dropdown-menu-right">
+                                            <a class="dropdown-item" href="javascript:void(0)">Delete</a>
+                                            <a class="dropdown-item" href="javascript:void(0)">Edit</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h5 class="mb-0"><a href="javascript:void(0);" class="text-black">Update information in footer section</a></h5>
+                                <div class="progress default-progress my-4">
+                                    <div class="progress-bar bg-info progress-animated" style="width: 45%; height:7px;" role="progressbar">
+                                        <span class="sr-only">45% Complete</span>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-between align-items-center kanban-user">
+                                    <ul class="users col-6">
+                                        <li><img src="{{ url_for('static', filename=  'codebyte/images/contacts/pic11.jpg')}}" alt=""></li>
+                                        <li><img src="{{ url_for('static', filename=  'codebyte/images/contacts/pic22.jpg')}}" alt=""></li>
+                                        <li><img src="{{ url_for('static', filename=  'codebyte/images/contacts/pic33.jpg')}}" alt=""></li>
+                                    </ul>
+                                    <div class="col-6 d-flex justify-content-end">
+                                        <p class="mb-0"><i class="far fa-clock me-2"></i>Due in 4 days</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-md-6 px-0">
+                <div class="kanbanPreview-bx">
+                    <div class="draggable-zone dropzoneContainer">
+                        <div class="sub-card align-items-center d-flex justify-content-between mb-4">
+                            <div>
+                                <h4 class="mb-0">Done(<span class="totalCount">3</span>)</h4>
+                            </div>
+                            <div class="plus-bx">
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fas fa-plus"></i></a>
+                            </div>
+                        </div>
+                        <div class="card draggable-handle draggable">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span class="text-danger">
+                                        <svg class="me-2" width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <circle cx="5" cy="5" r="5" fill="#FC2E53"/>
+                                        </svg>
+                                        BUGS FIXING
+                                    </span>
+                                    <div class="dropdown c-pointer">
+                                        <div class="btn-link" data-bs-toggle="dropdown">
+                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <circle cx="3.5" cy="11.5" r="2.5" transform="rotate(-90 3.5 11.5)" fill="#717579"/>
+                                                <circle cx="11.5" cy="11.5" r="2.5" transform="rotate(-90 11.5 11.5)" fill="#717579"/>
+                                                <circle cx="19.5" cy="11.5" r="2.5" transform="rotate(-90 19.5 11.5)" fill="#717579"/>
+                                            </svg>
+                                        </div>
+                                        <div class="dropdown-menu dropdown-menu-right">
+                                            <a class="dropdown-item" href="javascript:void(0)">Delete</a>
+                                            <a class="dropdown-item" href="javascript:void(0)">Edit</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h5 class="mb-0"><a href="javascript:void(0);" class="text-black">Update information in footer section</a></h5>
+                                <div class="progress default-progress my-4">
+                                    <div class="progress-bar bg-danger progress-animated" style="width: 45%; height:7px;" role="progressbar">
+                                        <span class="sr-only">45% Complete</span>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-between align-items-center kanban-user">
+                                    <ul class="users col-6">
+                                        <li><img src="{{ url_for('static', filename=  'codebyte/images/contacts/pic11.jpg')}}" alt=""></li>
+                                        <li><img src="{{ url_for('static', filename=  'codebyte/images/contacts/pic22.jpg')}}" alt=""></li>
+                                        <li><img src="{{ url_for('static', filename=  'codebyte/images/contacts/pic33.jpg')}}" alt=""></li>
+                                    </ul>
+                                    <div class="col-6 d-flex justify-content-end">
+                                        <p class="mb-0"><i class="far fa-clock me-2"></i>Due in 4 days</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card draggable-handle draggable">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span class="text-danger">
+                                        <svg class="me-2" width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <circle cx="5" cy="5" r="5" fill="#FC2E53"/>
+                                        </svg>
+                                        BUGS FIXING
+                                    </span>
+                                    <div class="dropdown c-pointer">
+                                        <div class="btn-link" data-bs-toggle="dropdown">
+                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <circle cx="3.5" cy="11.5" r="2.5" transform="rotate(-90 3.5 11.5)" fill="#717579"/>
+                                                <circle cx="11.5" cy="11.5" r="2.5" transform="rotate(-90 11.5 11.5)" fill="#717579"/>
+                                                <circle cx="19.5" cy="11.5" r="2.5" transform="rotate(-90 19.5 11.5)" fill="#717579"/>
+                                            </svg>
+                                        </div>
+                                        <div class="dropdown-menu dropdown-menu-right">
+                                            <a class="dropdown-item" href="javascript:void(0)">Delete</a>
+                                            <a class="dropdown-item" href="javascript:void(0)">Edit</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h5 class="mb-0"><a href="javascript:void(0);" class="text-black">Update information in footer section</a></h5>
+                                <div class="progress default-progress my-4">
+                                    <div class="progress-bar bg-danger progress-animated" style="width: 45%; height:7px;" role="progressbar">
+                                        <span class="sr-only">45% Complete</span>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-between align-items-center kanban-user">
+                                    <ul class="users col-6">
+                                        <li><img src="{{ url_for('static', filename=  'codebyte/images/contacts/pic11.jpg')}}" alt=""></li>
+                                        <li><img src="{{ url_for('static', filename=  'codebyte/images/contacts/pic22.jpg')}}" alt=""></li>
+                                        <li><img src="{{ url_for('static', filename=  'codebyte/images/contacts/pic33.jpg')}}" alt=""></li>
+                                    </ul>
+                                    <div class="col-6 d-flex justify-content-end">
+                                        <p class="mb-0"><i class="far fa-clock me-2"></i>Due in 4 days</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card draggable-handle draggable">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span class="sub-title">
+                                        <svg class="me-2" width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <circle cx="5" cy="5" r="5" fill="#FFA7D7"/>
+                                        </svg>
+                                        HTML
+                                    </span>
+                                    <div class="dropdown c-pointer">
+                                        <div class="btn-link" data-bs-toggle="dropdown">
+                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <circle cx="3.5" cy="11.5" r="2.5" transform="rotate(-90 3.5 11.5)" fill="#717579"/>
+                                                <circle cx="11.5" cy="11.5" r="2.5" transform="rotate(-90 11.5 11.5)" fill="#717579"/>
+                                                <circle cx="19.5" cy="11.5" r="2.5" transform="rotate(-90 19.5 11.5)" fill="#717579"/>
+                                            </svg>
+                                        </div>
+                                        <div class="dropdown-menu dropdown-menu-right">
+                                            <a class="dropdown-item" href="javascript:void(0)">Delete</a>
+                                            <a class="dropdown-item" href="javascript:void(0)">Edit</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h5 class="mb-0"><a href="javascript:void(0);" class="text-black">Create wireframe for landing page phase 1</a></h5>
+                                <div class="progress default-progress my-4">
+                                    <div class="progress-bar bg-design progress-animated" style="width: 45%; height:7px;" role="progressbar">
+                                        <span class="sr-only">45% Complete</span>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-between align-items-center kanban-user">
+                                    <ul class="users col-6">
+                                        <li><img src="{{ url_for('static', filename=  'codebyte/images/contacts/pic11.jpg')}}" alt=""></li>
+                                        <li><img src="{{ url_for('static', filename=  'codebyte/images/contacts/pic22.jpg')}}" alt=""></li>
+                                        <li><img src="{{ url_for('static', filename=  'codebyte/images/contacts/pic33.jpg')}}" alt=""></li>
+                                    </ul>
+                                    <div class="col-6 d-flex justify-content-end">
+                                        <p class="mb-0"><i class="far fa-clock me-2"></i>Due in 4 days</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            
+            
+        </div>	
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+        <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">People Title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label required">People Name</label>
+                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Codebyte">
+                        </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+        <button type="button" class="btn btn-danger light" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+    </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block additional_js %}
+<script src="{{ url_for('static', filename='codebyte/vendor/draggable/draggable.js')}}"></script>
+{% endblock %}

@@ -1,0 +1,67 @@
+{% extends 'codebyte/elements/layouts/admin.html' %}
+        
+{% block additional_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename=  'codebyte/vendor/fullcalendar/css/main.min.css')}}">
+{% endblock %}
+        
+{% block content %}
+<div class="content-body">
+    <!-- row -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-xl-9 col-xxl-8">
+                                <div id="calendar" class="fullcalendar"></div>
+                            </div>
+                            <div class="col-xl-3 col-xxl-4">
+                                <div>
+                                    <div class="mb-3">
+                                        <h4 class="card-title">Schedules</h4>
+                                        <span>December 24, Thursday</span>
+                                    </div>
+                                    <div class="calender-time">
+                                        <span class="fs-18 font-w500">7 AM</span>
+                                    </div>
+                                    <div class="badge-btn mb-4">
+                                        <span class="badge badge-xxl badge-success light text-start">Morning Coffee</span>
+                                    </div>
+                                    <div class="calender-time">
+                                        <span class="fs-18 font-w500">8 AM</span>
+                                    </div>
+                                    <div class="badge-btn mb-4">
+                                        <span class="badge badge-xxl badge-primary light text-start">Breakfast with Mr. Cahyadee at<br> Kopikitaktia</span>
+                                    </div>
+                                    <div class="badge-btn mb-4">
+                                        <span class="badge badge-xxl badge-danger light text-start"><i class="fas fa-envelope me-2 scale2"></i>Check Inbox</span>
+                                    </div>
+                                    <div class="calender-time">
+                                        <span class="fs-18 font-w500">10 AM</span>
+                                    </div>
+                                    <div class="calender-time">
+                                        <span class="fs-18 font-w500">12 AM</span>
+                                    </div>
+                                    <div class="calender-time">
+                                        <span class="fs-18 font-w500">2 AM</span>
+                                    </div>
+                                    <div class="badge-btn mb-4">
+                                        <span class="badge badge-xxl badge-warning light text-start">Weekly Meeting Peterdraw <br> Studios (PIC Mr. Mahmud)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>	
+                </div>	
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block additional_js %}
+<script src="{{ url_for('static', filename='codebyte/vendor/moment/moment.min.js')}}"></script>
+<script src="{{ url_for('static', filename='codebyte/vendor/fullcalendar/js/main.min.js')}}"></script>
+<script src="{{ url_for('static', filename='codebyte/js/plugins-init/calendar.js')}}"></script>
+{% endblock %}

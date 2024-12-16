@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<!-- PAGE TITLE HERE -->
+	<title>Codebyte - Flask Saas Admin Bootstrap 5 Template | IndiaCoder</title>
+	
+	<!-- Meta -->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="author" content="IndiaCoder" />
+	<meta name="robots" content="" />
+	<meta name="keywords" content="admin, admin dashboard, admin template, analytics, flask, bootstrap5, bootstrap 5 admin template, modern, responsive admin dashboard, sales dashboard, sass, ui kit, web app, Codebyte SaaS, User Interface (UI), User Experience (UX), Dashboard Design, SaaS Application, Web Application, Data Visualization, Analytics, Customization, Responsive Design, Bootstrap Framework, Charts and Graphs, Data Management, Reporting, Dark Mode, Mobile-Friendly, Dashboard Components, Integrations, Analytics Dashboard, API Integration, User Authentication" />
+	<meta name="description" content="Elevate your administrative efficiency and enhance productivity with the Codebyte Flask SaaS Admin Dashboard Template. Designed to streamline your tasks, this powerful tool provides a user-friendly interface, robust features, and customizable options, making it the ideal choice for managing your data and operations with ease." />
+	<meta property="og:title" content="Codebyte - Flask Saas Admin Bootstrap 5 Template | IndiaCoder" />
+	<meta property="og:description" content="Elevate your administrative efficiency and enhance productivity with the Codebyte Flask SaaS Admin Dashboard Template. Designed to streamline your tasks, this powerful tool provides a user-friendly interface, robust features, and customizable options, making it the ideal choice for managing your data and operations with ease." />
+	<meta property="og:image" content="https://codebyte.indiankoder.com/flask/social-image.png" />
+	<meta name="format-detection" content="telephone=no">
+	<meta name="twitter:title" content="Codebyte - Flask Saas Admin Bootstrap 5 Template | IndianCoder">
+	<meta name="twitter:description" content="Elevate your administrative efficiency and enhance productivity with the Codebyte Flask SaaS Admin Dashboard Template. Designed to streamline your tasks, this powerful tool provides a user-friendly interface, robust features, and customizable options, making it the ideal choice for managing your data and operations with ease.">
+	<meta name="twitter:image" content="https://codebyte.indiankoder.com/flask/social-image.png">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+	<!-- FAVICONS ICON -->
+	<link rel="shortcut icon" type="image/png" href="{{ url_for('static', filename='codebyte/images/favicon.png')}}" />
+	{% block additional_css %}
+	{% endblock %}
+	<link rel="stylesheet" href="{{ url_for('static', filename=  'codebyte/vendor/bootstrap-select/css/bootstrap-select.min.css')}}">
+	<link rel="stylesheet" href="{{ url_for('static', filename=  'codebyte/css/style.css')}}">
+</head>
+
+<body>
+	<div class="fix-wrapper" id="app-banner" style="background-image:url('{{ url_for('static', filename=  'codebyte/images/bg1.jpg')}}'); background-repeat:no-repeat;    background-size: cover; background-position: center;">
+			<div class="container">
+				<div class="row justify-content-center h-100 align-items-center">
+					<div class="inner-content col-xl-12 text-center">
+						<h1 class="error-head">400</h1>
+						<h3 class="error-para">Opps! Page not Found</h3>
+						<p>Sorry.😭 The page you are looking for is not  found</p>
+						<a href="/index" class="btn btn-secondary btn-hover-1"><span>Back to Home</span></a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+<!--**********************************
+	Scripts
+***********************************-->
+<!-- Required vendors -->
+<script src="{{ url_for('static', filename='codebyte/vendor/global/global.min.js')}}"></script>
+<script src="{{ url_for('static', filename='codebyte/vendor/bootstrap-select/js/bootstrap-select.min.js')}}"></script>
+<script src="{{ url_for('static', filename='codebyte/vendor/particles/particles.js')}}"></script>
+<script src="{{ url_for('static', filename='codebyte/vendor/particles/particles-app.js')}}"></script>
+<script src="{{ url_for('static', filename='codebyte/js/custom.min.js')}}"></script>
+<script src="{{ url_for('static', filename='codebyte/js/ic-sidenav-init.js')}}"></script>
+</body>
+</html>

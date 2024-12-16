@@ -1,0 +1,50 @@
+[
+  {
+    "category": "BMC",
+    "sub_category": "IPMITool",
+    "function": "Get BMC info",
+    "category_parameter": "in band",
+    "command_parameter": "",
+    "check_keywords": ""
+  },
+  {
+    "category": "Common",
+    "sub_category": "Wait specific time",
+    "function": "Wait",
+    "category_parameter": "10",
+    "command_parameter": "",
+    "check_keywords": ""
+  },
+  {
+    "category": "BMC",
+    "sub_category": "IPMITool",
+    "function": "Get LAN info",
+    "category_parameter": "in band",
+    "command_parameter": "",
+    "check_keywords": ""
+  },
+  {
+    "category": "Common",
+    "sub_category": "Wait specific time",
+    "function": "Wait",
+    "category_parameter": "3",
+    "command_parameter": "",
+    "check_keywords": ""
+  },
+  {
+    "category": "BMC",
+    "sub_category": "IPMITool",
+    "function": "Get user info",
+    "category_parameter": "in band",
+    "command_parameter": "",
+    "check_keywords": ""
+  },
+  {
+    "category": "Common",
+    "sub_category": "Wait specific time",
+    "function": "Wait",
+    "category_parameter": "5",
+    "command_parameter": "",
+    "check_keywords": ""
+  }
+]

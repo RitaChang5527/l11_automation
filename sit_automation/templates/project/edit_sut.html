@@ -1,0 +1,220 @@
+{% extends 'elements/layouts/admin.html' %}
+        
+{% block additional_css %}
+<link rel="stylesheet" href="{{ url_for('static', path=  'codebyte/vendor/select2/css/select2.min.css')}}">
+<link rel="stylesheet" href="{{ url_for('static', path=  'codebyte/vendor/dropzone/dist/dropzone.css')}}">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0">
+{% endblock %}
+        
+{% block content %}
+<div class="content-body">
+    <div class="container-fluid">
+        <div class="row page-titles">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="javascript:void(0)">Projects</a></li>
+                <li class="breadcrumb-item active"><a href="javascript:void(0)">Edit SUT Information </a></li>
+            </ol>
+        </div>
+
+        <!-- Row -->
+        <div class="row">
+            <div class="col-xl-6 col-lg-6">
+                <div class="card h-auto">
+                    <div class="card-header">
+                        <h4 class="card-title">BMC Information</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-3 row">
+                            <label class="col-sm-3 col-form-label">Login User Name:</label>
+                            <label class="col-sm-3 col-form-label" id="os_user_name">{{ sut_info['bmc']['login_info']['user_name'] }}</label>
+                            <label class="col-sm-3 col-form-label">Password:</label>
+                            <label class="col-sm-3 col-form-label" id="os_paswword">{{ sut_info['bmc']['login_info']['password'] }}</label>
+                        </div> 
+                        <div class="mb-3 row">
+                            <label class="col-sm-3 col-form-label">Mac Address:</label>
+                            <label class="col-sm-3 col-form-label" id="bmc_mac_addr">{{ sut_info['bmc']['network']['mac_addr'] }}</label>
+                            <label class="col-sm-3 col-form-label">IP Address:</label>
+                            <label class="col-sm-3 col-form-label" id="bmc_ic_addr">{{ sut_info['bmc']['network']['ip_addr'] }}</label>
+                        </div>
+                                                           
+                    </div>
+                </div>
+                <div class="card h-auto">
+                    <div class="card-header">
+                        <h4 class="card-title">OS Information</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-2 row">
+                            <label class="col-sm-3 col-form-label">Name:</label>
+                            <label class="col-sm-3 col-form-label" id="sut_name">{{ sut_info['os']['sut_name'] }}</label>
+                            <label class="col-sm-3 col-form-label">OS Type:</label>
+                            <label class="col-sm-3 col-form-label" id="os_type">{{ sut_info['os']['type'] }}</label>
+                        </div>
+                        <div class="mb-2 row">
+                            <label class="col-sm-3 col-form-label">Login User Name:</label>
+                            <label class="col-sm-3 col-form-label" id="os_user_name">{{ sut_info['os']['login_info']['user_name'] }}</label>
+                            <label class="col-sm-3 col-form-label">Password:</label>
+                            <label class="col-sm-3 col-form-label" id="os_paswword">{{ sut_info['os']['login_info']['password'] }}</label>
+                        </div>
+
+                        {% for interface, details in sut_info['os']['network'].items() %}
+                        <div class="mb-2 row">
+                            <label class="col-sm-3 col-form-label">Interface:</label>
+                            <label class="col-sm-3 col-form-label" id="network_interface">{{ interface }}</label>
+                            <label class="col-sm-3 col-form-label">Mac Address:</label>
+                            <label class="col-sm-3 col-form-label" id="mac_addr">{{ details['mac_addr'] }}</label>
+                        </div> 
+                        <div class="mb-2 row">
+                            <label class="col-sm-3 col-form-label">IP Address:</label>
+                            <label class="col-sm-3 col-form-label" id="ip_addr">{{ details['ip_addr'] }}</label>
+                        </div>
+
+                        {% endfor %}
+                    </div>
+                </div>
+                
+            </div>
+            <div class="col-xl-6 col-lg-6">
+                <div class="card h-auto">
+                    <div class="card-header">
+                        <h4 class="card-title">Test Parameters</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="basic-form">
+                            <form action="/sit_automation/edit_sut/{{ sut_info['_id'] }}/update" method="post" enctype="multipart/form-data">
+                                <!--
+                                <div class="mb-3">
+                                    <label class="col-sm-3 col-form-label">Cycling Type</label>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="cycling_type" value="ac" checked>
+                                        <label class="form-check-label">
+                                            AC
+                                        </label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="cycling_type" value="dc">
+                                        <label class="form-check-label">
+                                            DC
+                                        </label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="cycling_type" value="reset">
+                                        <label class="form-check-label">
+                                            Reset
+                                        </label>
+                                    </div>
+                                </div>
+                                -->
+                                <div class="mb-3 row">
+                                    <label class="col-sm-5 col-form-label">Test Cycle</label>
+                                    <div class="col-sm-3">
+                                        <input type="number" class="form-control" name="test_cycle" id="test_cycle" min="0" max="10000" value="{{ sut_info['test_parameters']['test_cycle'] }}">
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-3 row">
+                                    <label class="col-sm-5 col-form-label">Clear SEL at First Cycle</label>
+                                    <div class="col-sm-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="clear_sel_first" id="clear_sel_first" {{ "checked" if sut_info['test_parameters']['clear_sel_first']=="on" }}>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3 row">
+                                    <label class="col-sm-5 col-form-label">Stop Testing When Failed</label>
+                                    <div class="col-sm-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="stop_if_fail" id="stop_if_fail" {{ "checked" if sut_info['test_parameters']['stop_if_fail']=="on" }}>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3 row">
+                                    <label class="col-sm-5 col-form-label">Check Golden Sample</label>
+                                    <div class="col-sm-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="check_golden_sample" id="check_golden_sample" {{ "checked" if sut_info['test_parameters']['check_golden_sample']=="on" }}>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3 row">
+                                    <label class="col-sm-5 col-form-label">Retry Count of Each Command</label>
+                                    <div class="col-sm-3">
+                                        <input type="number" class="form-control" name="retry_count" id="retry_count" min="0" max="10000" value="{{ sut_info['test_parameters']['retry_count'] }}">
+                                    </div>
+                                </div>
+                                <div class="mb-3 row">
+                                    <label class="col-sm-5 col-form-label">Retry Interval</label>
+                                    <div class="col-sm-3">
+                                        <input type="number" class="form-control" name="retry_interval" id="retry_interval" min="0" max="10000" value="{{ sut_info['test_parameters']['retry_interval'] }}">
+                                    </div>
+                                    <label class="col-sm-3 col-form-label">Sec</label>
+                                </div>
+
+                                <div class="input-group mb-3 row">
+                                    <label class="col-sm-5 col-form-label">Select Workflow File</label>
+                                    {% if sut_info['test_parameters']['workflow_file'] %}
+
+                                    <label class="col-sm-4 col-form-label">{{ sut_info['test_parameters']['workflow_file'] }}</label>
+                                    <div class="col-sm-3">
+                                        <button type="button" class="btn btn-primary" id="reupload_btn">Re-upload</button>
+                                    </div> 
+                                    <input class="form-control" type="file" name="workflow_file" id="workflow_file1" style="display:none;"><br>
+                                    {% else %}
+                                    <input class="form-control" type="file" name="workflow_file" id="workflow_file2">
+                                    {% endif %}
+                                </div>
+
+                                <div class="mb-3 row">
+                                    <div class="col-sm-12">
+                                        <button type="submit" class="btn btn-primary">Save</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block additional_js %}
+<script src="{{ url_for('static', path='codebyte/vendor/bootstrap-datepicker-master/js/bootstrap-datepicker.min.js')}}"></script>
+<script src="{{ url_for('static', path='codebyte/vendor/dropzone/dist/dropzone.js')}}"></script>
+<script src="{{ url_for('static', path='codebyte/vendor/ckeditor/ckeditor.js')}}"></script>
+<script src="{{ url_for('static', path='codebyte/vendor/select2/js/select2.full.min.js')}}"></script>
+<script src="{{ url_for('static', path='codebyte/js/plugins-init/select2-init.js')}}"></script>
+<script src="{{ url_for('static', path='codebyte/js/dashboard/cms.js')}}"></script>
+<script>
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $('#imagePreview').css('background-image', 'url(' + e.target.result + ')');
+                $('#imagePreview').hide();
+                $('#imagePreview').fadeIn(650);
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+    $("#imageUpload").on('change', function () {
+
+        readURL(this);
+    });
+    $('.remove-img').on('click', function () {
+        var imageUrl = "{{ url_for('static', path=  'codebyte/images/no-img-avatar.png')}}";
+        $('.avatar-preview, #imagePreview').removeAttr('style');
+        $('#imagePreview').css('background-image', 'url(' + imageUrl + ')');
+    });
+</script>
+
+<script>
+    $(document).ready(function () {
+            $("#reupload_btn").click(function () {
+                $("#workflow_file1").show();
+            });
+        });
+</script>
+{% endblock %}

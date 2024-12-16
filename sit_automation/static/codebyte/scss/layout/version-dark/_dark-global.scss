@@ -1,0 +1,72 @@
+[data-theme-version="dark"]{
+	#chartBar{
+        line{
+            stroke: $d-border;
+        }
+    }
+     #redial .apexcharts-datalabels-group{
+        stroke: $white;
+     }
+      .morris_chart_height text tspan{
+            fill:$white;
+      }
+       .ct-grid{
+        stroke: rgba(255, 255, 255, 0.1);
+       }
+       .project .nav-tabs .nav-item .nav-link.active{
+        background-color: $dark-card;
+       }
+        .btn-link g [fill] {
+        fill: #fff;
+        }
+        .light-login{
+            display:inline-block;
+        }
+        .dark-login{
+            display:none;
+        }
+        .badge-outline-light{
+            color:#f5f5f5;
+        }
+        .badge-outline-dark,
+        .btn-outline-dark{
+            border-color:#f5f5f5;
+            color:$white;
+        }
+        .btn-light{
+            color: #f5f5f5;
+        }
+        .sidebar-right-inner{
+            .btn-light{
+                color:var(--text);
+            }
+        }
+        .btn-dark{
+            color:$white;
+        }
+        #overiewChart,
+        #marketChart,
+        #lineBar,
+        #chartTimeline{
+            line{
+                stroke: $d-border;
+            }
+        }
+        .apexcharts-text tspan{
+            fill:white;
+        }
+       .chartTimeline3 .apexcharts-series .apexcharts-backgroundBar{
+            fill:$d-bg;
+       }
+       .svg-details{
+        fill:$white;
+       }
+       .logo-compact{
+            
+                filter: invert(1);
+            
+       }
+       .companies-media img{
+            filter: brightness(8.5);
+       }
+}

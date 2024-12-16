@@ -1,0 +1,18 @@
+[
+  {
+    "category": "BMC",
+    "sub_category": "IPMITool",
+    "function": "Get BMC info",
+    "category_parameter": "out of band",
+    "command_parameter": "",
+    "check_keywords": ""
+  },
+  {
+    "category": "BMC",
+    "sub_category": "IPMITool",
+    "function": "Get sensor",
+    "category_parameter": "out of band",
+    "command_parameter": "",
+    "check_keywords": ""
+  }
+]

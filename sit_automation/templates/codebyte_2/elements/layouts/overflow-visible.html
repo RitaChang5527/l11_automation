@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- PAGE TITLE HERE -->
+        <title>Codebyte - Flask Saas Admin Bootstrap 5 Template | IndiaCoder</title>
+        
+        <!-- Meta -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="author" content="IndiaCoder">
+        <meta name="robots" content="">
+        <meta name="keywords" content="admin, admin dashboard, admin template, analytics, flask, bootstrap5, bootstrap 5 admin template, modern, responsive admin dashboard, sales dashboard, sass, ui kit, web app, Codebyte SaaS, User Interface (UI), User Experience (UX), Dashboard Design, SaaS Application, Web Application, Data Visualization, Analytics, Customization, Responsive Design, Bootstrap Framework, Charts and Graphs, Data Management, Reporting, Dark Mode, Mobile-Friendly, Dashboard Components, Integrations, Analytics Dashboard, API Integration, User Authentication" />
+        <meta name="description" content="Elevate your administrative efficiency and enhance productivity with the Codebyte Flask SaaS Admin Dashboard Template. Designed to streamline your tasks, this powerful tool provides a user-friendly interface, robust features, and customizable options, making it the ideal choice for managing your data and operations with ease." />
+        <meta property="og:title" content="Codebyte - Flask Saas Admin Bootstrap 5 Template | IndiaCoder">
+        <meta property="og:description" content="Elevate your administrative efficiency and enhance productivity with the Codebyte Flask SaaS Admin Dashboard Template. Designed to streamline your tasks, this powerful tool provides a user-friendly interface, robust features, and customizable options, making it the ideal choice for managing your data and operations with ease." />
+        <meta property="og:image" content="https://codebyte.indiankoder.com/flask/social-image.png">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="twitter:title" content="Codebyte - Flask Saas Admin Bootstrap 5 Template | IndianCoder">
+        <meta name="twitter:description" content="Elevate your administrative efficiency and enhance productivity with the Codebyte Flask SaaS Admin Dashboard Template. Designed to streamline your tasks, this powerful tool provides a user-friendly interface, robust features, and customizable options, making it the ideal choice for managing your data and operations with ease.">
+        <meta name="twitter:image" content="https://codebyte.indiankoder.com/flask/social-image.png">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <!-- FAVICONS ICON -->
+        <link rel="shortcut icon" type="image/png" href="{{ url_for('static', filename='codebyte/images/favicon.png')}}">
+        {% block additional_css %}
+        {% endblock %}
+        <link rel="stylesheet" href="{{ url_for('static', filename=  'codebyte/vendor/bootstrap-select/css/bootstrap-select.min.css')}}">
+        <link rel="stylesheet" href="{{ url_for('static', filename=  'codebyte/css/style.css')}}">
+    </head>
+<body>
+    <!--*******************
+        Preloader start
+    ********************-->   
+	<div id="loading-area" class="loading-page-3">
+		<div class="loading-inner">
+			<div class="load-text">
+				<span data-text="C" class="text-load text-primary">C</span>
+				<span data-text="O" class="text-load text-primary">O</span>
+				<span data-text="D" class="text-load text-primary">D</span>
+				<span data-text="E" class="text-load text-primary">E</span>
+				<span data-text="B" class="text-load">B</span>
+				<span data-text="Y" class="text-load">Y</span>
+				<span data-text="T" class="text-load">T</span>
+				<span data-text="E" class="text-load">E</span>
+				
+			</div>
+		</div>
+	</div>
+    <!--*******************
+        Preloader end
+    ********************-->
+
+    <!--**********************************
+        Main wrapper start
+    ***********************************-->
+    <div id="main-wrapper" class="overflow-visible">
+
+        <!--**********************************
+            Nav header start
+        ***********************************-->
+
+        {% include 'codebyte/elements/nav-header.html' %}
+
+        <!--**********************************
+            Nav header end
+        ***********************************-->
+		
+		<!--**********************************
+            Chat box start
+        ***********************************-->
+
+        {% include 'codebyte/elements/chat-box.html' %}
+
+		<!--**********************************
+            Chat box End
+        ***********************************-->
+		
+		<!--**********************************
+            Header start
+        ***********************************-->
+
+        {% include 'codebyte/elements/header.html' %}
+
+        <!--**********************************
+            Header end 
+        ***********************************-->
+
+        <!--**********************************
+            Sidebar start
+        ***********************************-->
+
+        {% include 'codebyte/elements/sidebar.html' %}
+
+        <!--**********************************
+            Sidebar end
+        ***********************************-->
+
+		<!--**********************************
+            Content body start
+        ***********************************-->
+
+        {% block content %}
+        {% endblock %}
+        
+		<!--**********************************
+            Content body end
+        ***********************************-->	
+
+        <!--**********************************
+            Footer start
+        ***********************************-->
+
+        {% include 'codebyte/elements/footer.html' %}
+        <!--**********************************
+            Footer end
+        ***********************************-->
+
+
+	</div>
+    <!--**********************************
+        Main wrapper end
+    ***********************************-->
+
+    <!--**********************************
+        Scripts
+    ***********************************-->
+    <!-- Required vendors -->
+    <script src="{{ url_for('static', filename='codebyte/vendor/global/global.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='codebyte/vendor/bootstrap-select/js/bootstrap-select.min.js')}}"></script>
+    {% block additional_js %}
+    {% endblock %}
+    <script src="{{ url_for('static', filename='codebyte/js/custom.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='codebyte/js/ic-sidenav-init.js')}}"></script>
+</body>
+</html>

@@ -1,0 +1,244 @@
+{% extends 'codebyte/elements/layouts/overflow-visible.html' %}
+
+        
+{% block additional_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename=  'codebyte/vendor/select2/css/select2.min.css')}}">
+<link rel="stylesheet" href="{{ url_for('static', filename=  'codebyte/vendor/dropzone/dist/dropzone.css')}}">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0">
+{% endblock %}
+        
+{% block content %}
+<div class="content-body">
+    <div class="container-fluid">
+
+        <div class="row page-titles">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="javascript:void(0)">Ecommerce</a></li>
+                <li class="breadcrumb-item"><a href="javascript:void(0)">Products</a></li>
+                <li class="breadcrumb-item active"><a href="javascript:void(0)">Add Product </a></li>
+            </ol>
+        </div>
+
+        <!-- Row -->
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="row">
+                    <div class="col-xl-8">
+                        <div class="card h-auto">
+                            <div class="card-body">
+                                <form>
+                                    <div class="mb-3">
+                                        <label class="form-label required">Product Name</label>
+                                        <input type="text" class="form-control" placeholder="Sample product">
+                                    </div>
+                                </form>
+                                <label class="form-label">Description</label>
+                                <div id="ckeditor"></div>
+                            </div>
+                        </div>
+                        <div class="card h-auto">
+                            <div class="card-header py-3">
+                                <h4 class="card-title--medium mb-0">Media</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="dz-default ic-message upload-img mb-3">	
+                                    <form action="#" class="dropzone">
+                                        
+                                        <div class="fallback">
+                                            <input name="file" type="file" multiple>
+                                            
+                                        </div>
+                                    </form>
+                                </div>	
+                                
+                            </div>
+                        </div>
+                        <div class="card h-auto">
+                            <div class="card-header py-3">
+                                <h4 class="card-title--medium mb-0">Pricing</h4>
+                            </div>
+                            <div class="card-body">
+                                <form>
+                                    <div class="mb-3">
+                                        <label class="form-label required">Base Price</label>
+                                        <input type="number" class="form-control" placeholder="Sample product">
+                                    </div>
+                                    <label class="form-label required mt-3">Discount Type</label>
+                                    <ul class="nav nav-pills mb-4" role="tablist">
+                                        <li class=" nav-item" role="presentation">
+                                            <a href="#navpills2-1" class="nav-link active" data-bs-toggle="tab" aria-expanded="false" aria-selected="true" role="tab">NO Discount</a>
+                                        </li>
+                                        <li class="nav-item" role="presentation">
+                                            <a href="#navpills2-2" class="nav-link" data-bs-toggle="tab" aria-expanded="false" aria-selected="false" tabindex="-1" role="tab">Percentage</a>
+                                        </li>
+                                        <li class="nav-item" role="presentation">
+                                            <a href="#navpills2-3" class="nav-link" data-bs-toggle="tab" aria-expanded="true" aria-selected="false" tabindex="-1" role="tab">Fixed Price</a>
+                                        </li>
+                                    </ul>
+                                    <div class="tab-content">
+                                        <div id="navpills2-1" class="tab-pane active">
+                                            <div class="row">
+                                                <div class="col-xl-6">
+                                                    <div class="mb-3">
+                                                      <label for="exampleFormControlInput1" class="form-label required">Tax Class</label>
+                                                      <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Taxable Goods">
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-6">
+                                                    <div class="mb-3">
+                                                      <label for="exampleFormControlInput2" class="form-label required">VAT Amount (%)</label>
+                                                      <input type="number" class="form-control" id="exampleFormControlInput2" placeholder="35">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="navpills2-2" class="tab-pane">
+                                            <div class="row">
+                                                <div class="col-xl-6">
+                                                    <div class="mb-3">
+                                                      <label for="exampleFormControlInput7" class="form-label required">Tax Class</label>
+                                                      <input type="text" class="form-control" id="exampleFormControlInput7" placeholder="Taxable Goods">
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-6">
+                                                    <div class="mb-3">
+                                                      <label for="exampleFormControlInput3" class="form-label required">VAT Amount (%)</label>
+                                                      <input type="number" class="form-control" id="exampleFormControlInput3" placeholder="35">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="navpills2-3" class="tab-pane">
+                                            <div class="row">
+                                                <div class="col-xl-12">
+                                                    <div class="mb-3">
+                                                      <label for="exampleFormControlInput4" class="form-label required">Fixed Discounted Price</label>
+                                                      <input type="text" class="form-control" id="exampleFormControlInput4" placeholder="Discounted price">
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-6">
+                                                    <div class="mb-3">
+                                                      <label for="exampleFormControlInput5" class="form-label required">Tax Class</label>
+                                                      <input type="text" class="form-control" id="exampleFormControlInput5" placeholder="Taxable Goods">
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-6">
+                                                    <div class="mb-3">
+                                                      <label for="exampleFormControlInput6" class="form-label required">VAT Amount (%)</label>
+                                                      <input type="number" class="form-control" id="exampleFormControlInput6" placeholder="35">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                                
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="col-xl-4">
+                        <div class="right-sidebar-sticky">
+                            <div class="card">
+                                <div class="card-header py-3">
+                                    <h4 class="card-title--medium mb-0">Thumbnail</h4>
+                                </div>
+                                <div class="card-body">
+                                    <div class="avatar-upload d-flex align-items-center">
+                                        <div class=" position-relative ">
+                                            <div class="avatar-preview">
+                                                <div id="imagePreview"
+                                                    style="background-image: url({{ url_for('static', filename=  'codebyte/images/no-img-avatar.png')}});">
+                                                </div>
+                                            </div>
+                                            <div class="change-btn d-flex align-items-center flex-wrap">
+                                                <input type='file' class="form-control d-none"
+                                                    id="imageUpload" accept=".png, .jpg, .jpeg">
+                                                <label for="imageUpload"
+                                                    class="btn btn-sm btn-primary light ms-0">Select
+                                                    Image</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card h-auto">
+                                <div class="card-header py-3">
+                                    <h4 class="card-title--medium mb-0">Tag	</h4>
+                                </div>
+                                <div class="card-body">
+                                    <select id="multi-value-select" multiple="multiple">
+                                        <option selected="selected">orange</option>
+                                        <option>white</option>
+                                        <option selected="selected">purple</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="card h-auto">
+                                <div class="card-header py-3">
+                                    <h4 class="card-title--medium mb-0">Status	</h4>
+                                </div>
+                                <div class="card-body">
+                                    
+                                        <label class="form-label">Status Type</label>
+                                        <select class="form-control default-select h-auto wide"
+                                            aria-label="Default select example">
+                                            <option selected>Published</option>
+                                            <option value="1">Scheduled</option>
+                                        </select>
+                                    
+                                </div>
+                            </div>
+                            <div class="card h-auto">
+                                <div class="card-header py-3">
+                                    <h4 class="card-title--medium mb-0">Product Template</h4>
+                                </div>
+                                <div class="card-body">
+                                    <label class="form-label">Select a store template</label>
+                                    <select class="form-control default-select h-auto wide"
+                                        aria-label="Default select example">
+                                        <option selected>Electronics</option>
+                                        <option value="1">Office stationary</option>
+                                        <option value="2">Fashion</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block additional_js %}
+<script src="{{ url_for('static', filename='codebyte/vendor/bootstrap-datepicker-master/js/bootstrap-datepicker.min.js')}}"></script>
+<script src="{{ url_for('static', filename='codebyte/vendor/dropzone/dist/dropzone.js')}}"></script>
+<script src="{{ url_for('static', filename='codebyte/vendor/ckeditor/ckeditor.js')}}"></script>
+<script src="{{ url_for('static', filename='codebyte/vendor/select2/js/select2.full.min.js')}}"></script>
+<script src="{{ url_for('static', filename='codebyte/js/plugins-init/select2-init.js')}}"></script>
+<script src="{{ url_for('static', filename='codebyte/js/dashboard/cms.js')}}"></script>
+<script>
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $('#imagePreview').css('background-image', 'url(' + e.target.result + ')');
+                $('#imagePreview').hide();
+                $('#imagePreview').fadeIn(650);
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+    $("#imageUpload").on('change', function () {
+
+        readURL(this);
+    });
+    $('.remove-img').on('click', function () {
+        var imageUrl = "{{ url_for('static', filename=  'codebyte/images/no-img-avatar.png')}}";
+        $('.avatar-preview, #imagePreview').removeAttr('style');
+        $('#imagePreview').css('background-image', 'url(' + imageUrl + ')');
+    });
+</script>
+{% endblock %}

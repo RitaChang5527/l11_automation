@@ -1,0 +1,1464 @@
+{% extends 'codebyte/elements/layouts/admin.html' %}
+        
+{% block additional_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename=  'codebyte/vendor/chartist/css/chartist.min.css')}}">
+<link rel="stylesheet" href="{{ url_for('static', filename=  'codebyte/vendor/lightgallery/dist/css/lightgallery.css')}}">
+<link rel="stylesheet" href="{{ url_for('static', filename=  'codebyte/vendor/lightgallery/dist/css/lg-thumbnail.css')}}">
+<link rel="stylesheet" href="{{ url_for('static', filename=  'codebyte/vendor/lightgallery/dist/css/lg-zoom.css')}}">
+{% endblock %}
+        
+{% block content %}
+<div class="content-body">
+	<div class="container-fluid">
+		<div class="row page-titles">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item"><a href="javascript:void(0)">App</a></li>
+				<li class="breadcrumb-item active"><a href="javascript:void(0)">Profile</a></li>
+			</ol>
+		</div>
+		<!-- row -->
+		<div class="row">
+			<div class="col-xl-9 col-xxl-8">
+				<div class="row">
+					<div class="col-xl-12">
+						<div class="profile card card-body p-0">
+							<div class="profile-head">
+								<div class="photo-content">
+									<div class="photo-btn">
+										<a href="/edit-profile" class="btn bgl-light text-white"><i
+												class="flaticon-editing me-2"></i>Edit</a>
+									</div>
+									<div class="cover-photo"></div>
+								</div>
+								<div class="profile-info">
+									<div class="profile-photo">
+										<img src="{{ url_for('static', filename=  'codebyte/images/profile/profile.png')}}" class="img-fluid" alt="">
+									</div>
+									<div class="profile-details">
+										<div class="profile-name px-3 pt-2">
+											<h4 class="text-white  mb-0 fs-23">Yatin xarma</h4>
+											<p class="text-white">Frentend Developer</p>
+										</div>
+
+									</div>
+
+								</div>
+								<div class="profile-info-1">
+									<div class="row">
+										<div class="col-xl-6 col-xxl-7 col-lg-7">
+											<div class="social-bx">
+												<div class="row gx-2">
+													<div class="col-4">
+														<div class="text-center">
+															<h4 class="font-w600 counter mb-0">248</h4>
+															<p class="mb-0 text-dark">Project</p>
+														</div>
+
+													</div>
+													<div class="col-4">
+														<div class="text-center">
+															<h4 class="font-w600 counter text-success mb-0">
+																5,200</h4>
+															<p class="mb-0 text-dark">& Earnings</p>
+														</div>
+
+													</div>
+													<div class="col-4">
+														<div class="text-center">
+															<h4 class="font-w600 counter text-danger mb-0">20
+															</h4>
+															<p class="mb-0 text-dark">% Rate</p>
+														</div>
+
+													</div>
+
+												</div>
+											</div>
+
+										</div>
+										<div class="col-xl-6 col-xxl-5 col-lg-5">
+											<div class="float-lg-end float-strat">
+												<a href="javascript:void(0);"
+													class="btn btn-primary me-3">Follow</a>
+												<a href="javascript:void(0);"
+													class="btn btn-outline-primary">Contact</a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="profile-info-3 d-sm-flex d-block align-items-end">
+									<div class="project ">
+										<ul class="nav nav-tabs border-0" role="tablist">
+											<li class="nav-item" role="presentation">
+												<a class="nav-link active" data-bs-toggle="tab"
+													href="#AllStatus" role="tab" aria-selected="true">Posts</a>
+											</li>
+											<li class="nav-item" role="presentation">
+												<a class="nav-link" data-bs-toggle="tab" href="#OnProgress"
+													role="tab" aria-selected="false" tabindex="-1">Projects</a>
+											</li>
+											<li class="nav-item" role="presentation">
+												<a class="nav-link" data-bs-toggle="tab" href="#Pending"
+													role="tab" aria-selected="false" tabindex="-1">Followers</a>
+											</li>
+											<li class="nav-item" role="presentation">
+												<a class="nav-link" data-bs-toggle="tab" href="#Closed"
+													role="tab" aria-selected="false" tabindex="-1">Activity</a>
+											</li>
+										</ul>
+									</div>
+									<div class="progress-box d-sm-block d-none w-25 ms-auto mb-md-4 mb-3">
+										<div class="d-flex justify-content-between mb-1">
+											<p class="mb-0  text-dark">Progress</p>
+											<p class="mb-0 text-dark font-w600">75%</p>
+										</div>
+										<div class="progress">
+											<div class="progress-bar bg-success"
+												style="width:75%; height:8px; border-radius:4px;"
+												role="progressbar"></div>
+										</div>
+									</div>
+								</div>
+
+
+							</div>
+						</div>
+					</div>
+					<div class="tab-content">
+						<div class="tab-pane fade active show" id="AllStatus">
+							<div class="col-xl-12">
+								<div class="card h-auto">
+									<div class="card-body">
+										<div class="post-input">
+											<textarea name="textarea" id="textarea" cols="30" rows="5"
+												class="form-control bg-transparent"
+												placeholder="Please type what you want...."></textarea>
+											<a href="javascript:void(0);"
+												class="btn btn-primary light me-1 px-3" data-bs-toggle="modal"
+												data-bs-target="#linkModal"><i class="fa fa-link m-0"></i> </a>
+											<!-- Modal -->
+											<div class="modal fade" id="linkModal">
+												<div class="modal-dialog modal-dialog-centered" role="document">
+													<div class="modal-content">
+														<div class="modal-header">
+															<h5 class="modal-title">Social Links</h5>
+															<button type="button" class="btn-close"
+																data-bs-dismiss="modal">
+															</button>
+														</div>
+														<div class="modal-body">
+															<a class="btn-social facebook"
+																href="javascript:void(0)"><i
+																	class="fab fa-facebook-f"></i></a>
+															<a class="btn-social google-plus"
+																href="javascript:void(0)"><i
+																	class="fab fa-google-plus-g"></i></a>
+															<a class="btn-social linkedin"
+																href="javascript:void(0)"><i
+																	class="fab fa-linkedin-in"></i></a>
+															<a class="btn-social instagram"
+																href="javascript:void(0)"><i
+																	class="fab fa-instagram"></i></a>
+															<a class="btn-social twitter"
+																href="javascript:void(0)"><i
+																	class="fab fa-twitter"></i></a>
+															<a class="btn-social youtube"
+																href="javascript:void(0)"><i
+																	class="fab fa-youtube"></i></a>
+															<a class="btn-social whatsapp"
+																href="javascript:void(0)"><i
+																	class="fab fa-whatsapp"></i></a>
+														</div>
+													</div>
+												</div>
+											</div>
+											<a href="javascript:void(0);"
+												class="btn btn-primary light me-1 px-3" data-bs-toggle="modal"
+												data-bs-target="#cameraModal"><i class="fa fa-camera m-0"></i>
+											</a>
+											<!-- Modal -->
+											<div class="modal fade" id="cameraModal">
+												<div class="modal-dialog modal-dialog-centered" role="document">
+													<div class="modal-content">
+														<div class="modal-header">
+															<h5 class="modal-title">Upload images</h5>
+															<button type="button" class="btn-close"
+																data-bs-dismiss="modal">
+															</button>
+														</div>
+														<div class="modal-body">
+															<div class="input-group mb-3">
+																<span class="input-group-text">Upload</span>
+																<div
+																	class="form-file border-left-end overflow-hidden">
+																	<input type="file"
+																		class="form-file-input form-control">
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<a href="javascript:void(0);" class="btn btn-primary"
+												data-bs-toggle="modal" data-bs-target="#postModal">Post</a>
+											<!-- Modal -->
+											<div class="modal fade" id="postModal">
+												<div class="modal-dialog modal-dialog-centered" role="document">
+													<div class="modal-content">
+														<div class="modal-header">
+															<h5 class="modal-title">Post</h5>
+															<button type="button" class="btn-close"
+																data-bs-dismiss="modal">
+															</button>
+														</div>
+														<div class="modal-body">
+															<textarea name="textarea" id="textarea2" cols="10"
+																rows="5" class="form-control bg-transparent"
+																placeholder="Please type what you want...."></textarea>
+															<a class="btn btn-primary"
+																href="javascript:void(0)">Post</a>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+
+								</div>
+								<div class="card h-auto">
+
+									<div class="card-header border-0">
+										<div class="products border-0">
+											<img src="{{ url_for('static', filename=  'codebyte/images/contacts/pic-2.jpg')}}"
+												class="avatar avatar-md rounded-circle" alt="">
+											<div>
+												<h5 class="mb-0"><a href="javascript:void(0)"
+														class="text-black">Thomas Fleming</a></h5>
+												<span>8 Hours ago</span>
+											</div>
+										</div>
+										<div class="dropdown custom-dropdown ">
+											<div class="btn sharp btn-primary tp-btn  ms-3"
+												data-bs-toggle="dropdown">
+												<svg width="22" height="22" viewBox="0 0 22 22" fill="none"
+													xmlns="http://www.w3.org/2000/svg">
+													<path
+														d="M13.5202 17.4167C13.5202 18.81 12.3927 19.9375 10.9994 19.9375C9.60601 19.9375 8.47852 18.81 8.47852 17.4167C8.47852 16.0233 9.60601 14.8958 10.9994 14.8958C12.3927 14.8958 13.5202 16.0233 13.5202 17.4167ZM9.85352 17.4167C9.85352 18.0492 10.3669 18.5625 10.9994 18.5625C11.6319 18.5625 12.1452 18.0492 12.1452 17.4167C12.1452 16.7842 11.6319 16.2708 10.9994 16.2708C10.3669 16.2708 9.85352 16.7842 9.85352 17.4167Z"
+														fill="var(--text)"></path>
+													<path
+														d="M13.5202 4.58369C13.5202 5.97699 12.3927 7.10449 10.9994 7.10449C9.60601 7.10449 8.47852 5.97699 8.47852 4.58369C8.47852 3.19029 9.60601 2.06279 10.9994 2.06279C12.3927 2.06279 13.5202 3.19029 13.5202 4.58369ZM9.85352 4.58369C9.85352 5.21619 10.3669 5.72949 10.9994 5.72949C11.6319 5.72949 12.1452 5.21619 12.1452 4.58369C12.1452 3.95119 11.6319 3.43779 10.9994 3.43779C10.3669 3.43779 9.85352 3.95119 9.85352 4.58369Z"
+														fill="var(--text)"></path>
+													<path
+														d="M13.5202 10.9997C13.5202 12.393 12.3927 13.5205 10.9994 13.5205C9.60601 13.5205 8.47852 12.393 8.47852 10.9997C8.47852 9.6063 9.60601 8.4788 10.9994 8.4788C12.3927 8.4788 13.5202 9.6063 13.5202 10.9997ZM9.85352 10.9997C9.85352 11.6322 10.3669 12.1455 10.9994 12.1455C11.6319 12.1455 12.1452 11.6322 12.1452 10.9997C12.1452 10.3672 11.6319 9.8538 10.9994 9.8538C10.3669 9.8538 9.85352 10.3672 9.85352 10.9997Z"
+														fill="var(--text)"></path>
+												</svg>
+
+											</div>
+											<div class="dropdown-menu dropdown-menu-end">
+												<a class="dropdown-item" href="javascript:void(0);">Option 1</a>
+												<a class="dropdown-item" href="javascript:void(0);">Option 2</a>
+												<a class="dropdown-item" href="javascript:void(0);">Option 3</a>
+											</div>
+										</div>
+									</div>
+									<div class="card-body pt-0">
+										<div class="post-img">
+											<img src="{{ url_for('static', filename=  'codebyte/images/post/post1.jpg')}}" class="w-100 rounded" alt="">
+										</div>
+
+										<div class="mt-3">
+											<p>Lorem Ipsum is simply dummy text of the printing and typesetting
+												industry.
+												Lorem Ipsum has been the industry's standard dummy text ever
+												since the 1500s.</p>
+										</div>
+										<ul class="post-comment d-flex mt-3">
+											<li>
+												<label class="me-3"><a href="javascript:void(0)"
+														class="btn btn-light btn-sm"><i
+															class="fa-regular text-danger fa-heart me-2"></i>Like</a></label>
+											</li>
+											<li>
+												<label class="me-3"><a href="javascript:void(0)"
+														class="btn btn-light btn-sm"><i
+															class="fa-regular text-success fa-message me-2"></i>Comment</a></label>
+											</li>
+											<li>
+												<label class="me-3"><a href="javascript:void(0)"
+														class="btn btn-light btn-sm"><i
+															class="fa-solid text-info fa-share me-2"></i>Share</a></label>
+											</li>
+
+
+
+										</ul>
+									</div>
+								</div>
+								<div class="card h-auto">
+									<div class="card-header border-0">
+										<div class="products border-0">
+											<img src="{{ url_for('static', filename=  'codebyte/images/contacts/pic-2.jpg')}}"
+												class="avatar avatar-md rounded-circle" alt="">
+											<div>
+												<h5 class="mb-0"><a href="javascript:void(0)"
+														class="text-black">Jhon Fleming</a></h5>
+												<span>8 Hours ago</span>
+											</div>
+										</div>
+										<div class="dropdown custom-dropdown ">
+											<div class="btn sharp btn-primary tp-btn  ms-3"
+												data-bs-toggle="dropdown">
+												<svg width="22" height="22" viewBox="0 0 22 22" fill="none"
+													xmlns="http://www.w3.org/2000/svg">
+													<path
+														d="M13.5202 17.4167C13.5202 18.81 12.3927 19.9375 10.9994 19.9375C9.60601 19.9375 8.47852 18.81 8.47852 17.4167C8.47852 16.0233 9.60601 14.8958 10.9994 14.8958C12.3927 14.8958 13.5202 16.0233 13.5202 17.4167ZM9.85352 17.4167C9.85352 18.0492 10.3669 18.5625 10.9994 18.5625C11.6319 18.5625 12.1452 18.0492 12.1452 17.4167C12.1452 16.7842 11.6319 16.2708 10.9994 16.2708C10.3669 16.2708 9.85352 16.7842 9.85352 17.4167Z"
+														fill="var(--text)"></path>
+													<path
+														d="M13.5202 4.58369C13.5202 5.97699 12.3927 7.10449 10.9994 7.10449C9.60601 7.10449 8.47852 5.97699 8.47852 4.58369C8.47852 3.19029 9.60601 2.06279 10.9994 2.06279C12.3927 2.06279 13.5202 3.19029 13.5202 4.58369ZM9.85352 4.58369C9.85352 5.21619 10.3669 5.72949 10.9994 5.72949C11.6319 5.72949 12.1452 5.21619 12.1452 4.58369C12.1452 3.95119 11.6319 3.43779 10.9994 3.43779C10.3669 3.43779 9.85352 3.95119 9.85352 4.58369Z"
+														fill="var(--text)"></path>
+													<path
+														d="M13.5202 10.9997C13.5202 12.393 12.3927 13.5205 10.9994 13.5205C9.60601 13.5205 8.47852 12.393 8.47852 10.9997C8.47852 9.6063 9.60601 8.4788 10.9994 8.4788C12.3927 8.4788 13.5202 9.6063 13.5202 10.9997ZM9.85352 10.9997C9.85352 11.6322 10.3669 12.1455 10.9994 12.1455C11.6319 12.1455 12.1452 11.6322 12.1452 10.9997C12.1452 10.3672 11.6319 9.8538 10.9994 9.8538C10.3669 9.8538 9.85352 10.3672 9.85352 10.9997Z"
+														fill="var(--text)"></path>
+												</svg>
+
+											</div>
+											<div class="dropdown-menu dropdown-menu-end">
+												<a class="dropdown-item" href="javascript:void(0);">Option 1</a>
+												<a class="dropdown-item" href="javascript:void(0);">Option 2</a>
+												<a class="dropdown-item" href="javascript:void(0);">Option 3</a>
+											</div>
+										</div>
+									</div>
+									<div class="card-body pt-0">
+										<div class="post-img">
+											<img src="{{ url_for('static', filename=  'codebyte/images/post/post2.jpg')}}" class="w-100 rounded" alt="">
+										</div>
+
+										<div class="mt-3">
+
+											<p>Lorem Ipsum is simply dummy text of the printing and typesetting
+												industry.
+												Lorem Ipsum has been the industry's standard dummy text ever
+												since the 1500s.</p>
+										</div>
+										<ul class="post-comment d-flex mt-3">
+											<li>
+												<label class="me-3"><a href="javascript:void(0)"
+														class="btn btn-light btn-sm"><i
+															class="fa-regular text-danger fa-heart me-2"></i>Like</a></label>
+											</li>
+											<li>
+												<label class="me-3"><a href="javascript:void(0)"
+														class="btn btn-light btn-sm"><i
+															class="fa-regular text-success fa-message me-2"></i>Comment</a></label>
+											</li>
+											<li>
+												<label class="me-3"><a href="javascript:void(0)"
+														class="btn btn-light btn-sm"><i
+															class="fa-solid text-info fa-share me-2"></i>Share</a></label>
+											</li>
+
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="tab-pane fade" id="OnProgress">
+							<div class="row">
+								<div class="col-xl-6 col-xxl-12">
+									<div class="card project-card">
+										<div class="card-body">
+											<div class="d-flex mb-4 align-items-start">
+												<div class="dz-media me-3">
+													<img src="{{ url_for('static', filename=  'codebyte/images/logos/pic1.jpg')}}" class="img-fluid" alt="">
+												</div>
+												<div class="me-auto">
+													<p class="text-primary mb-1">#P-000441425</p>
+													<h5 class="title font-w600 mb-2"><a href="/post-details"
+															class="text-black">Redesign Zenix Mobile App</a>
+													</h5>
+													<span>We Create Your Dream</span>
+												</div>
+												<span
+													class="badge badge-success d-sm-inline-block d-none">Compeleted</span>
+											</div>
+											<p class="mb-4">It is a long established fact that a reader will be
+												distracted by the readable content of a page when looking at its
+												layout.</p>
+
+											<div class="d-flex flex-wrap align-items-center">
+												<div class="me-auto mb-4">
+													<p class="mb-2 font-w500 text-black">Members</p>
+													<ul class="users-lg">
+														<li><img src="{{ url_for('static', filename=  'codebyte/images/users/pic1.jpg')}}" alt=""></li>
+														<li><img src="{{ url_for('static', filename=  'codebyte/images/users/pic2.jpg')}}" alt=""></li>
+														<li><img src="{{ url_for('static', filename=  'codebyte/images/users/pic3.jpg')}}" alt=""></li>
+														<li><img src="{{ url_for('static', filename=  'codebyte/images/users/pic4.jpg')}}" alt=""></li>
+														<li><img src="{{ url_for('static', filename=  'codebyte/images/users/pic5.jpg')}}" alt=""></li>
+														<li><img src="{{ url_for('static', filename=  'codebyte/images/users/pic6.jpg')}}" alt=""></li>
+														<li><img src="{{ url_for('static', filename=  'codebyte/images/users/pic7.jpg')}}" alt=""></li>
+													</ul>
+												</div>
+												<div class="d-flex align-items-center mb-4">
+													<div class="text-center border-bx me-3">
+														<span>Budget</span>
+														<p class="mb-0 pt-1 font-w500 text-black">$505,785</p>
+													</div>
+													<div class="text-center border-bx">
+														<span>Expenses</span>
+														<p class="mb-0 pt-1 font-w500 text-black">$458,388</p>
+													</div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-6">
+													<div>Questions:<span
+															class="text-black ms-3 font-w600">56</span></div>
+													<div>Comments:<span
+															class="text-black ms-3 font-w600">200</span></div>
+												</div>
+												<div class="col-6">
+													<h6>Progress
+														<span class="pull-right">75%</span>
+													</h6>
+													<div class="progress ">
+														<div class="progress-bar bg-info progress-animated"
+															style="width: 75%; height:8px;" role="progressbar">
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-xl-6 col-xxl-12">
+									<div class="card project-card">
+										<div class="card-body">
+											<div class="d-flex mb-4 align-items-start">
+												<div class="dz-media me-3">
+													<img src="{{ url_for('static', filename=  'codebyte/images/logos/pic2.jpg')}}" class="img-fluid" alt="">
+												</div>
+												<div class="me-auto">
+													<p class="text-primary mb-1">#P-000441425</p>
+													<h5 class="title font-w600 mb-2"><a href="/post-details"
+															class="text-black">Redesign Zenix Mobile App</a>
+													</h5>
+													<span>We Create Your Dream</span>
+												</div>
+												<span
+													class="badge badge-info d-sm-inline-block d-none">Compeleted</span>
+											</div>
+											<p class="mb-4">It is a long established fact that a reader will be
+												distracted by the readable content of a page when looking at its
+												layout.</p>
+
+											<div class="d-flex flex-wrap align-items-center">
+												<div class="me-auto mb-4">
+													<p class="mb-2 font-w500 text-black">Members</p>
+													<ul class="users-lg">
+														<li><img src="{{ url_for('static', filename=  'codebyte/images/users/pic1.jpg')}}" alt=""></li>
+														<li><img src="{{ url_for('static', filename=  'codebyte/images/users/pic2.jpg')}}" alt=""></li>
+														<li><img src="{{ url_for('static', filename=  'codebyte/images/users/pic3.jpg')}}" alt=""></li>
+														<li><img src="{{ url_for('static', filename=  'codebyte/images/users/pic4.jpg')}}" alt=""></li>
+														<li><img src="{{ url_for('static', filename=  'codebyte/images/users/pic5.jpg')}}" alt=""></li>
+														<li><img src="{{ url_for('static', filename=  'codebyte/images/users/pic6.jpg')}}" alt=""></li>
+														<li><img src="{{ url_for('static', filename=  'codebyte/images/users/pic7.jpg')}}" alt=""></li>
+													</ul>
+												</div>
+												<div class="d-flex align-items-center mb-4">
+													<div class="text-center border-bx me-3">
+														<span>Budget</span>
+														<p class="mb-0 pt-1 font-w500 text-black">$505,785</p>
+													</div>
+													<div class="text-center border-bx">
+														<span>Expenses</span>
+														<p class="mb-0 pt-1 font-w500 text-black">$458,388</p>
+													</div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-6">
+													<div>Questions:<span
+															class="text-black ms-3 font-w600">56</span></div>
+													<div>Comments:<span
+															class="text-black ms-3 font-w600">200</span></div>
+												</div>
+												<div class="col-6">
+													<h6>Progress
+														<span class="pull-right">75%</span>
+													</h6>
+													<div class="progress ">
+														<div class="progress-bar bg-danger progress-animated"
+															style="width: 75%; height:8px;" role="progressbar">
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-xl-6 col-xxl-12">
+									<div class="card project-card">
+										<div class="card-body">
+											<div class="d-flex mb-4 align-items-start">
+												<div class="dz-media me-3">
+													<img src="{{ url_for('static', filename=  'codebyte/images/logos/pic1.jpg')}}" class="img-fluid" alt="">
+												</div>
+												<div class="me-auto">
+													<p class="text-primary mb-1">#P-000441425</p>
+													<h5 class="title font-w600 mb-2"><a href="/post-details"
+															class="text-black">Redesign Zenix Mobile App</a>
+													</h5>
+													<span>We Create Your Dream</span>
+												</div>
+												<span
+													class="badge badge-danger d-sm-inline-block d-none">Incompleted</span>
+											</div>
+											<p class="mb-4">It is a long established fact that a reader will be
+												distracted by the readable content of a page when looking at its
+												layout.</p>
+
+											<div class="d-flex flex-wrap align-items-center">
+												<div class="me-auto mb-4">
+													<p class="mb-2 font-w500 text-black">Members</p>
+													<ul class="users-lg">
+														<li><img src="{{ url_for('static', filename=  'codebyte/images/users/pic1.jpg')}}" alt=""></li>
+														<li><img src="{{ url_for('static', filename=  'codebyte/images/users/pic2.jpg')}}" alt=""></li>
+														<li><img src="{{ url_for('static', filename=  'codebyte/images/users/pic3.jpg')}}" alt=""></li>
+														<li><img src="{{ url_for('static', filename=  'codebyte/images/users/pic4.jpg')}}" alt=""></li>
+														<li><img src="{{ url_for('static', filename=  'codebyte/images/users/pic5.jpg')}}" alt=""></li>
+														<li><img src="{{ url_for('static', filename=  'codebyte/images/users/pic6.jpg')}}" alt=""></li>
+														<li><img src="{{ url_for('static', filename=  'codebyte/images/users/pic7.jpg')}}" alt=""></li>
+													</ul>
+												</div>
+												<div class="d-flex align-items-center mb-4">
+													<div class="text-center border-bx me-3">
+														<span>Budget</span>
+														<p class="mb-0 pt-1 font-w500 text-black">$505,785</p>
+													</div>
+													<div class="text-center border-bx">
+														<span>Expenses</span>
+														<p class="mb-0 pt-1 font-w500 text-black">$458,388</p>
+													</div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-6">
+													<div>Questions:<span
+															class="text-black ms-3 font-w600">56</span></div>
+													<div>Comments:<span
+															class="text-black ms-3 font-w600">200</span></div>
+												</div>
+												<div class="col-6">
+													<h6>Progress
+														<span class="pull-right">75%</span>
+													</h6>
+													<div class="progress ">
+														<div class="progress-bar bg-info progress-animated"
+															style="width: 75%; height:8px;" role="progressbar">
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-xl-6 col-xxl-12">
+									<div class="card project-card">
+										<div class="card-body">
+											<div class="d-flex mb-4 align-items-start">
+												<div class="dz-media me-3">
+													<img src="{{ url_for('static', filename=  'codebyte/images/logos/pic2.jpg')}}" class="img-fluid" alt="">
+												</div>
+												<div class="me-auto">
+													<p class="text-primary mb-1">#P-000441425</p>
+													<h5 class="title font-w600 mb-2"><a href="/post-details"
+															class="text-black">Redesign Zenix Mobile App</a>
+													</h5>
+													<span>We Create Your Dream</span>
+												</div>
+												<span
+													class="badge badge-warning d-sm-inline-block d-none">Pending</span>
+											</div>
+											<p class="mb-4">It is a long established fact that a reader will be
+												distracted by the readable content of a page when looking at its
+												layout.</p>
+
+											<div class="d-flex flex-wrap align-items-center">
+												<div class="me-auto mb-4">
+													<p class="mb-2 font-w500 text-black">Members</p>
+													<ul class="users-lg">
+														<li><img src="{{ url_for('static', filename=  'codebyte/images/users/pic1.jpg')}}" alt=""></li>
+														<li><img src="{{ url_for('static', filename=  'codebyte/images/users/pic2.jpg')}}" alt=""></li>
+														<li><img src="{{ url_for('static', filename=  'codebyte/images/users/pic3.jpg')}}" alt=""></li>
+														<li><img src="{{ url_for('static', filename=  'codebyte/images/users/pic4.jpg')}}" alt=""></li>
+														<li><img src="{{ url_for('static', filename=  'codebyte/images/users/pic5.jpg')}}" alt=""></li>
+														<li><img src="{{ url_for('static', filename=  'codebyte/images/users/pic6.jpg')}}" alt=""></li>
+														<li><img src="{{ url_for('static', filename=  'codebyte/images/users/pic7.jpg')}}" alt=""></li>
+													</ul>
+												</div>
+												<div class="d-flex align-items-center mb-4">
+													<div class="text-center border-bx me-3">
+														<span>Budget</span>
+														<p class="mb-0 pt-1 font-w500 text-black">$505,785</p>
+													</div>
+													<div class="text-center border-bx">
+														<span>Expenses</span>
+														<p class="mb-0 pt-1 font-w500 text-black">$458,388</p>
+													</div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-6">
+													<div>Questions:<span
+															class="text-black ms-3 font-w600">56</span></div>
+													<div>Comments:<span
+															class="text-black ms-3 font-w600">200</span></div>
+												</div>
+												<div class="col-6">
+													<h6>Progress
+														<span class="pull-right">75%</span>
+													</h6>
+													<div class="progress ">
+														<div class="progress-bar bg-danger progress-animated"
+															style="width: 75%; height:8px;" role="progressbar">
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="tab-pane fade" id="Pending">
+							<div class="row">
+								<div class="col-xl-4 col-md-6 col-sm-6 items">
+									<div class="card contact-bx-1 item-content">
+										<div class="card-header border-0">
+											<div class="action-dropdown">
+												<div class="dropdown">
+													<a href="javascript:void(0);" data-bs-toggle="dropdown"
+														aria-expanded="false">
+														<svg width="24" height="24" viewBox="0 0 24 24"
+															fill="none" xmlns="http://www.w3.org/2000/svg">
+															<path
+																d="M12 13C12.5523 13 13 12.5523 13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12C11 12.5523 11.4477 13 12 13Z"
+																stroke="#575757" stroke-width="2"
+																stroke-linecap="round" stroke-linejoin="round">
+															</path>
+															<path
+																d="M12 6C12.5523 6 13 5.55228 13 5C13 4.44772 12.5523 4 12 4C11.4477 4 11 4.44772 11 5C11 5.55228 11.4477 6 12 6Z"
+																stroke="#575757" stroke-width="2"
+																stroke-linecap="round" stroke-linejoin="round">
+															</path>
+															<path
+																d="M12 20C12.5523 20 13 19.5523 13 19C13 18.4477 12.5523 18 12 18C11.4477 18 11 18.4477 11 19C11 19.5523 11.4477 20 12 20Z"
+																stroke="#575757" stroke-width="2"
+																stroke-linecap="round" stroke-linejoin="round">
+															</path>
+														</svg>
+													</a>
+													<div class="dropdown-menu dropdown-menu-end">
+														<a class="dropdown-item edit"
+															href="javascript:void(0);">Edit</a>
+														<a class="dropdown-item delete"
+															href="javascript:void(0);">Delete</a>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="card-body user-profile">
+											<div class="image-bx">
+												<img src="{{ url_for('static', filename=  'codebyte/images/users/pic1.jpg')}}"
+													data-src="{{ url_for('static', filename=  'codebyte/images/users/pic1.jpg')}}" alt=""
+													class="rounded-circle">
+												<span class="active"></span>
+											</div>
+											<div class="media-body user-meta-info">
+												<h6 class="fs-20 font-w500 my-1"><a href="/app-profile"
+														class="text-black user-name" data-name="Alan Green">Alan
+														Green</a></h6>
+												<p class="fs-14 mb-3 user-work" data-occupation="UI Designer">UI
+													Designer</p>
+												<ul>
+													<li><a href="javascript:void(0);"><i class="fa fa-phone"
+																aria-hidden="true"></i></a></li>
+													<li><a href="/email-compose"><i
+																class="fa-solid fa-message"></i></a></li>
+													<li><a href="javascript:void(0);"><i class="fas fa-video"
+																aria-hidden="true"></i></a></li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-xl-4 col-md-6 col-sm-6 items">
+									<div class="card contact-bx-1 item-content">
+										<div class="card-header border-0">
+											<div class="action-dropdown">
+												<div class="dropdown">
+													<a href="javascript:void(0);" data-bs-toggle="dropdown"
+														aria-expanded="false">
+														<svg width="24" height="24" viewBox="0 0 24 24"
+															fill="none" xmlns="http://www.w3.org/2000/svg">
+															<path
+																d="M12 13C12.5523 13 13 12.5523 13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12C11 12.5523 11.4477 13 12 13Z"
+																stroke="#575757" stroke-width="2"
+																stroke-linecap="round" stroke-linejoin="round">
+															</path>
+															<path
+																d="M12 6C12.5523 6 13 5.55228 13 5C13 4.44772 12.5523 4 12 4C11.4477 4 11 4.44772 11 5C11 5.55228 11.4477 6 12 6Z"
+																stroke="#575757" stroke-width="2"
+																stroke-linecap="round" stroke-linejoin="round">
+															</path>
+															<path
+																d="M12 20C12.5523 20 13 19.5523 13 19C13 18.4477 12.5523 18 12 18C11.4477 18 11 18.4477 11 19C11 19.5523 11.4477 20 12 20Z"
+																stroke="#575757" stroke-width="2"
+																stroke-linecap="round" stroke-linejoin="round">
+															</path>
+														</svg>
+													</a>
+													<div class="dropdown-menu dropdown-menu-end">
+														<a class="dropdown-item edit"
+															href="javascript:void(0);">Edit</a>
+														<a class="dropdown-item delete"
+															href="javascript:void(0);">Delete</a>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="card-body user-profile">
+											<div class="image-bx">
+												<span
+													class="icon-placeholder bgl-success rounded-circle text-success">am</span>
+												<span class="active"></span>
+											</div>
+											<div class="media-body user-meta-info">
+												<h6 class="fs-20 font-w500 my-1"><a href="/app-profile"
+														class="text-black user-name"
+														data-name="Angela Moss">Angela Moss</a></h6>
+												<p class="fs-14 mb-3 user-work"
+													data-occupation="Redblue Studios">Redblue Studios</p>
+												<ul>
+													<li><a href="javascript:void(0);"><i class="fa fa-phone"
+																aria-hidden="true"></i></a></li>
+													<li><a href="/email-compose"><i
+																class="fa-solid fa-message"></i></a></li>
+													<li><a href="javascript:void(0);"><i class="fas fa-video"
+																aria-hidden="true"></i></a></li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-xl-4 col-md-6 col-sm-6 items">
+									<div class="card contact-bx-1 item-content">
+										<div class="card-header border-0">
+											<div class="action-dropdown">
+												<div class="dropdown">
+													<a href="javascript:void(0);" data-bs-toggle="dropdown"
+														aria-expanded="false">
+														<svg width="24" height="24" viewBox="0 0 24 24"
+															fill="none" xmlns="http://www.w3.org/2000/svg">
+															<path
+																d="M12 13C12.5523 13 13 12.5523 13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12C11 12.5523 11.4477 13 12 13Z"
+																stroke="#575757" stroke-width="2"
+																stroke-linecap="round" stroke-linejoin="round">
+															</path>
+															<path
+																d="M12 6C12.5523 6 13 5.55228 13 5C13 4.44772 12.5523 4 12 4C11.4477 4 11 4.44772 11 5C11 5.55228 11.4477 6 12 6Z"
+																stroke="#575757" stroke-width="2"
+																stroke-linecap="round" stroke-linejoin="round">
+															</path>
+															<path
+																d="M12 20C12.5523 20 13 19.5523 13 19C13 18.4477 12.5523 18 12 18C11.4477 18 11 18.4477 11 19C11 19.5523 11.4477 20 12 20Z"
+																stroke="#575757" stroke-width="2"
+																stroke-linecap="round" stroke-linejoin="round">
+															</path>
+														</svg>
+													</a>
+													<div class="dropdown-menu dropdown-menu-end">
+														<a class="dropdown-item edit"
+															href="javascript:void(0);">Edit</a>
+														<a class="dropdown-item delete"
+															href="javascript:void(0);">Delete</a>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="card-body user-profile">
+											<div class="image-bx">
+												<img src="{{ url_for('static', filename=  'codebyte/images/users/pic2.jpg')}}"
+													data-src="{{ url_for('static', filename=  'codebyte/images/users/pic2.jpg')}}" alt=""
+													class="rounded-circle">
+												<span class="active"></span>
+											</div>
+											<div class="media-body user-meta-info">
+												<h6 class="fs-20 font-w500 my-1"><a href="/app-profile"
+														class="text-black user-name"
+														data-name="Brian Samuel">Brian Samuel</a></h6>
+												<p class="fs-14 mb-3 user-work"
+													data-occupation="Team Management">Team Management</p>
+												<ul>
+													<li><a href="javascript:void(0);"><i class="fa fa-phone"
+																aria-hidden="true"></i></a></li>
+													<li><a href="/email-compose"><i
+																class="fa-solid fa-message"></i></a></li>
+													<li><a href="javascript:void(0);"><i class="fas fa-video"
+																aria-hidden="true"></i></a></li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-xl-4 col-md-6 col-sm-6 items">
+									<div class="card contact-bx-1 item-content">
+										<div class="card-header border-0">
+											<div class="action-dropdown">
+												<div class="dropdown">
+													<a href="javascript:void(0);" data-bs-toggle="dropdown"
+														aria-expanded="false">
+														<svg width="24" height="24" viewBox="0 0 24 24"
+															fill="none" xmlns="http://www.w3.org/2000/svg">
+															<path
+																d="M12 13C12.5523 13 13 12.5523 13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12C11 12.5523 11.4477 13 12 13Z"
+																stroke="#575757" stroke-width="2"
+																stroke-linecap="round" stroke-linejoin="round">
+															</path>
+															<path
+																d="M12 6C12.5523 6 13 5.55228 13 5C13 4.44772 12.5523 4 12 4C11.4477 4 11 4.44772 11 5C11 5.55228 11.4477 6 12 6Z"
+																stroke="#575757" stroke-width="2"
+																stroke-linecap="round" stroke-linejoin="round">
+															</path>
+															<path
+																d="M12 20C12.5523 20 13 19.5523 13 19C13 18.4477 12.5523 18 12 18C11.4477 18 11 18.4477 11 19C11 19.5523 11.4477 20 12 20Z"
+																stroke="#575757" stroke-width="2"
+																stroke-linecap="round" stroke-linejoin="round">
+															</path>
+														</svg>
+													</a>
+													<div class="dropdown-menu dropdown-menu-end">
+														<a class="dropdown-item edit"
+															href="javascript:void(0);">Edit</a>
+														<a class="dropdown-item delete"
+															href="javascript:void(0);">Delete</a>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="card-body user-profile">
+											<div class="image-bx">
+												<span
+													class="icon-placeholder bgl-primary rounded-circle text-primary">Bc</span>
+												<span class="active"></span>
+											</div>
+											<div class="media-body user-meta-info">
+												<h6 class="fs-20 font-w500 my-1"><a href="/app-profile"
+														class="text-black user-name"
+														data-name="Benny Chagur">Benny Chagur</a></h6>
+												<p class="fs-14 mb-3 user-work"
+													data-occupation="Highspeed Inc.">Highspeed Inc.</p>
+												<ul>
+													<li><a href="javascript:void(0);"><i class="fa fa-phone"
+																aria-hidden="true"></i></a></li>
+													<li><a href="/email-compose"><i
+																class="fa-solid fa-message"></i></a></li>
+													<li><a href="javascript:void(0);"><i class="fas fa-video"
+																aria-hidden="true"></i></a></li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-xl-4 col-md-6 col-sm-6 items">
+									<div class="card contact-bx-1 item-content">
+										<div class="card-header border-0">
+											<div class="action-dropdown">
+												<div class="dropdown">
+													<a href="javascript:void(0);" data-bs-toggle="dropdown"
+														aria-expanded="false">
+														<svg width="24" height="24" viewBox="0 0 24 24"
+															fill="none" xmlns="http://www.w3.org/2000/svg">
+															<path
+																d="M12 13C12.5523 13 13 12.5523 13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12C11 12.5523 11.4477 13 12 13Z"
+																stroke="#575757" stroke-width="2"
+																stroke-linecap="round" stroke-linejoin="round">
+															</path>
+															<path
+																d="M12 6C12.5523 6 13 5.55228 13 5C13 4.44772 12.5523 4 12 4C11.4477 4 11 4.44772 11 5C11 5.55228 11.4477 6 12 6Z"
+																stroke="#575757" stroke-width="2"
+																stroke-linecap="round" stroke-linejoin="round">
+															</path>
+															<path
+																d="M12 20C12.5523 20 13 19.5523 13 19C13 18.4477 12.5523 18 12 18C11.4477 18 11 18.4477 11 19C11 19.5523 11.4477 20 12 20Z"
+																stroke="#575757" stroke-width="2"
+																stroke-linecap="round" stroke-linejoin="round">
+															</path>
+														</svg>
+													</a>
+													<div class="dropdown-menu dropdown-menu-end">
+														<a class="dropdown-item edit"
+															href="javascript:void(0);">Edit</a>
+														<a class="dropdown-item delete"
+															href="javascript:void(0);">Delete</a>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="card-body user-profile">
+											<div class="image-bx">
+												<img src="{{ url_for('static', filename=  'codebyte/images/users/pic3.jpg')}}"
+													data-src="{{ url_for('static', filename=  'codebyte/images/users/pic3.jpg')}}" alt=""
+													class="rounded-circle">
+												<span class="active"></span>
+											</div>
+											<div class="media-body user-meta-info">
+												<h6 class="fs-20 font-w500 my-1"><a href="/app-profile"
+														class="text-black user-name"
+														data-name="Chyntia Lawra">Chyntia Lawra</a></h6>
+												<p class="fs-14 mb-3 user-work"
+													data-occupation="Zero Two Studios">Zero Two Studios</p>
+												<ul>
+													<li><a href="javascript:void(0);"><i class="fa fa-phone"
+																aria-hidden="true"></i></a></li>
+													<li><a href="/email-compose"><i
+																class="fa-solid fa-message"></i></a></li>
+													<li><a href="javascript:void(0);"><i class="fas fa-video"
+																aria-hidden="true"></i></a></li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-xl-4 col-md-6 col-sm-6 items">
+									<div class="card contact-bx-1 item-content">
+										<div class="card-header border-0">
+											<div class="action-dropdown">
+												<div class="dropdown">
+													<a href="javascript:void(0);" data-bs-toggle="dropdown"
+														aria-expanded="false">
+														<svg width="24" height="24" viewBox="0 0 24 24"
+															fill="none" xmlns="http://www.w3.org/2000/svg">
+															<path
+																d="M12 13C12.5523 13 13 12.5523 13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12C11 12.5523 11.4477 13 12 13Z"
+																stroke="#575757" stroke-width="2"
+																stroke-linecap="round" stroke-linejoin="round">
+															</path>
+															<path
+																d="M12 6C12.5523 6 13 5.55228 13 5C13 4.44772 12.5523 4 12 4C11.4477 4 11 4.44772 11 5C11 5.55228 11.4477 6 12 6Z"
+																stroke="#575757" stroke-width="2"
+																stroke-linecap="round" stroke-linejoin="round">
+															</path>
+															<path
+																d="M12 20C12.5523 20 13 19.5523 13 19C13 18.4477 12.5523 18 12 18C11.4477 18 11 18.4477 11 19C11 19.5523 11.4477 20 12 20Z"
+																stroke="#575757" stroke-width="2"
+																stroke-linecap="round" stroke-linejoin="round">
+															</path>
+														</svg>
+													</a>
+													<div class="dropdown-menu dropdown-menu-end">
+														<a class="dropdown-item edit"
+															href="javascript:void(0);">Edit</a>
+														<a class="dropdown-item delete"
+															href="javascript:void(0);">Delete</a>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="card-body user-profile">
+											<div class="image-bx">
+												<span
+													class="icon-placeholder bgl-primary rounded-circle text-primary">Bc</span>
+												<span class="active"></span>
+											</div>
+											<div class="media-body user-meta-info">
+												<h6 class="fs-20 font-w500 my-1"><a href="/app-profile"
+														class="text-black user-name"
+														data-name="Benny Chagur">Benny Chagur</a></h6>
+												<p class="fs-14 mb-3 user-work"
+													data-occupation="Highspeed Inc.">Highspeed Inc.</p>
+												<ul>
+													<li><a href="javascript:void(0);"><i class="fa fa-phone"
+																aria-hidden="true"></i></a></li>
+													<li><a href="/email-compose"><i
+																class="fa-solid fa-message"></i></a></li>
+													<li><a href="javascript:void(0);"><i class="fas fa-video"
+																aria-hidden="true"></i></a></li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="tab-pane fade" id="Closed">
+							<div class="row">
+								<div class="col-xl-12">
+									<div id="user-activity" class="card">
+										<div class="card-header border-0 pb-0 d-sm-flex d-block">
+											<h4 class="card-title">Visitor Activity</h4>
+											<div class="card-action project mb-sm-0 my-2">
+												<ul class="nav nav-tabs" role="tablist">
+													<li class="nav-item" role="presentation">
+														<a class="nav-link active" data-bs-toggle="tab"
+															href="#user" role="tab" aria-selected="true">
+															Day
+														</a>
+													</li>
+													<li class="nav-item" role="presentation">
+														<a class="nav-link" data-bs-toggle="tab" href="#user"
+															role="tab" aria-selected="false" tabindex="-1">
+															Month
+														</a>
+													</li>
+													<li class="nav-item" role="presentation">
+														<a class="nav-link" data-bs-toggle="tab" href="#user"
+															role="tab" aria-selected="false" tabindex="-1">
+															Year
+														</a>
+													</li>
+												</ul>
+											</div>
+										</div>
+
+										<div class="card-body">
+											<div class="tab-content" id="myTabContent">
+												<div class="tab-pane fade show active" id="user"
+													role="tabpanel">
+													<canvas id="activity" class="chartjs" height="318"
+														style="display: block; box-sizing: border-box; height: 318px; width: 977px;"
+														width="977"></canvas>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-xl-3 col-xxl-4">
+				<div class="card h-auto">
+					<div class="card-header pb-0 border-0">
+						<h4 class="card-title--medium mb-0">
+							Biography
+						</h4>
+						<div class="dropdown c-pointer ">
+							<div class="btn-link" data-bs-toggle="dropdown">
+								<svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+									xmlns="http://www.w3.org/2000/svg">
+									<circle cx="12.4999" cy="3.5" r="2.5" fill="#A5A5A5"></circle>
+									<circle cx="12.4999" cy="11.5" r="2.5" fill="#A5A5A5"></circle>
+									<circle cx="12.4999" cy="19.5" r="2.5" fill="#A5A5A5"></circle>
+								</svg>
+							</div>
+							<div class="dropdown-menu dropdown-menu-right">
+								<a class="dropdown-item" href="javascript:void(0)">Delete</a>
+								<a class="dropdown-item" href="javascript:void(0)">Edit</a>
+							</div>
+						</div>
+					</div>
+					<div class="card-body pt-3">
+						<p class="text-dark">My Name is Yatin I Am Frentend Developer and I Can Do Anything in
+							Software Field.</p>
+						<div class="adrees-bx">
+							<ul>
+								<li class="mb-3"><a href=""><i class="flaticon-location"></i>
+									</a>Rama Krishina Purum Kota</li>
+								<li class="mb-3"><a href=""><i class="flaticon-cake"></i>
+									</a>December 21, 2001</li>
+								<li class="mb-3"><a href=""><i class="flaticon-business-and-trade"></i>
+									</a>W3ITEXPERTS - Software Company</li>
+							</ul>
+						</div>
+						<div class="proile-social-bx adrees-bx mt-3">
+							<h4 class="card-title--medium mb-3">Social</h4>
+							<ul class="d-flex align-items-center flex-wrap">
+								<li class="mb-3"><a href=""><i class="flaticon-facebook"></i>
+									</a></li>
+								<li class="mb-3"><a href=""><i class="flaticon-instagram"></i>
+									</a></li>
+								<li class="mb-3"><a href=""><i class="flaticon-twitter"></i>
+									</a></li>
+								<li class="mb-3"><a href=""><i class="flaticon-linkedin"></i>
+									</a></li>
+								<li class="mb-3"><a href=""><i class="flaticon-dribble-big-logo"></i>
+									</a></li>
+								<li class="mb-3"><a href=""><i class="flaticon-behance"></i>
+									</a></li>
+							</ul>
+						</div>
+						<div class="mt-3">
+							<h4 class="card-title--medium mb-3">Skills</h4>
+							<ul class="d-flex align-items-center flex-wrap">
+								<li class="mb-3"><a href="" class="badge badge-light me-2">Html</a></li>
+								<li class="mb-3"><a href="" class="badge badge-light me-2">Css</a></li>
+								<li class="mb-3"><a href="" class="badge badge-light me-2">Figma</a></li>
+								<li class="mb-3"><a href="" class="badge badge-light me-2">React</a></li>
+								<li class="mb-3"><a href="" class="badge badge-light me-2">Scss</a></li>
+								<li class="mb-3"><a href="" class="badge badge-light me-2">Tailwand css</a></li>
+								<li class="mb-3"><a href="" class="badge badge-light">React Native</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="card h-auto">
+					<div class="card-header pb-0 border-0">
+						<h4 class="card-title--medium mb-0">
+							Prople you know
+						</h4>
+						<div class="dropdown c-pointer ">
+							<div class="btn-link" data-bs-toggle="dropdown">
+								<svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+									xmlns="http://www.w3.org/2000/svg">
+									<circle cx="12.4999" cy="3.5" r="2.5" fill="#A5A5A5"></circle>
+									<circle cx="12.4999" cy="11.5" r="2.5" fill="#A5A5A5"></circle>
+									<circle cx="12.4999" cy="19.5" r="2.5" fill="#A5A5A5"></circle>
+								</svg>
+							</div>
+							<div class="dropdown-menu dropdown-menu-right">
+								<a class="dropdown-item" href="javascript:void(0)">Delete</a>
+								<a class="dropdown-item" href="javascript:void(0)">Edit</a>
+							</div>
+						</div>
+					</div>
+					<div class="card-body  py-3 ic-scroll height250" id="RecentActivityContent">
+						<div class="products pt-0">
+							<img src="{{ url_for('static', filename=  'codebyte/images/contacts/pic2.jpg')}}" class="avatar avatar-md" alt="">
+							<div>
+								<a href="javascript:void(0)">
+									<h6 class="mb-0">Liam Antony</h6>
+								</a>
+								<small>Web Doveloper</small>
+							</div>
+							<div class="ms-auto app-icon">
+								<i class="fa-solid fa-user-plus"></i>
+							</div>
+						</div>
+						<div class="products">
+							<img src="{{ url_for('static', filename=  'codebyte/images/contacts/pic3.jpg')}}" class="avatar avatar-md" alt="">
+							<div>
+								<a href="javascript:void(0)">
+									<h6 class="mb-0">Liam Antony</h6>
+								</a>
+								<small>Web Doveloper</small>
+							</div>
+							<div class="ms-auto app-icon">
+								<i class="fa-solid fa-user-plus"></i>
+							</div>
+						</div>
+						<div class="products">
+							<img src="{{ url_for('static', filename=  'codebyte/images/contacts/pic1.jpg')}}" class="avatar avatar-md" alt="">
+							<div>
+								<a href="javascript:void(0)">
+									<h6 class="mb-0">Liam Antony</h6>
+								</a>
+								<small>Web Doveloper</small>
+							</div>
+							<div class="ms-auto app-icon">
+								<i class="fa-solid fa-user-plus"></i>
+							</div>
+						</div>
+
+					</div>
+					<div class="text-center card-footer pt-0 border-0">
+						<a href="" class="btn btn-outline-primary btn-block btn-sm ic-load-more"
+							id="RecentActivity" rel="/static/codebyte/ajax/contacts.html">Load More</a>
+					</div>
+				</div>
+				<div class="card h-auto">
+					<div class="card-header pb-0 border-0">
+						<h4 class="card-title--medium mb-0">
+							Interest
+						</h4>
+						<div class="dropdown c-pointer ">
+							<div class="btn-link" data-bs-toggle="dropdown">
+								<svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+									xmlns="http://www.w3.org/2000/svg">
+									<circle cx="12.4999" cy="3.5" r="2.5" fill="#A5A5A5"></circle>
+									<circle cx="12.4999" cy="11.5" r="2.5" fill="#A5A5A5"></circle>
+									<circle cx="12.4999" cy="19.5" r="2.5" fill="#A5A5A5"></circle>
+								</svg>
+							</div>
+							<div class="dropdown-menu dropdown-menu-right">
+								<a class="dropdown-item" href="javascript:void(0)">Delete</a>
+								<a class="dropdown-item" href="javascript:void(0)">Edit</a>
+							</div>
+						</div>
+					</div>
+					<div class="card-body py-3">
+						<div class="profile-interest">
+							<div class="row mt-4 sp4" id="lightgallery">
+								<a href="{{ url_for('static', filename=  'codebyte/images/profile/2.jpg')}}" data-exthumbimage="{{ url_for('static', filename=  'codebyte/images/profile/2.jpg')}}" data-src="{{ url_for('static', filename=  'codebyte/images/profile/2.jpg')}}" class="lg-item mb-1 col-lg-4 col-xl-4 col-sm-4 col-6">
+									<img src="{{ url_for('static', filename=  'codebyte/images/profile/2.jpg')}}" alt="" class="img-fluid rounded">
+								</a>
+								<a href="{{ url_for('static', filename=  'codebyte/images/profile/3.jpg')}}" data-exthumbimage="{{ url_for('static', filename=  'codebyte/images/profile/3.jpg')}}" data-src="{{ url_for('static', filename=  'codebyte/images/profile/3.jpg')}}" class="lg-item mb-1 col-lg-4 col-xl-4 col-sm-4 col-6">
+									<img src="{{ url_for('static', filename=  'codebyte/images/profile/3.jpg')}}" alt="" class="img-fluid rounded">
+								</a>
+								<a href="{{ url_for('static', filename=  'codebyte/images/profile/4.jpg')}}" data-exthumbimage="{{ url_for('static', filename=  'codebyte/images/profile/4.jpg')}}" data-src="{{ url_for('static', filename=  'codebyte/images/profile/4.jpg')}}" class="lg-item mb-1 col-lg-4 col-xl-4 col-sm-4 col-6">
+									<img src="{{ url_for('static', filename=  'codebyte/images/profile/4.jpg')}}" alt="" class="img-fluid rounded">
+								</a>
+								<a href="{{ url_for('static', filename=  'codebyte/images/profile/3.jpg')}}" data-exthumbimage="{{ url_for('static', filename=  'codebyte/images/profile/3.jpg')}}" data-src="{{ url_for('static', filename=  'codebyte/images/profile/3.jpg')}}" class="lg-item mb-1 col-lg-4 col-xl-4 col-sm-4 col-6">
+									<img src="{{ url_for('static', filename=  'codebyte/images/profile/3.jpg')}}" alt="" class="img-fluid rounded">
+								</a>
+								<a href="{{ url_for('static', filename=  'codebyte/images/profile/4.jpg')}}" data-exthumbimage="{{ url_for('static', filename=  'codebyte/images/profile/4.jpg')}}" data-src="{{ url_for('static', filename=  'codebyte/images/profile/4.jpg')}}" class="lg-item mb-1 col-lg-4 col-xl-4 col-sm-4 col-6">
+									<img src="{{ url_for('static', filename=  'codebyte/images/profile/4.jpg')}}" alt="" class="img-fluid rounded">
+								</a>
+								<a href="{{ url_for('static', filename=  'codebyte/images/profile/2.jpg')}}" data-exthumbimage="{{ url_for('static', filename=  'codebyte/images/profile/2.jpg')}}" data-src="{{ url_for('static', filename=  'codebyte/images/profile/2.jpg')}}" class="lg-item mb-1 col-lg-4 col-xl-4 col-sm-4 col-6">
+									<img src="{{ url_for('static', filename=  'codebyte/images/profile/2.jpg')}}" alt="" class="img-fluid rounded">
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="card h-auto">
+					<div class="card-header pb-0 border-0">
+						<h4 class="card-title--medium mb-0">
+							Our Latest News
+						</h4>
+						<div class="dropdown c-pointer ">
+							<div class="btn-link" data-bs-toggle="dropdown">
+								<svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+									xmlns="http://www.w3.org/2000/svg">
+									<circle cx="12.4999" cy="3.5" r="2.5" fill="#A5A5A5"></circle>
+									<circle cx="12.4999" cy="11.5" r="2.5" fill="#A5A5A5"></circle>
+									<circle cx="12.4999" cy="19.5" r="2.5" fill="#A5A5A5"></circle>
+								</svg>
+							</div>
+							<div class="dropdown-menu dropdown-menu-right">
+								<a class="dropdown-item" href="javascript:void(0)">Delete</a>
+								<a class="dropdown-item" href="javascript:void(0)">Edit</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="card-body py-3">
+						<div class="profile-news">
+							<div class="media pt-0 pb-3">
+								<img src="{{ url_for('static', filename=  'codebyte/images/profile/5.jpg')}}" alt="image" class="me-3 rounded" width="75">
+								<div class="media-body">
+									<h5 class="m-b-5"><a href="/post-details" class="text-dark">Innovations
+											in Event Ticketing</a></h5>
+									<p class="mb-0">I shared this on my fb wall.</p>
+								</div>
+							</div>
+							<div class="media pt-3 pb-3">
+								<img src="{{ url_for('static', filename=  'codebyte/images/profile/6.jpg')}}" alt="image" class="me-3 rounded" width="75">
+								<div class="media-body">
+									<h5 class="m-b-5"><a href="/post-details" class="text-dark">Getting More
+											for Your Money</a></h5>
+									<p class="mb-0">I shared this on my fb wall.</p>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<div class="modal fade" id="addCloseFriendModal">
+	<div class="modal-dialog modal-dialog-centered" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title">Add to close friends</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+			</div>
+			<div class="modal-body">
+				<form>
+					<div class="mb-3">
+						<input class="form-control" placeholder="search here...">
+					</div>
+					<ul class="user-media-list">
+						<li class="mb-2 border-bottom pb-2">
+							<div class="d-flex align-items-center">
+								<div class="img_cont me-2">
+									<img src="{{ url_for('static', filename=  'codebyte/images/avatar/1.jpg')}}" height="45" width="45"
+										class="rounded-circle user_img" alt="">
+								</div>
+								<div class="user_info">
+									<h6 class="mb-0">Archie Parker</h6>
+									<p class="mb-0">Kalid is online</p>
+								</div>
+							</div>
+						</li>
+						<li class="mb-2 border-bottom pb-2">
+							<div class="d-flex align-items-center">
+								<div class="img_cont me-2">
+									<img src="{{ url_for('static', filename=  'codebyte/images/avatar/2.jpg')}}" height="45" width="45"
+										class="rounded-circle user_img" alt="">
+								</div>
+								<div class="user_info">
+									<h6 class="mb-0">Alfie Mason</h6>
+									<p class="mb-0">Kalid is online</p>
+								</div>
+							</div>
+						</li>
+						<li class="mb-2 border-bottom pb-2">
+							<div class="d-flex align-items-center">
+								<div class="img_cont me-2">
+									<img src="{{ url_for('static', filename=  'codebyte/images/avatar/3.jpg')}}" height="45" width="45"
+										class="rounded-circle user_img" alt="">
+								</div>
+								<div class="user_info">
+									<h6 class="mb-0">Bashid Samim</h6>
+									<p class="mb-0">Kalid is online</p>
+								</div>
+							</div>
+						</li>
+						<li class="mb-2 border-bottom pb-2">
+							<div class="d-flex align-items-center">
+								<div class="img_cont me-2">
+									<img src="{{ url_for('static', filename=  'codebyte/images/avatar/4.jpg')}}" height="45" width="45"
+										class="rounded-circle user_img" alt="">
+								</div>
+								<div class="user_info">
+									<h6 class="mb-0">Jack Ronan</h6>
+									<p class="mb-0">Kalid is online</p>
+								</div>
+							</div>
+						</li>
+						<li class="mb-2 pb-2">
+							<div class="d-flex align-items-center">
+								<div class="img_cont me-2">
+									<img src="{{ url_for('static', filename=  'codebyte/images/avatar/5.jpg')}}" height="45" width="45"
+										class="rounded-circle user_img" alt="">
+								</div>
+								<div class="user_info">
+									<h6 class="mb-0">Oliver Acker</h6>
+									<p class="mb-0">Kalid is online</p>
+								</div>
+							</div>
+						</li>
+					</ul>
+					<input type="submit" value="Done" class="submit btn btn-primary w-100" name="submit">
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="createGroupModal">
+	<div class="modal-dialog modal-dialog-centered" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title">Create Group</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+			</div>
+			<div class="modal-body">
+				<form>
+					<div class="mb-3">
+						<label class="form-label">Name</label>
+						<input class="form-control" placeholder="Enter group name">
+					</div>
+					<div class="mb-3">
+						<label class="form-label">Select Friends</label>
+						<input class="form-control" placeholder="search here...">
+					</div>
+					<ul class="user-media-list">
+						<li class="mb-2 border-bottom pb-2">
+							<div class="d-flex align-items-center">
+								<div class="img_cont me-2">
+									<img src="{{ url_for('static', filename=  'codebyte/images/avatar/1.jpg')}}" height="45" width="45"
+										class="rounded-circle user_img" alt="">
+								</div>
+								<div class="user_info">
+									<h6 class="mb-0">Archie Parker</h6>
+									<p class="mb-0">Kalid is online</p>
+								</div>
+							</div>
+						</li>
+						<li class="mb-2 border-bottom pb-2">
+							<div class="d-flex align-items-center">
+								<div class="img_cont me-2">
+									<img src="{{ url_for('static', filename=  'codebyte/images/avatar/2.jpg')}}" height="45" width="45"
+										class="rounded-circle user_img" alt="">
+								</div>
+								<div class="user_info">
+									<h6 class="mb-0">Alfie Mason</h6>
+									<p class="mb-0">Kalid is online</p>
+								</div>
+							</div>
+						</li>
+						<li class="mb-2 pb-2">
+							<div class="d-flex align-items-center">
+								<div class="img_cont me-2">
+									<img src="{{ url_for('static', filename=  'codebyte/images/avatar/5.jpg')}}" height="45" width="45"
+										class="rounded-circle user_img" alt="">
+								</div>
+								<div class="user_info">
+									<h6 class="mb-0">Oliver Acker</h6>
+									<p class="mb-0">Kalid is online</p>
+								</div>
+							</div>
+						</li>
+					</ul>
+					<input type="submit" value="Create" class="submit btn btn-primary w-100" name="submit">
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="sendMessageModal">
+	<div class="modal-dialog modal-dialog-centered" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title">Send Message</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+			</div>
+			<div class="modal-body">
+				<form class="comment-form">
+					<div class="row">
+						<div class="col-lg-6">
+							<div class="mb-3">
+								<label class="text-black font-w600 form-label required">Name </label>
+								<input type="text" class="form-control" value="Author" name="Author"
+									placeholder="Author">
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<div class="mb-3">
+								<label class="text-black font-w600 form-label required">Email</label>
+								<input type="text" class="form-control" value="Email" placeholder="Email"
+									name="Email">
+							</div>
+						</div>
+						<div class="col-lg-12">
+							<div class="mb-3">
+								<label class="text-black font-w600 form-label">Comment</label>
+								<textarea rows="8" class="form-control" name="comment"
+									placeholder="Comment"></textarea>
+							</div>
+						</div>
+						<div class="col-lg-12">
+							<div class="mb-3 mb-0">
+								<input type="submit" value="Post Comment" class="submit btn btn-primary"
+									name="submit">
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}
+
+{% block additional_js %}
+<script src="{{ url_for('static', filename='codebyte/vendor/counter/counter.min.js')}}"></script>
+<script src="{{ url_for('static', filename='codebyte/vendor/counter/waypoint.min.js')}}"></script>
+<script src="{{ url_for('static', filename='codebyte/vendor/lightgallery/dist/lightgallery.min.js')}}"></script>
+<script src="{{ url_for('static', filename='codebyte/vendor/lightgallery/dist/plugins/thumbnail/lg-thumbnail.min.js')}}"></script>
+<script src="{{ url_for('static', filename='codebyte/vendor/lightgallery/dist/plugins/zoom/lg-zoom.min.js')}}"></script>
+<script src="{{ url_for('static', filename='codebyte/vendor/chart-js/chart.bundle.min.js')}}"></script>
+<script src="{{ url_for('static', filename='codebyte/js/plugins-init/widgets-script-init.js')}}"></script>
+{% endblock %}

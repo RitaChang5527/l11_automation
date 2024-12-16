@@ -1,0 +1,567 @@
+{% extends 'codebyte/elements/layouts/admin.html' %}
+        
+{% block additional_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename=  'codebyte/vendor/star-rating/star-rating-svg.css')}}">
+<link rel="stylesheet" href="{{ url_for('static', filename=  'codebyte/vendor/lightgallery/dist/css/lightgallery.css')}}">
+<link rel="stylesheet" href="{{ url_for('static', filename=  'codebyte/vendor/lightgallery/dist/css/lg-thumbnail.css')}}">
+<link rel="stylesheet" href="{{ url_for('static', filename=  'codebyte/vendor/swiper/css/swiper-bundle.min.css')}}">
+{% endblock %}
+        
+{% block content %}
+<div class="content-body">
+    <div class="container-fluid">
+        <div class="page-titles">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="javascript:void(0)">Shop</a></li>
+                <li class="breadcrumb-item active"><a href="javascript:void(0)">Product Details</a></li>
+            </ol>
+        </div>
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-xl-4">
+                                <div dir="rtl"  class="swiper mySwiper2">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide DZoomImage">
+                                            <img src="{{ url_for('static', filename=  'codebyte/images/product/1.jpg')}}" class="rounded w-100" alt="">
+                                        </div>
+                                        <div class="swiper-slide DZoomImage">
+                                            <img src="{{ url_for('static', filename=  'codebyte/images/product/2.jpg')}}" class="rounded w-100" alt="">
+                                            
+                                        </div>
+                                        <div class="swiper-slide DZoomImage">
+                                            <img src="{{ url_for('static', filename=  'codebyte/images/product/3.jpg')}}" class="rounded w-100" alt="">
+                                            
+                                        </div>
+                                        <div class="swiper-slide DZoomImage">
+                                            <img src="{{ url_for('static', filename=  'codebyte/images/product/4.jpg')}}" class="rounded w-100" alt="">
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div dir="rtl" class="swiper mySwiper gallery-slider">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <img class="img-fluid" src="{{ url_for('static', filename=  'codebyte/images/tab/1.jpg')}}" alt="">
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img class="img-fluid" src="{{ url_for('static', filename=  'codebyte/images/tab/2.jpg')}}" alt="">
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img class="img-fluid" src="{{ url_for('static', filename=  'codebyte/images/tab/3.jpg')}}" alt="">
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img class="img-fluid" src="{{ url_for('static', filename=  'codebyte/images/tab/4.jpg')}}" alt="">
+                                        </div>
+
+                                    </div>
+                                </div>	
+                            </div>
+                            <div class="col-xl-5">
+                                <div class="product-details-bx">
+                                    <div class="new-arrival-content pr">
+                                        <h5 class="card-title">Lightweight Puffer Jacket With a Hood</h5>
+                                        <div class="comment-review star-rating">
+                                            <ul class="mb-2">
+                                                <li><span class="badge badge-success badge-sm me-3">#1 Best Seller</span></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                            </ul>
+                                            <span class="review-text">(34 reviews) / </span><a class="product-review" href=""  data-bs-toggle="modal" data-bs-target="#reviewModal">Write a review?</a>
+                                        </div>
+                                        <div class="size-chart-bx">
+                                            <div class="row">
+                                                <div class="col-xl-6 col-sm-6">
+                                                    <div class="size-filter">
+                                                        <h5 class="m-b-15">Available size</h5>
+                                                        <div class="d-flex select-size" role="group" aria-label="Basic radio toggle button group">
+                                                            <input type="radio" class="btn-check" name="btnradio" id="btnradio1" checked="">
+                                                            <label class="btn btn-outline-primary sharp sharp-xs me-2" for="btnradio1">XS</label>
+    
+                                                            <input type="radio" class="btn-check" name="btnradio" id="btnradio2">
+                                                            <label class="btn btn-outline-primary sharp sharp-xs me-2" for="btnradio2">SM</label>
+    
+                                                            <input type="radio" class="btn-check" name="btnradio" id="btnradio3">
+                                                            <label class="btn btn-outline-primary sharp sharp-xs me-2" for="btnradio3">MD</label>
+    
+                                                            <input type="radio" class="btn-check" name="btnradio" id="btnradio4">
+                                                            <label class="btn btn-outline-primary sharp sharp-xs me-2" for="btnradio4">LG</label>
+    
+                                                            <input type="radio" class="btn-check" name="btnradio" id="btnradio5">
+                                                            <label class="btn btn-outline-primary sharp sharp-xs" for="btnradio5">XL</label>
+                                                        </div>
+    
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-6  col-sm-6 align-self-center">
+                                                    <div class="meta-content meta-content ms-0 ms-sm-5 mt-3 mt-sm-0">
+                                                        <h5>Available Color</h5>
+                                                        <div class="d-flex align-items-center color-filter">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="radio" name="radioNoLabel" id="radioNoLabel11" value="#24262B" aria-label="..." checked="">
+                                                                <span style="background-color: rgb(36, 38, 43);"></span>
+                                                            </div>
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="radio" name="radioNoLabel" id="radioNoLabel12" value="#8CB2D1" aria-label="...">
+                                                                <span style="background-color: rgb(140, 178, 209);"></span>
+                                                            </div>
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="radio" name="radioNoLabel" id="radioNoLabel13" value="#0D775E" aria-label="...">
+                                                                <span style="background-color: rgb(13, 119, 94);"></span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+                                        <div class="size-chart-bx">
+                                            <div class="row">
+                                                <div class="col-xl-5 col-6 ">
+                                                    <div class="quntity">
+                                                        <button data-decrease>-</button>
+                                                        <input class="form-control mx-2" data-value type="text" value="1">
+                                                        <button data-increase>+</button>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-7 col-6">
+                                                    <div>
+                                                        <a class="btn btn-primary"><i class="flaticon-shopping-cart me-2"></i>Add To Cart</a>
+                                                        
+                                                    </div>
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="row">
+                                                <div class="col-xl-12">
+                                                    <div class="month-deal">
+                                                        <div>
+                                                            <h5>Deal of the month</h5>
+                                                            <p class="mb-0">Yes! Send me exclusive offers, personalised, and unique gift ideas, tips for shopping on Codebyte <a href="shop-standard.html" class="dz-link-2">View All Products</a></p>
+                                                        </div>
+                                                        <div class="sale-countdown">
+                                                            <div class="countdown text-center">
+                                                                <div class="date"><span class="time days text-primary">29</span>
+                                                                    <span class="work-time">Days</span>
+                                                                </div>
+                                                                <div class="date"><span class="time hours text-primary">05</span>
+                                                                    <span class="work-time">Hours</span>
+                                                                </div>
+                                                                <div class="date"><span class="time mins text-primary">00</span>
+                                                                    <span class="work-time">Minutess</span>
+                                                                </div>
+                                                                <div class="date"><span class="time secs text-primary">03</span>
+                                                                    <span class="work-time">Second</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="size-chart-bx border-top-0">
+                                            <div class="row">
+                                                <div class="col-xl-12">
+                                                    <div>
+                                                        <ul>
+                                                            <li class="mb-2">
+                                                                <strong class="text-dark me-2">SKU:</strong>
+                                                                <span>PRT584E63A</span>
+                                                            </li>
+                                                            <li class="mb-2">
+                                                                <strong class="text-dark me-2">Category:</strong>
+                                                                <span>Cable handles,</span>
+                                                                <span>Rubber Weight,</span>
+                                                                <span>Fitness Rope,</span>
+                                                                <span>Hand Strengthener,</span>
+                                                                <span>Kettle Bell</span>
+                                                            </li>
+                                                            <li class="mb-2">
+                                                                <strong class="text-dark me-2">Tags:</strong>
+                                                                <span>Fitness,</span>
+                                                                <span>Shoes,</span>
+                                                                <span>Everyday,</span>
+                                                                <span>Sport</span>
+                                                            </li>
+                                                            <li class="social-bx">
+                                                                <strong class="text-dark me-2">Share:</strong>
+                                                                <span class="social-media">											
+                                                                    <a href="https://www.facebook.com/dexignzone" target="_blank">
+                                                                        <i class="flaticon-facebook"></i>
+                                                                    </a>
+                                                                </span>
+                                                                <span class="social-media">											
+                                                                    <a href="https://www.linkedin.com/showcase/3686700/admin/" target="_blank">
+                                                                        <i class="flaticon-linkedin"></i>
+                                                                    </a>
+                                                                </span>
+                                                                <span class="social-media">											
+                                                                    <a href="https://www.instagram.com/dexignzone/" target="_blank">
+                                                                        <i class="flaticon-instagram"></i>
+                                                                    </a>
+                                                                </span>
+                                                                <span class="social-media">											
+                                                                    <a href="https://twitter.com/dexignzones" target="_blank">
+                                                                        <i class="flaticon-twitter"></i>
+                                                                    </a>
+                                                                </span>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3">
+                                    <div class="cart-detail">
+                                        <a href="javascript:void(0);" class="btn btn-outline-primary btn-block">Bank Offer 5% Cashback</a>
+                                        <div class="cart-bx">
+                                            <i class="flaticon flaticon-ship text-primary"></i>
+                                            <div>
+                                                <h6 class="mb-0">Easy Returen</h6>
+                                                <p class="mb-0">30 Days</p>
+                                            </div>
+                                        </div>
+                                        <div class="cart-bx">
+                                            <i class="flaticon-box text-primary"></i>
+                                            <div>
+                                                <h6 class="mb-0">Enjoy The Product</h6>
+                                                <p class="mb-0">Lorem Ipsum is simply.</p>
+                                            </div>
+                                        </div>
+                                        <div class="border-bottom d-flex align-items-center mt-4 pb-3">
+                                            <svg class="me-3 svg-details" height="20" viewBox="1 1 511.99984 511" width="20" xmlns="http://www.w3.org/2000/svg"><path d="m512 256.5c0 50.53125-15 99.671875-43.375 142.113281-3.855469 5.769531-10.191406 8.886719-16.644531 8.886719-3.820313 0-7.683594-1.089844-11.097657-3.375-9.183593-6.136719-11.648437-18.558594-5.511718-27.742188 23.964844-35.839843 36.628906-77.292968 36.628906-119.882812 0-18.300781-2.289062-36.476562-6.804688-54.015625-2.753906-10.695313 3.6875-21.601563 14.382813-24.355469 10.703125-2.75 21.601563 3.6875 24.355469 14.382813 5.351562 20.796875 8.066406 42.324219 8.066406 63.988281zm-144.265625 184.894531c-33.59375 20.347657-72.230469 31.105469-111.734375 31.105469-119.101562 0-216-96.898438-216-216s96.898438-216 216-216c44.097656 0 86.5 13.195312 122.628906 38.160156 9.085938 6.277344 21.542969 4 27.824219-5.085937 6.277344-9.085938 4.003906-21.542969-5.085937-27.824219-42.84375-29.601562-93.109376-45.25-145.367188-45.25-68.378906 0-132.667969 26.628906-181.019531 74.980469-48.351563 48.351562-74.980469 112.640625-74.980469 181.019531s26.628906 132.667969 74.980469 181.019531c48.351562 48.351563 112.640625 74.980469 181.019531 74.980469 46.8125 0 92.617188-12.757812 132.460938-36.894531 9.449218-5.722657 12.46875-18.019531 6.746093-27.46875-5.726562-9.449219-18.023437-12.464844-27.472656-6.742188zm-109.804687-126.902343c-3.167969.125-6.125-1-8.421876-3.1875l-104.746093-99.316407c-8.015625-7.601562-20.675781-7.265625-28.273438.75-7.601562 8.015625-7.265625 20.675781.75 28.273438l104.726563 99.300781c9.671875 9.195312 22.183594 14.1875 35.441406 14.1875.710938 0 1.421875-.015625 2.132812-.042969 14.042969-.566406 26.941407-6.644531 36.316407-17.117187.238281-.261719.464843-.53125.6875-.808594l211.042969-262.5c6.921874-8.609375 5.554687-21.199219-3.054688-28.117188-8.605469-6.921874-21.199219-5.554687-28.121094 3.054688l-210.628906 261.988281c-2.070312 2.160157-4.84375 3.414063-7.851562 3.535157zm0 0"/></svg>
+                                            <p class="mb-0 text-dark">You will save ₹504 on this order</p>
+
+                                            
+                                        </div>
+                                        <div class="d-flex align-items-center justify-content-between mt-3">
+                                            <p>Price</p>
+                                            <h4 class="card-title--medium">$125.75</h4>
+                                        </div>
+                                        <div>
+                                            <button class="btn btn-primary btn-block mb-3">Add to Cart</button>
+                                            <button class="btn btn-outline-primary btn-block">Add to wishlist</button>
+                                        </div>
+                                    </div>
+                                        
+                                </div>
+                                <div class="col-xl-12">
+                                    <div class="mt-5">
+                                        <div class="project">
+                                            <ul class="nav nav-tabs justify-content-center" role="tablist">
+                                                <li class="nav-item">
+                                                    <a class="nav-link active" data-bs-toggle="tab" href="#AllStatus" role="tab">Description</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" data-bs-toggle="tab" href="#OnProgress" role="tab">Reviews (2)</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="tab-content">
+                                            <div class="tab-pane fade active show" id="AllStatus">
+                                                <div class="detail-bx text-center mt-4">
+                                                    <h5 class="card-title--medium">Eco-friendly Products Revolution</h5>
+                                                    <p>
+                                                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                                                    </p>
+                                                    <ul class=" feature-detail d-flex align-items-center justify-content-lg-center justify-content-start flex-wrap">
+                                                        <li>
+                                                            <i class="fa-solid fa-check"></i>
+                                                            <h5 class="mb-0">Transform Your Look with Confidence</h5>
+                                                        </li>
+                                                        <li>
+                                                            <i class="fa-solid fa-check"></i>
+                                                            <h5 class="mb-0">Timeless Beauty Secrets Revealed</h5>
+                                                        </li>
+                                                        <li>
+                                                            <i class="fa-solid fa-check"></i>
+                                                            <h5 class="mb-0">Radiate Confidence Through Timeless Beauty</h5>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <h5 class="card-title my-3">Related Product Details</h5>
+                                                    <div class="row">
+                                                        <div class="col-xl-3 col-sm-6">
+                                                            <div class="card">
+                                                                <div class="card-body product-card border ">
+                                                                    <div class="dz-product-bx">
+                                                                        <img loading="lazy" class="dz-media" src="{{ url_for('static', filename=  'codebyte/images/product/1.jpg')}}" alt="">
+                                                                        <img loading="lazy" class="dz-media-1" src="{{ url_for('static', filename=  'codebyte/images/product/pic1.jpg')}}" alt="">
+                                                                        <div class="dz-side-view">
+                                                                            <a href="javascript:void(0)" class="wishlist mb-2">
+                                                                                <i class="fa-regular fa-heart"></i>
+                                                                            </a>
+                                                                            <a href="javascript:void(0)" class="wishlist">
+                                                                                <i class="fa-regular fa-eye"></i>
+                                                                            </a>
+                                                                            
+                            
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="new-arrival-content text-center mt-3">
+                                                                            <h4><a href="/ecom-product-detail">Bonorum et Malorum</a></h4>
+                                                                            <ul class="star-rating">
+                                                                                <li><i class="fa fa-star"></i></li>
+                                                                                <li><i class="fa fa-star"></i></li>
+                                                                                <li><i class="fa fa-star"></i></li>
+                                                                                <li><i class="fa-solid fa-star-half-stroke"></i></li>
+                                                                                <li><i class="fa-solid fa-star-half-stroke"></i></li>
+                                                                            </ul>
+                                                                            <del class="discount">$761.00</del>
+                                                                            <span class="price">$159</span>
+                                                                        </div>
+                                                                    
+                                                                </div>
+                                                            </div>
+                                                        
+                                                        </div>
+                                                        <div class="col-xl-3 col-sm-6">
+                                                            <div class="card">
+                                                                <div class="card-body product-card border ">
+                                                                    <div class="dz-product-bx">
+                                                                        <img loading="lazy" class="dz-media" src="{{ url_for('static', filename=  'codebyte/images/product/2.jpg')}}" alt="">
+                                                                        <img loading="lazy" class="dz-media-1" src="{{ url_for('static', filename=  'codebyte/images/product/pic2.jpg')}}" alt="">
+                                                                        <div class="dz-side-view">
+                                                                            <a href="javascript:void(0)" class="wishlist mb-2">
+                                                                                <i class="fa-regular fa-heart"></i>
+                                                                            </a>
+                                                                            <a href="javascript:void(0)" class="wishlist">
+                                                                                <i class="fa-regular fa-eye"></i>
+                                                                            </a>
+                                                                            
+                            
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="new-arrival-content text-center mt-3">
+                                                                            <h4><a href="/ecom-product-detail">Bonorum et Malorum</a></h4>
+                                                                            <ul class="star-rating">
+                                                                                <li><i class="fa fa-star"></i></li>
+                                                                                <li><i class="fa fa-star"></i></li>
+                                                                                <li><i class="fa fa-star"></i></li>
+                                                                                <li><i class="fa-solid fa-star-half-stroke"></i></li>
+                                                                                <li><i class="fa-solid fa-star-half-stroke"></i></li>
+                                                                            </ul>
+                                                                            <del class="discount">$761.00</del>
+                                                                            <span class="price">$159</span>
+                                                                        </div>
+                                                                    
+                                                                </div>
+                                                            </div>
+                                                        
+                                                        </div>
+                                                        <div class="col-xl-3 col-sm-6">
+                                                            <div class="card">
+                                                                <div class="card-body product-card border ">
+                                                                    <div class="dz-product-bx">
+                                                                        <img loading="lazy" class="dz-media" src="{{ url_for('static', filename=  'codebyte/images/product/3.jpg')}}" alt="">
+                                                                        <img loading="lazy" class="dz-media-1" src="{{ url_for('static', filename=  'codebyte/images/product/pic3.jpg')}}" alt="">
+                                                                        <div class="dz-side-view">
+                                                                            <a href="javascript:void(0)" class="wishlist mb-2">
+                                                                                <i class="fa-regular fa-heart"></i>
+                                                                            </a>
+                                                                            <a href="javascript:void(0)" class="wishlist">
+                                                                                <i class="fa-regular fa-eye"></i>
+                                                                            </a>
+                                                                            
+                            
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="new-arrival-content text-center mt-3">
+                                                                            <h4><a href="/ecom-product-detail">Bonorum et Malorum</a></h4>
+                                                                            <ul class="star-rating">
+                                                                                <li><i class="fa fa-star"></i></li>
+                                                                                <li><i class="fa fa-star"></i></li>
+                                                                                <li><i class="fa fa-star"></i></li>
+                                                                                <li><i class="fa-solid fa-star-half-stroke"></i></li>
+                                                                                <li><i class="fa-solid fa-star-half-stroke"></i></li>
+                                                                            </ul>
+                                                                            <del class="discount">$761.00</del>
+                                                                            <span class="price">$159</span>
+                                                                        </div>
+                                                                    
+                                                                </div>
+                                                            </div>
+                                                        
+                                                        </div>
+                                                        <div class="col-xl-3 col-sm-6">
+                                                            <div class="card">
+                                                                <div class="card-body product-card border ">
+                                                                    <div class="dz-product-bx">
+                                                                        <img loading="lazy" class="dz-media" src="{{ url_for('static', filename=  'codebyte/images/product/4.jpg')}}" alt="">
+                                                                        <img loading="lazy" class="dz-media-1" src="{{ url_for('static', filename=  'codebyte/images/product/pic4.jpg')}}" alt="">
+                                                                        <div class="dz-side-view">
+                                                                            <a href="javascript:void(0)" class="wishlist mb-2">
+                                                                                <i class="fa-regular fa-heart"></i>
+                                                                            </a>
+                                                                            <a href="javascript:void(0)" class="wishlist">
+                                                                                <i class="fa-regular fa-eye"></i>
+                                                                            </a>
+                                                                            
+                            
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="new-arrival-content text-center mt-3">
+                                                                            <h4><a href="/ecom-product-detail">Bonorum et Malorum</a></h4>
+                                                                            <ul class="star-rating">
+                                                                                <li><i class="fa fa-star"></i></li>
+                                                                                <li><i class="fa fa-star"></i></li>
+                                                                                <li><i class="fa fa-star"></i></li>
+                                                                                <li><i class="fa-solid fa-star-half-stroke"></i></li>
+                                                                                <li><i class="fa-solid fa-star-half-stroke"></i></li>
+                                                                            </ul>
+                                                                            <del class="discount">$761.00</del>
+                                                                            <span class="price">$159</span>
+                                                                        </div>
+                                                                    
+                                                                </div>
+                                                            </div>
+                                                        
+                                                        </div>
+                                                    </div>
+                                            </div>
+                                            <div class="tab-pane fade" id="OnProgress">
+                                                <h4 class="card-title mt-4">Comments[02]</h4>
+                                                <p>There Are Many Variations Of Passages Of Lorem Ipsum Available.</p>
+                                                <div class="row">
+                                                    <div class="col-xl-6">
+                                                        <div class="d-flex align-items-strat">
+                                                            <img src="{{ url_for('static', filename=  'codebyte/images/users/pic1.jpg')}}" class="product-img" alt="">
+                                                            <div>
+                                                                <h5 class="mb-0">Monsur Rahman Lito</h5>
+                                                                <ul class="d-flex align-items-center">
+                                                                    <li><i class="fa-solid fa-star text-warning"></i></li>
+                                                                    <li><i class="fa-solid fa-star text-warning"></i></li>
+                                                                    <li><i class="fa-solid fa-star text-warning"></i></li>
+                                                                    <li><i class="fa-solid fa-star text-warning"></i></li>
+                                                                </ul>
+                                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui quae, ipsum commodi rerum porro totam libero est.</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-6">
+                                                        <div class="d-flex align-items-strat">
+                                                            <img src="{{ url_for('static', filename=  'codebyte/images/users/pic1.jpg')}}" class="product-img" alt="">
+                                                            <div>
+                                                                <h5 class="mb-0">Monsur Rahman Lito</h5>
+                                                                <ul class="d-flex align-items-center">
+                                                                    <li><i class="fa-solid fa-star text-warning"></i></li>
+                                                                    <li><i class="fa-solid fa-star text-warning"></i></li>
+                                                                    <li><i class="fa-solid fa-star text-warning"></i></li>
+                                                                    <li><i class="fa-solid fa-star text-warning"></i></li>
+                                                                </ul>
+                                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui quae, ipsum commodi rerum porro totam libero est.</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                                <div class="comment mt-3">
+                                                    <h3 class="card-title">Leave Comment</h3>
+                                                    <div class="row">
+                                                        <div class="col-xl-6 col-sm-6">
+                                                            <div class="mb-3">
+                                                             <label for="exampleFormControlInput1" class="form-label required">Name</label>
+                                                              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Karen Hope">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xl-6 col-sm-6 ">
+                                                            <div class="mb-3">
+                                                                 <label for="exampleFormControlInput2" class="form-label required">Email Id</label>
+                                                              <input type="email" class="form-control" id="exampleFormControlInput2" placeholder="hello@example.com">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xl-12">
+                                                            <div class="mb-3">
+                                                            <label for="exampleFormControlTextarea3" class="form-label required">Messasge</label>
+                                                              <textarea class="form-control" id="exampleFormControlTextarea3" rows="3">Messasge</textarea>
+                                                            </div>
+                                                        </div>
+                                                        <div>
+                                                            <button class="btn btn-primary" type="submit">Submit A Comment</button>
+                                                        </div>
+                                                    
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+</div>
+{% endblock %}
+
+{% block additional_js %}
+<script src="{{ url_for('static', filename='codebyte/vendor/lightgallery/dist/lightgallery.min.js')}}"></script>
+<script src="{{ url_for('static', filename='codebyte/vendor/lightgallery/dist/plugins/thumbnail/lg-thumbnail.min.js')}}"></script>
+<script src="{{ url_for('static', filename='codebyte/vendor/lightgallery/dist/plugins/zoom/lg-zoom.min.js')}}"></script>
+<script src="{{ url_for('static', filename='codebyte/vendor/star-rating/jquery.star-rating-svg.js')}}"></script>
+<script src="{{ url_for('static', filename='codebyte/vendor/swiper/js/swiper-bundle.min.js')}}"></script>
+<script src="{{ url_for('static', filename='codebyte/vendor/countdown/jquery.countdown.js')}}"></script>
+<script>
+    var swiper = new Swiper(".mySwiper", {
+        spaceBetween: 10,
+        slidesPerView: 4,
+        freeMode: true,
+        watchSlidesProgress: true,
+    });
+    var swiper2 = new Swiper(".mySwiper2", {
+        spaceBetween: 10,
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        thumbs: {
+            swiper: swiper,
+        },
+    });
+
+    $(function() {
+$('[data-decrease]').on('click', decrease);
+$('[data-increase]').click(increase);
+$('[data-value]').change(valueChange);
+});
+
+function decrease() {
+var value = $(this).parent().find('[data-value]').val();
+if(value > 0) {
+    value--;
+    $(this).parent().find('[data-value]').val(value);
+}
+}
+
+function increase() {
+var value = $(this).parent().find('[data-value]').val();
+if(value < 100) {
+    value++;
+    $(this).parent().find('[data-value]').val(value);
+}
+}
+
+function valueChange() {
+var value = $(this).val();
+if(value == undefined || isNaN(value) == true || value <= 0) {
+    $(this).val(0);
+} else if(value >= 101) {
+    $(this).val(100);
+}
+}
+</script>
+{% endblock %}

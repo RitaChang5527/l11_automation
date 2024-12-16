@@ -1,0 +1,481 @@
+{% extends 'codebyte/elements/layouts/admin.html' %}
+        
+{% block additional_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename=  'codebyte/vendor/datatables/css/jquery.dataTables.min.css')}}">
+{% endblock %}
+        
+{% block content %}
+<div class="content-body">
+    <!-- row -->
+    <div class="container-fluid">
+        <div class="page-titles">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="javascript:void(0)">Contacts</a></li>
+                <li class="breadcrumb-item active"><a href="javascript:void(0)">Contact List</a></li>
+            </ol>
+        </div>
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-header d-sm-flex d-block">
+                        <div class="me-auto mb-sm-0 mb-3">
+                            <h4 class="card-title">Contact</h4>
+                            
+                        </div>
+                        <a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-primary btn-sm">Add Customer</a>
+                    </div>
+                    <div class="card-body pt-3">
+                        <div class="table-responsive">
+                            <table class="table display" id="ListDatatableView">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Coustomer</th>
+                                        <th>Country</th>
+                                        <th>Date</th>
+                                        <th>Company Name</th>
+                                        <th>Status</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <h6>1.</h6>
+                                        </td>
+                                        <td>
+                                            <div class="media style-1">
+                                                <img src="{{ url_for('static', filename=  'codebyte/images/users/pic1.jpg')}}" class="img-fluid me-3" alt="">
+                                                <div class="media-body">
+                                                    <h6 class="mb-0">John Doe</h6>
+                                                    <span>johndoe@gmail.com</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <h6>England</h6>
+                                                <span>COde:En</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <h6 class="text-primary">10/21/2016</h6>
+                                                <span>Paid</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            Abbott-Jacobs
+                                        </td>
+                                        <td><span class="badge badge-warning light">Pending</span></td>
+                                        <td>
+                                            <div class="d-flex justify-content-end">
+                                                <a href="javascript:void(0);" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fa fa-pencil"></i></a>
+                                                <a href="javascript:void(0);" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
+                                            </div>												
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <h6>2.</h6>
+                                        </td>
+                                        <td>
+                                            <div class="media style-1">
+                                                <img src="{{ url_for('static', filename=  'codebyte/images/users/pic2.jpg')}}" class="img-fluid me-3" alt="">
+                                                <div class="media-body">
+                                                    <h6 class="mb-0">Alex Smith</h6>
+                                                    <span>alexsmith@gmail.com</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <h6 class="mb-0">England</h6>
+                                                <span>COde:En</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <h6 class="text-primary">10/21/2016</h6>
+                                                <span>Paid</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            Abbott-Jacobs
+                                        </td>
+                                        <td><span class="badge badge-danger light">Closed</span></td>
+                                        <td>
+                                            <div class="d-flex justify-content-end">
+                                                <a href="javascript:void(0);" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fa fa-pencil"></i></a>
+                                                <a href="javascript:void(0);" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
+                                            </div>												
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <h6>3.</h6>
+                                        </td>
+                                        <td>
+                                            <div class="media style-1">
+                                                <img src="{{ url_for('static', filename=  'codebyte/images/users/pic3.jpg')}}" class="img-fluid me-3" alt="">
+                                                <div class="media-body">
+                                                    <h6 class="mb-0">John Doe</h6>
+                                                    <span>johndoe@gmail.com</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <h6>England</h6>
+                                                <span>COde:En</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <h6 class="text-primary">10/21/2016</h6>
+                                                <span>Paid</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            Abbott-Jacobs
+                                        </td>
+                                        <td><span class="badge badge-warning light">Pending</span></td>
+                                        <td>
+                                            <div class="d-flex justify-content-end">
+                                                <a href="javascript:void(0);" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fa fa-pencil"></i></a>
+                                                <a href="javascript:void(0);" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
+                                            </div>												
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <h6>4.</h6>
+                                        </td>
+                                        <td>
+                                            <div class="media style-1">
+                                                <img src="{{ url_for('static', filename=  'codebyte/images/users/pic4.jpg')}}" class="img-fluid me-3" alt="">
+                                                <div class="media-body">
+                                                    <h6 class="mb-0">John Doe</h6>
+                                                    <span>johndoe@gmail.com</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <h6>England</h6>
+                                                <span>COde:En</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <h6 class="text-primary">10/21/2016</h6>
+                                                <span>Paid</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            Abbott-Jacobs
+                                        </td>
+                                        <td><span class="badge badge-warning light">Pending</span></td>
+                                        <td>
+                                            <div class="d-flex justify-content-end">
+                                                <a href="javascript:void(0);" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fa fa-pencil"></i></a>
+                                                <a href="javascript:void(0);" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
+                                            </div>												
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <h6>5.</h6>
+                                        </td>
+                                        <td>
+                                            <div class="media style-1">
+                                                <img src="{{ url_for('static', filename=  'codebyte/images/users/pic5.jpg')}}" class="img-fluid me-3" alt="">
+                                                <div class="media-body">
+                                                    <h6 class="mb-0">John Doe</h6>
+                                                    <span>johndoe@gmail.com</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <h6>England</h6>
+                                                <span>COde:En</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <h6 class="text-primary">10/21/2016</h6>
+                                                <span>Paid</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            Abbott-Jacobs
+                                        </td>
+                                        <td><span class="badge badge-warning light">Pending</span></td>
+                                        <td>
+                                            <div class="d-flex justify-content-end">
+                                                <a href="javascript:void(0);" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fa fa-pencil"></i></a>
+                                                <a href="javascript:void(0);" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
+                                            </div>												
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <h6>6.</h6>
+                                        </td>
+                                        <td>
+                                            <div class="media style-1">
+                                                <img src="{{ url_for('static', filename=  'codebyte/images/users/pic6.jpg')}}" class="img-fluid me-3" alt="">
+                                                <div class="media-body">
+                                                    <h6 class="mb-0">John Doe</h6>
+                                                    <span>johndoe@gmail.com</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <h6>England</h6>
+                                                <span>COde:En</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <h6 class="text-primary">10/21/2016</h6>
+                                                <span>Paid</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            Abbott-Jacobs
+                                        </td>
+                                        <td><span class="badge badge-warning light">Pending</span></td>
+                                        <td>
+                                            <div class="d-flex justify-content-end">
+                                                <a href="javascript:void(0);" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fa fa-pencil"></i></a>
+                                                <a href="javascript:void(0);" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
+                                            </div>												
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <h6>7.</h6>
+                                        </td>
+                                        <td>
+                                            <div class="media style-1">
+                                                <img src="{{ url_for('static', filename=  'codebyte/images/users/pic7.jpg')}}" class="img-fluid me-3" alt="">
+                                                <div class="media-body">
+                                                    <h6 class="mb-0">John Doe</h6>
+                                                    <span>johndoe@gmail.com</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <h6>England</h6>
+                                                <span>COde:En</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <h6 class="text-primary">10/21/2016</h6>
+                                                <span>Paid</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            Abbott-Jacobs
+                                        </td>
+                                        <td><span class="badge badge-warning light">Pending</span></td>
+                                        <td>
+                                            <div class="d-flex justify-content-end">
+                                                <a href="javascript:void(0);" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fa fa-pencil"></i></a>
+                                                <a href="javascript:void(0);" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
+                                            </div>												
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <h6>8.</h6>
+                                        </td>
+                                        <td>
+                                            <div class="media style-1">
+                                                <img src="{{ url_for('static', filename=  'codebyte/images/users/pic8.jpg')}}" class="img-fluid me-3" alt="">
+                                                <div class="media-body">
+                                                    <h6 class="mb-0">John Doe</h6>
+                                                    <span>johndoe@gmail.com</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <h6>England</h6>
+                                                <span>COde:En</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <h6 class="text-primary">10/21/2016</h6>
+                                                <span>Paid</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            Abbott-Jacobs
+                                        </td>
+                                        <td><span class="badge badge-warning light">Pending</span></td>
+                                        <td>
+                                            <div class="d-flex justify-content-end">
+                                                <a href="javascript:void(0);" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fa fa-pencil"></i></a>
+                                                <a href="javascript:void(0);" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
+                                            </div>												
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <h6>9.</h6>
+                                        </td>
+                                        <td>
+                                            <div class="media style-1">
+                                                <img src="{{ url_for('static', filename=  'codebyte/images/users/pic1.jpg')}}" class="img-fluid me-3" alt="">
+                                                <div class="media-body">
+                                                    <h6 class="mb-0">John Doe</h6>
+                                                    <span>johndoe@gmail.com</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <h6>England</h6>
+                                                <span>COde:En</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <h6 class="text-primary">10/21/2016</h6>
+                                                <span>Paid</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            Abbott-Jacobs
+                                        </td>
+                                        <td><span class="badge badge-warning light">Pending</span></td>
+                                        <td>
+                                            <div class="d-flex justify-content-end">
+                                                <a href="javascript:void(0);" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fa fa-pencil"></i></a>
+                                                <a href="javascript:void(0);" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
+                                            </div>												
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <h6>10.</h6>
+                                        </td>
+                                        <td>
+                                            <div class="media style-1">
+                                                <img src="{{ url_for('static', filename=  'codebyte/images/users/pic2.jpg')}}" class="img-fluid me-3" alt="">
+                                                <div class="media-body">
+                                                    <h6 class="mb-0">John Doe</h6>
+                                                    <span>johndoe@gmail.com</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <h6>England</h6>
+                                                <span>COde:En</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <h6 class="text-primary">10/21/2016</h6>
+                                                <span>Paid</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            Abbott-Jacobs
+                                        </td>
+                                        <td><span class="badge badge-warning light">Pending</span></td>
+                                        <td>
+                                            <div class="d-flex justify-content-end">
+                                                <a href="javascript:void(0);" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fa fa-pencil"></i></a>
+                                                <a href="javascript:void(0);" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
+                                            </div>												
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <h6>11.</h6>
+                                        </td>
+                                        <td>
+                                            <div class="media style-1">
+                                                <img src="{{ url_for('static', filename=  'codebyte/images/users/pic3.jpg')}}" class="img-fluid me-3" alt="">
+                                                <div class="media-body">
+                                                    <h6 class="mb-0">John Doe</h6>
+                                                    <span>johndoe@gmail.com</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <h6>England</h6>
+                                                <span>COde:En</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <h6 class="text-primary">10/21/2016</h6>
+                                                <span>Paid</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            Abbott-Jacobs
+                                        </td>
+                                        <td><span class="badge badge-warning light">Pending</span></td>
+                                        <td>
+                                            <div class="d-flex justify-content-end">
+                                                <a href="javascript:void(0);" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fa fa-pencil"></i></a>
+                                                <a href="javascript:void(0);" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
+                                            </div>												
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+        <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Add Coustomer</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                <div class="col-xl-12">
+                    <form>
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                          </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+        <button type="button" class="btn btn-danger light" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+    </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block additional_js %}
+<script src="{{ url_for('static', filename='codebyte/vendor/datatables/js/jquery.dataTables.min.js')}}"></script>
+<script src="{{ url_for('static', filename='codebyte/js/plugins-init/datatables.init.js')}}"></script>
+{% endblock %}

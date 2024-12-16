@@ -1,0 +1,267 @@
+{% extends 'codebyte/elements/layouts/admin.html' %}
+        
+{% block additional_css %}
+{% endblock %}
+		
+{% block content %}
+<div class="content-body">
+    <!-- row -->
+    <div class="container-fluid">
+        <div class="page-titles">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="javascript:void(0)">Blog</a></li>
+                <li class="breadcrumb-item  active"><a href="javascript:void(0)">Blog Home</a></li>
+            </ol>
+        </div>
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="row g-2">
+                    <div class="col-xl-8 col-lg-7">
+                        <div class="card ic-blog-bx h-auto">
+                            <div class="card-body p-2">
+                                <div class="ic-media">
+                                    <img src="{{ url_for('static', filename=  'codebyte/images/blog/1.jpg')}}" class="rounded" alt="">
+                                </div>
+                                <div class="ic-content px-2">
+                                    <span class="badge badge-outline-primary">Business</span>
+                                    <a href=""><h3 class="mt-2 mb-1">Unlocking Business Efficiency With Sass Solutions</h3></a>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore laudantium libero incidunt.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-5">
+                        <div class="card ic-blog-grid h-auto mb-2">
+                            <div class="card-body p-0">
+                                <div class="ic-blog-media">
+                                    <img src="{{ url_for('static', filename=  'codebyte/images/blog/2.jpg')}}" class="w-100 rounded" alt="">
+                                    <div class="ic-blog-info">
+                                        <div class="ic-meta">
+                                            <ul>
+                                                
+                                                <li><a href="javascript:void(0);" class="me-2 text-white">lifestyle</a></li>
+                                                <li><a href="javascript:void(0);" class="text-white">Wooden</a></li>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <h4><a href="" class="text-white">Embrace Luxury Living with our Elegant Couches</a></h4>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="card ic-blog-grid h-auto">
+                            <div class="card-body p-0">
+                                <div class="ic-blog-media">
+                                    <img src="{{ url_for('static', filename=  'codebyte/images/blog/3.jpg')}}" class="w-100 rounded" alt="">
+                                    <div class="ic-blog-info">
+                                        <div class="ic-meta">
+                                            <ul>
+                                                
+                                                <li><a href="javascript:void(0);" class="me-2 text-white">lifestyle</a></li>
+                                                <li><a href="javascript:void(0);" class="text-white">Wooden</a></li>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <h4><a href="" class="text-white">Embrace Luxury Living with our Elegant Couches</a></h4>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-12">
+                <div class="row g-2">
+                    <div class="col-xl-3 col-sm-6">
+                        <div class="card">
+                            <div class="card-body ic-blog-grid p-2">
+                                <div class="ic-blog-media">
+                                    <img src="{{ url_for('static', filename=  'codebyte/images/blog/2.jpg')}}" class="w-100 rounded ic-post" alt="">
+
+                                </div>
+                                <div class="ic-content p-2 pt-3">
+                                    <span class="badge badge-outline-primary">Business</span>
+                                    <a href=""><h4 class="mt-2">The Role of SaaS Administration in Ensuring Data Security</h4></a>
+                                    <p class="mb-0">This post explores the critical role of SaaS administrators in maintaining data security within cloud-based applications</p>
+                                    <div class="mt-2">
+                                        <img src="{{ url_for('static', filename=  'codebyte/images/contacts/pic2.jpg')}}" class="avatar rounded-circle me-1 small-post" alt="">
+                                        <span class="me-2">Yatin xarma</span>
+                                        <span>3 Min Read</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-sm-6">
+                        <div class="card">
+                            <div class="card-body ic-blog-grid p-2">
+                                <div class="ic-blog-media">
+                                    <img src="{{ url_for('static', filename=  'codebyte/images/blog/2.jpg')}}" class="w-100 rounded ic-post" alt="">
+
+                                </div>
+                                <div class="ic-content p-2 pt-3">
+                                    <span class="badge badge-outline-primary">Software</span>
+                                    <a href=""><h4 class="mt-2">The Role of SaaS Administration in Ensuring Data Security</h4></a>
+                                    <p class="mb-0">This post explores the critical role of SaaS administrators in maintaining data security within cloud-based applications</p>
+                                    <div class="mt-2">
+                                        <img src="{{ url_for('static', filename=  'codebyte/images/contacts/pic2.jpg')}}" class="avatar rounded-circle me-1 small-post" alt="">
+                                        <span class="me-2">Almash Khan</span>
+                                        <span>3 Min Read</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-sm-6">
+                        <div class="card">
+                            <div class="card-body ic-blog-grid p-2">
+                                <div class="ic-blog-media">
+                                    <img src="{{ url_for('static', filename=  'codebyte/images/blog/4.jpg')}}" class="w-100 rounded ic-post" alt="">
+
+                                </div>
+                                <div class="ic-content p-2 pt-3">
+                                    <span class="badge badge-outline-primary">Business</span>
+                                    <a href=""><h4 class="mt-2">The Role of SaaS Administration in Ensuring Data Security</h4></a>
+                                    <p class="mb-0">This post explores the critical role of SaaS administrators in maintaining data security within cloud-based applications</p>
+                                    <div class="mt-2">
+                                        <img src="{{ url_for('static', filename=  'codebyte/images/contacts/pic2.jpg')}}" class="avatar rounded-circle me-1 small-post" alt="">
+                                        <span class="me-2">Yatin xarma</span>
+                                        <span>3 Min Read</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-sm-6">
+                        <div class="card">
+                            <div class="card-body ic-blog-grid p-2">
+                                <div class="ic-blog-media">
+                                    <img src="{{ url_for('static', filename=  'codebyte/images/blog/3.jpg')}}" class="w-100 rounded ic-post" alt="">
+
+                                </div>
+                                <div class="ic-content p-2 pt-3">
+                                    <span class="badge badge-outline-primary">Business</span>
+                                    <a href=""><h4 class="mt-2">The Role of SaaS Administration in Ensuring Data Security</h4></a>
+                                    <p class="mb-0">This post explores the critical role of SaaS administrators in maintaining data security within cloud-based applications</p>
+                                    <div class="mt-2">
+                                        <img src="{{ url_for('static', filename=  'codebyte/images/contacts/pic2.jpg')}}" class="avatar rounded-circle me-1 small-post" alt="">
+                                        <span class="me-2">Yatin xarma</span>
+                                        <span>3 Min Read</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-12">
+                <div class="d-flex align-items-center justify-content-between mb-4">
+                    <h4 class="card-title">Editor Choice</h4>
+                    <a href="" class="text-primary">View All</a>
+                </div>
+                <div class="row g-2">
+                    <div class="col-xl-3 col-sm-6">
+                        <div class="card">
+                            <div class="card-body ic-blog-grid style-1 p-2">
+                                <div class="ic-blog-media">
+                                    <img src="{{ url_for('static', filename=  'codebyte/images/blog/2.jpg')}}" class="w-100 rounded ic-post" alt="">
+
+                                </div>
+                                <div class="ic-content p-2 pt-3">
+                                    <div class="ic-meta mb-2">
+                                        <ul>
+                                            <li class="dz-comment"><a href="javascript:void(0);">0 Comment</a></li>
+                                            <li><a href="javascript:void(0);">Sep 10, 2023</a></li>
+                                        </ul>
+                                    </div> 
+                                    <h5 class="card-title--medium"><a href="javascript:void(0);" class="text-dark">Tuning an Acoustic and Electric Guitar in 6 Steps</a></h5>
+                                    <p>Lorem Ipsum is simply dummy text of has the printing and has been typesetting industry. </p>
+                                    <div class="read-btn">
+                                        <a href="" class="btn btn-primary btn-sm  text-uppercase">read more</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-sm-6">
+                        <div class="card">
+                            <div class="card-body ic-blog-grid style-1 p-2">
+                                <div class="ic-blog-media">
+                                    <img src="{{ url_for('static', filename=  'codebyte/images/blog/3.jpg')}}" class="w-100 rounded ic-post" alt="">
+
+                                </div>
+                                <div class="ic-content p-2 pt-3">
+                                    <div class="ic-meta mb-2">
+                                        <ul>
+                                            <li class="dz-comment"><a href="javascript:void(0);">0 Comment</a></li>
+                                            <li><a href="javascript:void(0);">Sep 10, 2023</a></li>
+                                        </ul>
+                                    </div> 
+                                    <h5 class="card-title--medium"><a href="javascript:void(0);" class="text-dark">Tuning an Acoustic and Electric Guitar in 6 Steps</a></h5>
+                                    <p>Lorem Ipsum is simply dummy text of has the printing and has been typesetting industry. </p>
+                                    <div class="read-btn">
+                                        <a href="" class="btn btn-primary btn-sm  text-uppercase">read more</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-sm-6">
+                        <div class="card">
+                            <div class="card-body ic-blog-grid style-1 p-2">
+                                <div class="ic-blog-media">
+                                    <img src="{{ url_for('static', filename=  'codebyte/images/blog/4.jpg')}}" class="w-100 rounded ic-post" alt="">
+
+                                </div>
+                                <div class="ic-content p-2 pt-3">
+                                    <div class="ic-meta mb-2">
+                                        <ul>
+                                            <li class="dz-comment"><a href="javascript:void(0);">0 Comment</a></li>
+                                            <li><a href="javascript:void(0);">Sep 10, 2023</a></li>
+                                        </ul>
+                                    </div> 
+                                    <h5 class="card-title--medium"><a href="javascript:void(0);" class="text-dark">Tuning an Acoustic and Electric Guitar in 6 Steps</a></h5>
+                                    <p>Lorem Ipsum is simply dummy text of has the printing and has been typesetting industry. </p>
+                                    <div class="read-btn">
+                                        <a href="" class="btn btn-primary btn-sm  text-uppercase">read more</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-sm-6">
+                        <div class="card">
+                            <div class="card-body ic-blog-grid style-1 p-2">
+                                <div class="ic-blog-media">
+                                    <img src="{{ url_for('static', filename=  'codebyte/images/blog/3.jpg')}}" class="w-100 rounded ic-post" alt="">
+
+                                </div>
+                                <div class="ic-content p-2 pt-3">
+                                    <div class="ic-meta mb-2">
+                                        <ul>
+                                            <li class="dz-comment"><a href="javascript:void(0);">0 Comment</a></li>
+                                            <li><a href="javascript:void(0);">Sep 10, 2023</a></li>
+                                        </ul>
+                                    </div> 
+                                    <h5 class="card-title--medium"><a href="javascript:void(0);" class="text-dark">Tuning an Acoustic and Electric Guitar in 6 Steps</a></h5>
+                                    <p>Lorem Ipsum is simply dummy text of has the printing and has been typesetting industry. </p>
+                                    <div class="read-btn">
+                                        <a href="" class="btn btn-primary btn-sm  text-uppercase">read more</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block additional_js %}
+{% endblock %}

@@ -1,0 +1,226 @@
+[
+  {
+    "category": "BMC",
+    "sub_category": "IPMITool",
+    "function": "Set to clear SEL",
+    "category_parameter": "in band",
+    "command_parameter": "",
+    "check_keywords": ""
+  },
+  {
+    "category": "OS",
+    "sub_category": "Linux",
+    "function": "Set to clear dmesg",
+    "category_parameter": "",
+    "command_parameter": "",
+    "check_keywords": ""
+  },
+  {
+    "category": "OS",
+    "sub_category": "Linux",
+    "function": "Set power off",
+    "category_parameter": "",
+    "command_parameter": "",
+    "check_keywords": ""
+  },
+  {
+    "category": "Common",
+    "sub_category": "Wait specific time",
+    "function": "Wait",
+    "category_parameter": "10",
+    "command_parameter": "",
+    "check_keywords": ""
+  },
+  {
+    "category": "Common",
+    "sub_category": "Check OS status",
+    "function": "Get Ping OS status",
+    "category_parameter": "",
+    "command_parameter": "",
+    "check_keywords": "0 received"
+  },
+  {
+    "category": "BMC",
+    "sub_category": "IPMITool",
+    "function": "Get chassis power",
+    "category_parameter": "out of band",
+    "command_parameter": "",
+    "check_keywords": "off"
+  },
+  {
+    "category": "Common",
+    "sub_category": "Wait specific time",
+    "function": "Wait",
+    "category_parameter": "20",
+    "command_parameter": "",
+    "check_keywords": ""
+  },
+  {
+    "category": "BMC",
+    "sub_category": "IPMITool",
+    "function": "Set chassis power on",
+    "category_parameter": "out of band",
+    "command_parameter": "",
+    "check_keywords": ""
+  },
+  {
+    "category": "Common",
+    "sub_category": "Wait specific time",
+    "function": "Wait",
+    "category_parameter": "10",
+    "command_parameter": "",
+    "check_keywords": ""
+  },
+  {
+    "category": "BMC",
+    "sub_category": "IPMITool",
+    "function": "Get chassis power",
+    "category_parameter": "out of band",
+    "command_parameter": "",
+    "check_keywords": "on"
+  },
+  {
+    "category": "Common",
+    "sub_category": "Wait specific time",
+    "function": "Wait",
+    "category_parameter": "60",
+    "command_parameter": "",
+    "check_keywords": ""
+  },
+  {
+    "category": "Common",
+    "sub_category": "Check OS status",
+    "function": "Get Ping OS status",
+    "category_parameter": "",
+    "command_parameter": "",
+    "check_keywords": "5 received"
+  },
+  {
+    "category": "Common",
+    "sub_category": "Wait specific time",
+    "function": "Wait",
+    "category_parameter": "30",
+    "command_parameter": "",
+    "check_keywords": ""
+  },
+  {
+    "category": "OS",
+    "sub_category": "Linux",
+    "function": "Get CPU info",
+    "category_parameter": "",
+    "command_parameter": "",
+    "check_keywords": ""
+  },
+  {
+    "category": "OS",
+    "sub_category": "Linux",
+    "function": "Get Memory info by meminfo",
+    "category_parameter": "",
+    "command_parameter": "",
+    "check_keywords": ""
+  },
+  {
+    "category": "OS",
+    "sub_category": "Linux",
+    "function": "Get Memory info by dmidecode",
+    "category_parameter": "",
+    "command_parameter": "",
+    "check_keywords": ""
+  },
+  {
+    "category": "OS",
+    "sub_category": "Linux",
+    "function": "Get PCI device",
+    "category_parameter": "",
+    "command_parameter": "",
+    "check_keywords": ""
+  },
+  {
+    "category": "OS",
+    "sub_category": "Linux",
+    "function": "Get Drive device",
+    "category_parameter": "",
+    "command_parameter": "",
+    "check_keywords": ""
+  },
+  {
+    "category": "OS",
+    "sub_category": "Linux",
+    "function": "Get USB device",
+    "category_parameter": "",
+    "command_parameter": "",
+    "check_keywords": ""
+  },
+  {
+    "category": "OS",
+    "sub_category": "Linux",
+    "function": "Get Network device",
+    "category_parameter": "",
+    "command_parameter": "",
+    "check_keywords": ""
+  },
+  {
+    "category": "OS",
+    "sub_category": "Linux",
+    "function": "Get SUT info by dmidecode",
+    "category_parameter": "",
+    "command_parameter": "",
+    "check_keywords": ""
+  },
+  {
+    "category": "BMC",
+    "sub_category": "IPMITool",
+    "function": "Get BMC info",
+    "category_parameter": "in band",
+    "command_parameter": "",
+    "check_keywords": ""
+  },
+  {
+    "category": "BMC",
+    "sub_category": "IPMITool",
+    "function": "Get LAN info",
+    "category_parameter": "in band",
+    "command_parameter": "",
+    "check_keywords": ""
+  },
+  {
+    "category": "BMC",
+    "sub_category": "IPMITool",
+    "function": "Get user info",
+    "category_parameter": "in band",
+    "command_parameter": "",
+    "check_keywords": ""
+  },
+  {
+    "category": "BMC",
+    "sub_category": "IPMITool",
+    "function": "Get sensor",
+    "category_parameter": "in band",
+    "command_parameter": "",
+    "check_keywords": ""
+  },
+  {
+    "category": "BMC",
+    "sub_category": "IPMITool",
+    "function": "Get FRU",
+    "category_parameter": "in band",
+    "command_parameter": "",
+    "check_keywords": ""
+  },
+  {
+    "category": "BMC",
+    "sub_category": "IPMITool",
+    "function": "Get SEL",
+    "category_parameter": "in band",
+    "command_parameter": "",
+    "check_keywords": "fail;critical;warning;error"
+  },
+  {
+    "category": "OS",
+    "sub_category": "Linux",
+    "function": "Get Log by dmesg",
+    "category_parameter": "",
+    "command_parameter": "",
+    "check_keywords": "fail;critical;warning;error"
+  }
+]

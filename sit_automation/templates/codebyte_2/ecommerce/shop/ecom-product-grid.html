@@ -1,0 +1,419 @@
+{% extends 'codebyte/elements/layouts/overflow-visible.html' %}
+
+        
+{% block additional_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename=  'codebyte/vendor/nouislider/nouislider.min.css')}}">
+{% endblock %}
+        
+{% block content %}
+<div class="content-body">
+    <div class="container-fluid">
+        <div class="page-titles">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="javascript:void(0)">Shop</a></li>
+                <li class="breadcrumb-item active"><a href="javascript:void(0)">Product Grid</a></li>
+            </ol>
+        </div>
+        <div class="row">
+            <div class="col-xl-2 col-xxl-3 col-md-4  mail-left-body border-end-0">
+                <div class="filter-sidebar">
+                    <div class="card">
+                        <div class="card-header p-4 border-0 pb-0">
+                            <h5 class="mb-0"><i class="flaticon-filter me-2"></i>Filters</h5>
+                            <a href="javascript:void(0);" class="text-primary">Clear All</a>
+                        </div>
+                        <div class="card-body p-0">
+                            <div class="px-4 mb-3 pt-3">
+                                <h6 class="ft-title">Categories</h6>
+                                    <div class="form-check  check-xs">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                        <label class="form-check-label" for="flexCheckDefault">
+                                        Shop
+                                        </label><span class="badge badge-xs badge-light float-end">2,712</span>
+                                     </div>
+                                    <div class="form-check check-xs">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault-1">
+                                        <label class="form-check-label" for="flexCheckDefault-1">
+                                        Watch
+                                        </label><span class="badge badge-xs  badge-light float-end">530</span>
+                                    </div>
+                                    <div class="form-check  check-xs">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault-3">
+                                        <label class="form-check-label" for="flexCheckDefault-3">
+                                        Dresss
+                                        </label><span class="badge badge-xs  badge-light float-end">250</span>
+                                    </div>
+                            </div>
+                            <div class="px-4 mb-3">
+                                <h6 class="ft-title">Price</h6>
+                                    <div class="form-check  check-xs">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault-4">
+                                        <label class="form-check-label" for="flexCheckDefault-4">
+                                            $0 - $599 
+                                        </label>
+                                     </div>
+                                    <div class="form-check check-xs">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault-5">
+                                        <label class="form-check-label" for="flexCheckDefault-5">
+                                            $0 - $599 
+                                        </label>
+                                    </div>
+                                    <div class="form-check check-xs">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault-6">
+                                        <label class="form-check-label" for="flexCheckDefault-6">
+                                            $0 - $599 
+                                        </label>
+                                    </div>
+                            </div>
+                            <div class="px-4 mb-3">
+                                    <h6 class="ft-title">Price Range</h6>
+                                     <div class="price-slide range-slider mt-3">
+                                        <div class="price">
+                                            <div class="range-slider style-1">
+                                            <div id="slider-tooltips-product" class="mb-3"></div>
+                                            <span class="example-val" id="slider-margin-value-min"></span>
+                                            <span class="example-val" id="slider-margin-value-max"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="px-4 mb-3">
+                                <h6 class="ft-title">Discount</h6>
+                             
+                                    <div class="form-check check-xs">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault-7">
+                                        <label class="form-check-label" for="flexCheckDefault-7">
+                                            0% - 20% 
+                                        </label>
+                                      </div>
+                                 
+                                
+                                    <div class="form-check check-xs">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault-8">
+                                        <label class="form-check-label" for="flexCheckDefault-8">
+                                            40% - 60% 
+                                        </label>
+                                      </div>
+                                      <div class="form-check check-xs">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault-9">
+                                        <label class="form-check-label" for="flexCheckDefault-9">
+                                            0% - 20% 
+                                        </label>
+                                      </div>
+                                 
+                                
+                                    <div class="form-check check-xs">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault-10">
+                                        <label class="form-check-label" for="flexCheckDefault-10">
+                                            40% - 60% 
+                                        </label>
+                                      </div>
+                                
+                            </div>
+                        
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="d-md-none d-flex align-items-center">
+                <h4 class="card-title--medium mb-0">Filter</h4>
+                <div class="email-tools-box p-0">
+                    <i class="flaticon-filter"></i>
+                </div>
+            </div>
+            <div class="col-xl-10 col-xxl-9 col-md-8 mt-4 mt-md-0">
+                <div class="row">
+                    <div class="col-xl-3 col-xxl-4  col-md-6 col-sm-6">
+                        <div class="card">
+                            <div class="card-body product-card">
+                                <div class="dz-product-bx">
+                                    <img loading="lazy" class="dz-media" src="{{ url_for('static', filename=  'codebyte/images/product/1.jpg')}}" alt="">
+                                    <img loading="lazy" class="dz-media-1" src="{{ url_for('static', filename=  'codebyte/images/product/pic1.jpg')}}" alt="">
+                                    <div class="dz-side-view">
+                                        <a href="javascript:void(0)" class="wishlist mb-2">
+                                            <i class="fa-regular fa-heart"></i>
+                                        </a>
+                                        <a href="javascript:void(0)" class="wishlist">
+                                            <i class="fa-regular fa-eye"></i>
+                                        </a>
+                                        
+
+                                    </div>
+                                </div>
+                                <div class="new-arrival-content text-center mt-3">
+                                        <h4><a href="/ecom-product-detail">Bonorum et Malorum</a></h4>
+                                        <ul class="star-rating">
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa-solid fa-star-half-stroke"></i></li>
+                                            <li><i class="fa-solid fa-star-half-stroke"></i></li>
+                                        </ul>
+                                        <del class="discount">$761.00</del>
+                                        <span class="price">$159</span>
+                                    </div>
+                                
+                            </div>
+                        </div>
+                    
+                    </div>
+                    <div class="col-xl-3 col-xxl-4  col-md-6 col-sm-6">
+                        <div class="card">
+                            <div class="card-body product-card">
+                                <div class="dz-product-bx">
+                                    <img loading="lazy" class="dz-media" src="{{ url_for('static', filename=  'codebyte/images/product/2.jpg')}}" alt="">
+                                    <img loading="lazy" class="dz-media-1" src="{{ url_for('static', filename=  'codebyte/images/product/pic2.jpg')}}" alt="">
+                                    <div class="dz-side-view">
+                                        <a href="javascript:void(0)" class="wishlist mb-2">
+                                            <i class="fa-regular fa-heart"></i>
+                                        </a>
+                                        <a href="javascript:void(0)" class="wishlist">
+                                            <i class="fa-regular fa-eye"></i>
+                                        </a>
+                                        
+
+                                    </div>
+                                </div>
+                                <div class="new-arrival-content text-center mt-3">
+                                        <h4><a href="/ecom-product-detail">Bonorum et Malorum</a></h4>
+                                        <ul class="star-rating">
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa-solid fa-star-half-stroke"></i></li>
+                                            <li><i class="fa-solid fa-star-half-stroke"></i></li>
+                                        </ul>
+                                        <del class="discount">$761.00</del>
+                                        <span class="price">$159</span>
+                                    </div>
+                                
+                            </div>
+                        </div>
+                    
+                    </div>
+                    <div class="col-xl-3 col-xxl-4  col-md-6 col-sm-6">
+                        <div class="card">
+                            <div class="card-body product-card">
+                                <div class="dz-product-bx">
+                                    <img loading="lazy" class="dz-media" src="{{ url_for('static', filename=  'codebyte/images/product/3.jpg')}}" alt="">
+                                    <img loading="lazy" class="dz-media-1" src="{{ url_for('static', filename=  'codebyte/images/product/pic3.jpg')}}" alt="">
+                                    <div class="dz-side-view">
+                                        <a href="javascript:void(0)" class="wishlist mb-2">
+                                            <i class="fa-regular fa-heart"></i>
+                                        </a>
+                                        <a href="javascript:void(0)" class="wishlist">
+                                            <i class="fa-regular fa-eye"></i>
+                                        </a>
+                                        
+
+                                    </div>
+                                </div>
+                                <div class="new-arrival-content text-center mt-3">
+                                        <h4><a href="/ecom-product-detail">Bonorum et Malorum</a></h4>
+                                        <ul class="star-rating">
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa-solid fa-star-half-stroke"></i></li>
+                                            <li><i class="fa-solid fa-star-half-stroke"></i></li>
+                                        </ul>
+                                        <del class="discount">$761.00</del>
+                                        <span class="price">$159</span>
+                                    </div>
+                                
+                            </div>
+                        </div>
+                    
+                    </div>
+                    <div class="col-xl-3 col-xxl-4  col-md-6 col-sm-6">
+                        <div class="card">
+                            <div class="card-body product-card">
+                                <div class="dz-product-bx">
+                                    <img loading="lazy" class="dz-media" src="{{ url_for('static', filename=  'codebyte/images/product/4.jpg')}}" alt="">
+                                    <img loading="lazy" class="dz-media-1" src="{{ url_for('static', filename=  'codebyte/images/product/pic4.jpg')}}" alt="">
+                                    <div class="dz-side-view">
+                                        <a href="javascript:void(0)" class="wishlist mb-2">
+                                            <i class="fa-regular fa-heart"></i>
+                                        </a>
+                                        <a href="javascript:void(0)" class="wishlist">
+                                            <i class="fa-regular fa-eye"></i>
+                                        </a>
+                                        
+
+                                    </div>
+                                </div>
+                                <div class="new-arrival-content text-center mt-3">
+                                        <h4><a href="/ecom-product-detail">Bonorum et Malorum</a></h4>
+                                        <ul class="star-rating">
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa-solid fa-star-half-stroke"></i></li>
+                                            <li><i class="fa-solid fa-star-half-stroke"></i></li>
+                                        </ul>
+                                        <del class="discount">$761.00</del>
+                                        <span class="price">$159</span>
+                                    </div>
+                                
+                            </div>
+                        </div>
+                    
+                    </div>
+                    <div class="col-xl-3 col-xxl-4  col-md-6 col-sm-6">
+                        <div class="card">
+                            <div class="card-body product-card">
+                                <div class="dz-product-bx">
+                                    <img loading="lazy" class="dz-media" src="{{ url_for('static', filename=  'codebyte/images/product/5.jpg')}}" alt="">
+                                    <img loading="lazy" class="dz-media-1" src="{{ url_for('static', filename=  'codebyte/images/product/pic5.jpg')}}" alt="">
+                                    <div class="dz-side-view">
+                                        <a href="javascript:void(0)" class="wishlist mb-2">
+                                            <i class="fa-regular fa-heart"></i>
+                                        </a>
+                                        <a href="javascript:void(0)" class="wishlist">
+                                            <i class="fa-regular fa-eye"></i>
+                                        </a>
+                                        
+
+                                    </div>
+                                </div>
+                                <div class="new-arrival-content text-center mt-3">
+                                        <h4><a href="/ecom-product-detail">Bonorum et Malorum</a></h4>
+                                        <ul class="star-rating">
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa-solid fa-star-half-stroke"></i></li>
+                                            <li><i class="fa-solid fa-star-half-stroke"></i></li>
+                                        </ul>
+                                        <del class="discount">$761.00</del>
+                                        <span class="price">$159</span>
+                                    </div>
+                                
+                            </div>
+                        </div>
+                    
+                    </div>
+                    <div class="col-xl-3 col-xxl-4  col-md-6 col-sm-6">
+                        <div class="card">
+                            <div class="card-body product-card">
+                                <div class="dz-product-bx">
+                                    <img loading="lazy" class="dz-media" src="{{ url_for('static', filename=  'codebyte/images/product/6.jpg')}}" alt="">
+                                    <img loading="lazy" class="dz-media-1" src="{{ url_for('static', filename=  'codebyte/images/product/pic6.jpg')}}" alt="">
+                                    <div class="dz-side-view">
+                                        <a href="javascript:void(0)" class="wishlist mb-2">
+                                            <i class="fa-regular fa-heart"></i>
+                                        </a>
+                                        <a href="javascript:void(0)" class="wishlist">
+                                            <i class="fa-regular fa-eye"></i>
+                                        </a>
+                                        
+
+                                    </div>
+                                </div>
+                                <div class="new-arrival-content text-center mt-3">
+                                        <h4><a href="/ecom-product-detail">Bonorum et Malorum</a></h4>
+                                        <ul class="star-rating">
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa-solid fa-star-half-stroke"></i></li>
+                                            <li><i class="fa-solid fa-star-half-stroke"></i></li>
+                                        </ul>
+                                        <del class="discount">$761.00</del>
+                                        <span class="price">$159</span>
+                                    </div>
+                                
+                            </div>
+                        </div>
+                    
+                    </div>
+                    <div class="col-xl-3 col-xxl-4  col-md-6 col-sm-6">
+                        <div class="card">
+                            <div class="card-body product-card">
+                                <div class="dz-product-bx">
+                                    <img loading="lazy" class="dz-media" src="{{ url_for('static', filename=  'codebyte/images/product/7.jpg')}}" alt="">
+                                    <img loading="lazy" class="dz-media-1" src="{{ url_for('static', filename=  'codebyte/images/product/pic7.jpg')}}" alt="">
+                                    <div class="dz-side-view">
+                                        <a href="javascript:void(0)" class="wishlist mb-2">
+                                            <i class="fa-regular fa-heart"></i>
+                                        </a>
+                                        <a href="javascript:void(0)" class="wishlist">
+                                            <i class="fa-regular fa-eye"></i>
+                                        </a>
+                                        
+
+                                    </div>
+                                </div>
+                                <div class="new-arrival-content text-center mt-3">
+                                        <h4><a href="/ecom-product-detail">Bonorum et Malorum</a></h4>
+                                        <ul class="star-rating">
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa-solid fa-star-half-stroke"></i></li>
+                                            <li><i class="fa-solid fa-star-half-stroke"></i></li>
+                                        </ul>
+                                        <del class="discount">$761.00</del>
+                                        <span class="price">$159</span>
+                                    </div>
+                                
+                            </div>
+                        </div>
+                    
+                    </div>
+                    <div class="col-xl-3 col-xxl-4  col-md-6 col-sm-6">
+                        <div class="card">
+                            <div class="card-body product-card">
+                                <div class="dz-product-bx">
+                                    <img loading="lazy" class="dz-media" src="{{ url_for('static', filename=  'codebyte/images/product/1.jpg')}}" alt="">
+                                    <img loading="lazy" class="dz-media-1" src="{{ url_for('static', filename=  'codebyte/images/product/pic1.jpg')}}" alt="">
+                                    <div class="dz-side-view">
+                                        <a href="javascript:void(0)" class="wishlist mb-2">
+                                            <i class="fa-regular fa-heart"></i>
+                                        </a>
+                                        <a href="javascript:void(0)" class="wishlist">
+                                            <i class="fa-regular fa-eye"></i>
+                                        </a>
+                                        
+
+                                    </div>
+                                </div>
+                                <div class="new-arrival-content text-center mt-3">
+                                        <h4><a href="/ecom-product-detail">Bonorum et Malorum</a></h4>
+                                        <ul class="star-rating">
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa-solid fa-star-half-stroke"></i></li>
+                                            <li><i class="fa-solid fa-star-half-stroke"></i></li>
+                                        </ul>
+                                        <del class="discount">$761.00</del>
+                                        <span class="price">$159</span>
+                                    </div>
+                                
+                            </div>
+                        </div>
+                    
+                    </div>
+                    
+                    
+                    
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block additional_js %}
+<script src="{{ url_for('static', filename='codebyte/vendor/nouislider/nouislider.min.js')}}"></script>
+<script src="{{ url_for('static', filename='codebyte/vendor/wnumb/wNumb.js')}}"></script>
+<script>
+    $(".email-tools-box").on('click', function () {
+        $(' .mail-left-body ,.email-tools-box').toggleClass("active");
+    });
+</script>
+{% endblock %}

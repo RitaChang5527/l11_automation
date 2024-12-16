@@ -1,0 +1,74 @@
+Device Model:     MK000960GZXRB
+Serial Number:    S6M7NE0T800257
+Firmware Version: HPG0
+User Capacity:    960,197,124,096 bytes [960 GB]
+SATA Version is:  SATA 3.3, 6.0 Gb/s (current: 6.0 Gb/s)
+SMART overall-health self-assessment test result: PASSED
+					without error or no self-test has ever 
+Error logging capability:        (0x01)	Error logging supported.
+ID# ATTRIBUTE_NAME          FLAGS    VALUE WORST THRESH FAIL RAW_VALUE
+175 Program_Fail_Count_Chip PO--CK   100   100   001    -    0
+187 Reported_Uncorrect      -O--CK   100   100   000    -    0
+198 Offline_Uncorrectable   ----C-   100   100   000    -    0
+199 UDMA_CRC_Error_Count    -OSRCK   100   100   000    -    0
+                            ||||___ R error rate
+                            |______ P prefailure warning
+0x03       GPL     R/O      1  Ext. Comprehensive SMART error log
+0x10       GPL     R/O      1  NCQ Command Error log
+SMART Extended Comprehensive Error Log Version: 1 (1 sectors)
+No Errors Logged
+SCT Error Recovery Control command not supported
+0x04  =====  =               =  ===  == General Errors Statistics (rev 1) ==
+0x04  0x008  4               0  ---  Number of Reported Uncorrectable Errors
+0x06  0x018  4               0  ---  Number of Interface CRC Errors
+0x0001  2            0  Command failed due to ICRC error
+0x0002  2            0  R_ERR response for data FIS
+0x0003  2            0  R_ERR response for device-to-host data FIS
+0x0004  2            0  R_ERR response for host-to-device data FIS
+0x0005  2            0  R_ERR response for non-data FIS
+0x0006  2            0  R_ERR response for device-to-host non-data FIS
+0x0007  2            0  R_ERR response for host-to-device non-data FIS
+0x000b  2            0  CRC errors within host-to-device FIS
+0x000d  2            0  Non-CRC errors within host-to-device FIS
+0x000f  2            0  R_ERR response for host-to-device data FIS, CRC
+0x0010  2            0  R_ERR response for host-to-device data FIS, non-CRC
+0x0012  2            0  R_ERR response for host-to-device non-data FIS, CRC
+0x0013  2            0  R_ERR response for host-to-device non-data FIS, non-CRC
+
+Device Model:     MK000960GZXRB
+Serial Number:    S6M7NE0T800257
+Firmware Version: HPG0
+User Capacity:    960,197,124,096 bytes [960 GB]
+SATA Version is:  SATA 3.3, 6.0 Gb/s (current: 6.0 Gb/s)
+SMART overall-health self-assessment test result: PASSED
+					without error or no self-test has ever 
+Error logging capability:        (0x01)	Error logging supported.
+ID# ATTRIBUTE_NAME          FLAGS    VALUE WORST THRESH FAIL RAW_VALUE
+175 Program_Fail_Count_Chip PO--CK   100   100   001    -    0
+187 Reported_Uncorrect      -O--CK   100   100   000    -    0
+198 Offline_Uncorrectable   ----C-   100   100   000    -    0
+199 UDMA_CRC_Error_Count    -OSRCK   100   100   000    -    0
+                            ||||___ R error rate
+                            |______ P prefailure warning
+0x03       GPL     R/O      1  Ext. Comprehensive SMART error log
+0x10       GPL     R/O      1  NCQ Command Error log
+SMART Extended Comprehensive Error Log Version: 1 (1 sectors)
+No Errors Logged
+SCT Error Recovery Control command not supported
+0x04  =====  =               =  ===  == General Errors Statistics (rev 1) ==
+0x04  0x008  4               0  ---  Number of Reported Uncorrectable Errors
+0x06  0x018  4               0  ---  Number of Interface CRC Errors
+0x0001  2            0  Command failed due to ICRC error
+0x0002  2            0  R_ERR response for data FIS
+0x0003  2            0  R_ERR response for device-to-host data FIS
+0x0004  2            0  R_ERR response for host-to-device data FIS
+0x0005  2            0  R_ERR response for non-data FIS
+0x0006  2            0  R_ERR response for device-to-host non-data FIS
+0x0007  2            0  R_ERR response for host-to-device non-data FIS
+0x000b  2            0  CRC errors within host-to-device FIS
+0x000d  2            0  Non-CRC errors within host-to-device FIS
+0x000f  2            0  R_ERR response for host-to-device data FIS, CRC
+0x0010  2            0  R_ERR response for host-to-device data FIS, non-CRC
+0x0012  2            0  R_ERR response for host-to-device non-data FIS, CRC
+0x0013  2            0  R_ERR response for host-to-device non-data FIS, non-CRC
+

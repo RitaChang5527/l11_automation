@@ -1,0 +1,95 @@
+var Codebyte=function(){"use strict";var t=$(window).width();$(window).height();var e=function(){jQuery(".default-select,.table-responsive select").length>0&&(jQuery(".default-select").selectpicker(),jQuery(".default-select,.table-responsive select").selectpicker())},i=function(){setTimeout(function(){jQuery("#loading-area").remove(),$("#main-wrapper").addClass("show")},1200)},a=function(){jQuery("#menu").length>0&&$("#menu").metisMenu(),jQuery(".metismenu > .mm-active ").each(function(){!jQuery(this).children("ul").length>0&&jQuery(this).addClass("active-no-child")})},n=function(){$("#checkAll, #checkAll4, #checkAll1, #checkAll2, #checkAll5").on("change",function(){$("td input, .email-list .custom-checkbox input").prop("checked",$(this).prop("checked"))}),$(".checkAllInput").on("click",function(){jQuery(this).closest(".ItemsCheckboxSec").find('input[type="checkbox"]').prop("checked",!0)}),$(".unCheckAllInput").on("click",function(){jQuery(this).closest(".ItemsCheckboxSec").find('input[type="checkbox"]').prop("checked",!1)})},o=function(){$(".nav-control").on("click",function(){$("#main-wrapper").toggleClass("menu-toggle"),$(".hamburger").toggleClass("is-active"),I()})},s=function(){$("input[name='automationSelect']").on("change",function(){$(".check-ai").removeClass("active"),$(this).closest(".check-ai").addClass("active"),"automatic"===$(this).val()?$(".check-sub-bx").addClass("dismiss"):$(".check-sub-bx").removeClass("dismiss")}),$(document).ready(function(){$(document).ready(function(){$("#add-btn").click(function(){var t=`
+
+		<hr>
+        <div class="check-sub-bx-1 mt-3 dismiss">
+          <div class="row">
+            <div class="col-xl-3">
+              <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label required">Product Tag</label>
+                <div class="dropdown bootstrap-select default-select w-100">
+                  <select class="default-select w-100" aria-label="Default select example">
+                    <option selected="">Product Title</option>
+                    <option value="1">Product Tag</option>
+                    <option value="2">Product Price</option>
+                  </select>
+                  <button type="button" tabindex="-1" class="btn dropdown-toggle btn-light" data-bs-toggle="dropdown" role="combobox" aria-owns="bs-select-1" aria-haspopup="listbox" aria-expanded="false" title="Product Title">
+                    <div class="filter-option">
+                      <div class="filter-option-inner">
+                        <div class="filter-option-inner-inner">Product Title</div>
+                      </div>
+                    </div>
+                  </button>
+                  <div class="dropdown-menu" style="max-height: 199.375px; overflow: hidden; min-height: 0px;">
+                    <div class="inner show" role="listbox" id="bs-select-1" tabindex="-1" aria-activedescendant="bs-select-1-0" style="max-height: 183.375px; overflow-y: auto; min-height: 0px;">
+                      <ul class="dropdown-menu inner show" role="presentation" style="margin-top: 0px; margin-bottom: 0px;">
+                        <li class="selected active">
+                          <a role="option" class="dropdown-item active selected" id="bs-select-1-0" tabindex="0" aria-setsize="3" aria-posinset="1" aria-selected="true">
+                            <span class="text">Product Title</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a role="option" class="dropdown-item" id="bs-select-1-1" tabindex="0">
+                            <span class="text">Product Tag</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a role="option" class="dropdown-item" id="bs-select-1-2" tabindex="0">
+                            <span class="text">Product Price</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-3">
+              <div class="mb-3">
+                <label for="exampleFormControlInput2" class="form-label required">Product Margin</label>
+                <div class="dropdown bootstrap-select default-select w-100">
+                  <select class="default-select w-100" aria-label="Default select example">
+                    <option selected="">is less than</option>
+                    <option value="1">is equal to</option>
+                    <option value="2">is greater than</option>
+                  </select>
+                  <button type="button" tabindex="-1" class="btn dropdown-toggle btn-light" data-bs-toggle="dropdown" role="combobox" aria-owns="bs-select-2" aria-haspopup="listbox" aria-expanded="false" title="is less than">
+                    <div class="filter-option">
+                      <div class="filter-option-inner">
+                        <div class="filter-option-inner-inner">is less than</div>
+                      </div>
+                    </div>
+                  </button>
+                  <div class="dropdown-menu" style="max-height: 199.375px; overflow: hidden; min-height: 0px;">
+                    <div class="inner show" role="listbox" id="bs-select-2" tabindex="-1" aria-activedescendant="bs-select-2-0" style="max-height: 183.375px; overflow-y: auto; min-height: 0px;">
+                      <ul class="dropdown-menu inner show" role="presentation" style="margin-top: 0px; margin-bottom: 0px;">
+                        <li class="selected active">
+                          <a role="option" class="dropdown-item active selected" id="bs-select-2-0" tabindex="0" aria-setsize="3" aria-posinset="1" aria-selected="true">
+                            <span class="text">is less than</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a role="option" class="dropdown-item" id="bs-select-2-1" tabindex="0">
+                            <span class="text">is equal to</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a role="option" class="dropdown-item" id="bs-select-2-2" tabindex="0">
+                            <span class="text">is greater than</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-3">
+              <div class="mb-3">
+                <label for="exampleFormControlInput3" class="form-label required">Quantity</label>
+                <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="1">
+              </div>
+            </div>
+          
+          </div>
+         
+        </div>`;$(this).closest(".row").after(t)})})})},l=function(){1199>=$(window).width()?(jQuery(".mail-tab a").unbind().on("click",function(){$(".inbox-area-list").css("display","none"),$(".read-content-bx").css("display","block")}),jQuery(".dz-back-arrow").unbind().on("click",function(){$(".inbox-area-list").css("display","block"),$(".read-content-bx").css("display","none")})):(jQuery(".mail-tab button").unbind("click"),$(".inbox-area-list").css("display","block"),$(".read-content-bx").css("display","block"))},c=function(){$(".metismenu li a").hover(function(t){var e=$(this).parent().children("ul"),i=$("#main-wrapper").width(),a=($(window).width()-$("#main-wrapper").width())/2;if($(this).offset().left,$(this).outerWidth(),e.outerWidth(),"ltr"===$("html").attr("dir"))$(this).offset().left+$(this).outerWidth()+e.outerWidth()-a>i&&($(this).parent().parent("ul.metismenu").length>0?e.css({left:"auto",right:"0"}):e.css({left:"auto",right:"100%"}));else{var n=i-($(this).offset().left+$(this).outerWidth()-a),o=n+$(this).outerWidth()+e.outerWidth();console.log(n),o>i&&($(this).parent().parent("ul.metismenu").length>0?e.css({left:"0",right:"auto"}):e.css({left:"100%",right:"auto"}))}},function(){$(this).children("ul").removeAttr("style")})},r=function(){for(var t=window.location,e=$("ul#menu a").filter(function(){return this.href==t}).addClass("mm-active").parent().addClass("mm-active");e.is("li");)e=e.parent().addClass("mm-show").parent().addClass("mm-active")},d=function(){$("ul#menu>li").on("click",function(){let t=$("body").attr("data-sidebar-style");"mini"===t&&(console.log($(this).find("ul")),$(this).find("ul").stop())})},u=function(){$('a[data-action="collapse"]').on("click",function(t){t.preventDefault(),$(this).closest(".card").find('[data-action="collapse"] i').toggleClass("mdi-arrow-down mdi-arrow-up"),$(this).closest(".card").children(".card-body").collapse("toggle")}),$('a[data-action="expand"]').on("click",function(t){t.preventDefault(),$(this).closest(".card").find('[data-action="expand"] i').toggleClass("icon-size-actual icon-size-fullscreen"),$(this).closest(".card").toggleClass("card-fullscreen")}),$('[data-action="close"]').on("click",function(){$(this).closest(".card").removeClass().slideUp("fast")}),$('[data-action="reload"]').on("click",function(){var t=$(this);t.parents(".card").addClass("card-load"),t.parents(".card").append('<div class="card-loader"><i class=" ti-reload rotate-refresh"></div>'),setTimeout(function(){t.parents(".card").children(".card-loader").remove(),t.parents(".card").removeClass("card-load")},2e3)})},h=function(){let t=$(".header").innerHeight();$(window).scroll(function(){"horizontal"===$("body").attr("data-layout")&&"static"===$("body").attr("data-header-position")&&"fixed"===$("body").attr("data-sidebar-position")&&($(this.window).scrollTop()>=t?$(".ic-sidenav").addClass("fixed"):$(".ic-sidenav").removeClass("fixed"))})},p=function(){t<=991&&(jQuery(".menu-tabs .nav-link").on("click",function(){jQuery(this).hasClass("open")?(jQuery(this).removeClass("open"),jQuery(".fixed-content-box").removeClass("active"),jQuery(".hamburger").show()):(jQuery(".menu-tabs .nav-link").removeClass("open"),jQuery(this).addClass("open"),jQuery(".fixed-content-box").addClass("active"),jQuery(".hamburger").hide())}),jQuery(".close-fixed-content").on("click",function(){jQuery(".fixed-content-box").removeClass("active"),jQuery(".hamburger").removeClass("is-active"),jQuery("#main-wrapper").removeClass("menu-toggle"),jQuery(".hamburger").show()}))},f=function(){jQuery(".bell-link").on("click",function(){jQuery(".chatbox").addClass("active")}),jQuery(".chatbox-close").on("click",function(){jQuery(".chatbox").removeClass("active")})},m=function(){$(".btn-number").on("click",function(t){t.preventDefault(),fieldName=$(this).attr("data-field"),type=$(this).attr("data-type");var e=$("input[name='"+fieldName+"']"),i=parseInt(e.val());isNaN(i)?e.val(0):"minus"==type?e.val(i-1):"plus"==type&&e.val(i+1)})},b=function(){jQuery(".ic-chat-user-box .ic-chat-user").on("click",function(){jQuery(".ic-chat-user-box").addClass("d-none"),jQuery(".ic-chat-history-box").removeClass("d-none")}),jQuery(".ic-chat-history-back").on("click",function(){jQuery(".ic-chat-user-box").removeClass("d-none"),jQuery(".ic-chat-history-box").addClass("d-none")}),jQuery(".ic-fullscreen").on("click",function(){jQuery(".ic-fullscreen").toggleClass("active")})},v=function(){jQuery(".show-pass").on("click",function(){jQuery(this).toggleClass("active"),"password"==jQuery("#ic-password").attr("type")?jQuery("#ic-password").attr("type","text"):"text"==jQuery("#ic-password").attr("type")&&jQuery("#ic-password").attr("type","password")})},g=function(){$(".heart").on("click",function(){$(this).toggleClass("heart-blast")})},x=function(){$(".ic-load-more").on("click",function(t){t.preventDefault(),$(this).append(' <i class="fas fa-sync"></i>');var e=$(this).attr("rel"),i=$(this).attr("id");$.ajax({method:"POST",url:e,dataType:"html",success:function(t){$("#"+i+"Content").append(t),$(".ic-load-more i").remove()}})})},y=function(){jQuery("#lightgallery").length>0&&lightGallery(document.getElementById("lightgallery"),{plugins:[lgThumbnail,lgZoom],selector:".lg-item",thumbnail:!0,exThumbImage:"data-src"})},k=function(){$(".custom-file-input").on("change",function(){var t=$(this).val().split("\\").pop();$(this).siblings(".custom-file-label").addClass("selected").html(t)})},w=function(){var t=$(window).height()-206;$(".chatbox .msg_card_body").css("height",t)},C=function(){$(".ic-demo-trigger").on("click",function(){$(".ic-demo-panel").addClass("show")}),$(".ic-demo-close, .bg-close").on("click",function(){$(".ic-demo-panel").removeClass("show")}),$(".ic-demo-bx").on("click",function(){$(".ic-demo-bx").removeClass("demo-active"),$(this).addClass("demo-active")})},_=function(){jQuery(".bt-datepicker").length>0&&$(".bt-datepicker").datepicker({autoclose:!0,todayHighlight:!0}).datepicker("update",new Date)},z=function(){if(jQuery(".ic-theme-mode").length>0){jQuery(".ic-theme-mode").on("click",function(){jQuery(this).toggleClass("active"),jQuery(this).hasClass("active")?(jQuery("body").attr("data-theme-version","dark"),setCookie("version","dark"),jQuery("#theme_version").val("dark")):(jQuery("body").attr("data-theme-version","light"),setCookie("version","light"),jQuery("#theme_version").val("light")),$(".default-select").selectpicker("refresh")});var t=getCookie("version");jQuery("body").attr("data-theme-version",t),jQuery(".ic-theme-mode").removeClass("active"),setTimeout(function(){"dark"===jQuery("body").attr("data-theme-version")&&jQuery(".ic-theme-mode").addClass("active")},1500)}},I=function(){var t=window.innerHeight,t=window.innerHeight;(t>0?t:screen.height)&&($(".content-body").css("min-height",window.innerHeight-70+"px"),setTimeout(()=>{"vertical"===$("body").attr("data-layout")&&("mini"===$("body").attr("data-sidebar-style")&&$(".ic-sidenav  .metismenu").height()>window.innerHeight-60||"modern"===$("body").attr("data-sidebar-style")&&$(".ic-sidenav  .metismenu").height()>window.innerHeight-60||"full"===$("body").attr("data-sidebar-style")&&$("#main-wrapper").hasClass("menu-toggle")&&$(".ic-sidenav  .metismenu").height()>window.innerHeight-60)&&$(".content-body").css("min-height",$(".ic-sidenav .metismenu").height()+110+"px")},500)),setTimeout(()=>{"fixed"===$("body").attr("data-header-position")&&"horizontal"===$("body").attr("data-layout")&&"fixed"===$("body").attr("data-sidebar-position")?$(".content-body").css("padding-top",$(".ic-sidenav").height()+$(".header").height()+"px"):"fixed"===$("body").attr("data-header-position")&&"horizontal"===$("body").attr("data-layout")&&"static"===$("body").attr("data-sidebar-position")?$(".content-body").css("padding-top",$(".header").height()+"px"):"static"===$("body").attr("data-header-position")&&"horizontal"===$("body").attr("data-layout")&&"fixed"===$("body").attr("data-sidebar-position")?$(".content-body").css("padding-top","0px"):$(".content-body").css("padding-top","")},400)},P=function(){jQuery(".counter").length>0&&$(document).ready(function(){$(".counter").counterUp({delay:10,time:1e3})})},T=new Date;T.setMonth(T.getMonth()+1),T=T.getDate()+" "+["January","February","March","April","May","June","July","August","September","October","November","December"][T.getMonth()]+" "+T.getFullYear();var M=function(t){$(".countdown").length&&$(".countdown").countdown({date:t+" 23:5"},function(){$(".countdown").text("we are live")})},A=function(){if(jQuery("#ckeditor").length>0||jQuery("#ckeditor1").length>0){let t=[];jQuery("#ckeditor").length>0&&t.push(document.querySelector("#ckeditor")),jQuery("#ckeditor1").length>0&&t.push(document.querySelector("#ckeditor1")),t.forEach(t=>{ClassicEditor.create(t,{simpleUpload:{uploadUrl:"ckeditor-upload.php"}}).then(t=>{window.editor=t}).catch(t=>{console.error(t.stack)})})}},H=function(){t>1024&&$(".metismenu  li").unbind().each(function(t){if($("ul",this).length>0){var e=$("ul:first",this).css("display","block"),i=e.offset().left,a=e.width(),e=$("ul:first",this).removeAttr("style");$("body").height();var n=$("body").width();if(jQuery("html").hasClass("rtl"))var o=i+a<=n;else var o=i>0;o?$(this).find("ul:first").removeClass("left"):$(this).find("ul:first").addClass("left")}})},D=function(){$(".contact-footer").on("click",function(){$(".contact-footer").removeClass("show"),$(this).addClass("show")})},S=function(){let t=new Date,e=t.getFullYear(),i=document.getElementsByClassName("current-year");for(let a of i)a.innerHTML=e},q=function(){var t={init:function(){var t=document.querySelectorAll(".draggable-zone");if(0===t.length)return!1;new Sortable.default(t,{draggable:".draggable",handle:".draggable.draggable-handle",mirror:{appendTo:"body",constrainDimensions:!0}}).on("drag:stop",()=>{setTimeout(function(){var t;t=0,jQuery(".dropzoneContainer").each(function(){t=jQuery(this).find(".draggable-handle").length,jQuery(this).find(".totalCount").html(t)})},200)})}};jQuery(document).ready(function(){t.init()})},F=function(){let t=$(".DZoomImage");t.on("mousemove",function(t){let e=$(this).offset();var i=(t.pageX-e.left)/$(this).width()*100<=100?(t.pageX-e.left)/$(this).width()*100:100,a=(t.pageY-e.top)/$(this).height()*100<=100?(t.pageY-e.top)/$(this).height()*100:100;$(this).find("img").css("transform-origin",i+"% "+a+"%")}),t.on("mouseenter",function(t){let e=$(this).find("img");e.css("cursor","pointer"),e.css("transition","0.1s"),e.css("transform","scale(1.5)"),$(this).find(".mfp-link i").css({opacity:1,zIndex:1})}),t.on("mouseleave",function(t){let e=$(this).find("img");e.css("transition","0.1s"),e.css("transform","scale(1)"),$(this).find(".mfp-link i").css({opacity:0,zIndex:1})})},W=function(){if($("#slider-tooltips-product").length>0){var t=document.getElementById("slider-tooltips-product");noUiSlider.create(t,{start:[40,346],connect:!0,format:{from:function(t){return Number(t)},to:function(t){return Math.round(t)}},tooltips:[wNumb({decimals:1}),!0],range:{min:0,max:400}});var e=[document.getElementById("slider-margin-value-min"),document.getElementById("slider-margin-value-max")];t.noUiSlider.on("update",function(t,i,a){e[0].innerHTML="$"+t[0],e[1].innerHTML="$"+t[1]})}};return{init:function(){a(),n(),o(),F(),r(),d(),I(),u(),h(),p(),f(),m(),b(),M(T),S(),v(),g(),x(),y(),s(),k(),w(),z(),C(),_(),A(),D(),q(),l(),P(),W(),setTimeout(function(){c()},500)},load:function(){i(),e(),l()},resize:function(){w(),l(),I()},handleMenuPosition:function(){H()}}}();jQuery(document).ready(function(){$('[data-bs-toggle="popover"]').popover();"use strict";Codebyte.init()}),jQuery(window).on("load",function(){"use strict";Codebyte.load(),setTimeout(function(){Codebyte.handleMenuPosition()},1e3)}),jQuery(window).on("resize",function(){"use strict";Codebyte.resize(),setTimeout(function(){Codebyte.handleMenuPosition()},1e3)});

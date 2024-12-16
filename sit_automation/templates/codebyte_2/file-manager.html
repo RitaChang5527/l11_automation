@@ -1,0 +1,700 @@
+{% extends 'codebyte/elements/layouts/admin.html' %}
+        
+{% block additional_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename=  'codebyte/vendor/datatables/css/jquery.dataTables.min.css')}}">
+{% endblock %}
+        
+{% block content %}
+<div class="content-body">
+    <!-- row -->
+    <div class="container-fluid">
+            <div class="row page-titles">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="javascript:void(0)">File</a></li>
+                    <li class="breadcrumb-item active"><a href="javascript:void(0)">File Manager</a></li>
+                </ol>
+            </div>
+            <div class="row">
+                <div class="col-xl-9">
+                    <div class="card">
+                        <div class="card-header border-0 pb-0">
+                            <h2 class="card-title">Folders</h2>
+                            <a href="javascript:void(0);" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Folder</a>
+                        </div>
+                        <div class="card-body">
+                            <div class="row g-4">
+                                <div class="col-xl-3 col-sm-4">
+                                    <div class="ic-folder-bx">
+                                        <div class=" d-flex align-items-center justify-content-between mb-3">
+                                            <div class=" d-flex align-items-center">
+                                                <svg height="24" viewBox="0 0 64 64" width="24" xmlns="http://www.w3.org/2000/svg"><g id="Folder"><path d="m59 10h-34.6a1 1 0 0 0 -.7808 1.625l4.4 5.5a4.973 4.973 0 0 0 3.9008 1.875h31.08a1 1 0 0 0 1-1v-3a5.0059 5.0059 0 0 0 -5-5z" fill="#ffb125"/><path d="m64 17h-32.08a2.9949 2.9949 0 0 1 -2.3385-1.1239l-5.0015-6.2521a6.9688 6.9688 0 0 0 -5.46-2.624h-14.12a5 5 0 0 0 -5 5v40a5 5 0 0 0 5 5h54a5 5 0 0 0 5-5z" fill="#fcd354"/></g></svg>
+                                                <h6 class="mb-0 ms-2 fs-15">Foto Pantai</h6>
+                                                
+                                            </div>
+                                            <div class="dropdown c-pointer">
+                                                <div class="btn-link" data-bs-toggle="dropdown">
+                                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <circle cx="12.4999" cy="3.5" r="2.5" fill="#A5A5A5"></circle>
+                                                        <circle cx="12.4999" cy="11.5" r="2.5" fill="#A5A5A5"></circle>
+                                                        <circle cx="12.4999" cy="19.5" r="2.5" fill="#A5A5A5"></circle>
+                                                    </svg>
+                                                </div>
+                                                <div class="dropdown-menu dropdown-menu-right">
+                                                    <a class="dropdown-item" href="javascript:void(0)">Delete</a>
+                                                    <a class="dropdown-item" href="javascript:void(0)">Edit</a>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        
+                                        <div class="d-flex align-items-center">
+                                            <span class="mb-0 me-2 text-dark font-w500">245 Files</span>
+                                            <small>2.0GB Usage</small>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-sm-4">
+                                    <div class="ic-folder-bx">
+                                        <div class=" d-flex align-items-center justify-content-between mb-3">
+                                            <div class=" d-flex align-items-center">
+                                                <svg height="24" viewBox="0 0 64 64" width="24" xmlns="http://www.w3.org/2000/svg"><g id="Folder1"><path d="m59 10h-34.6a1 1 0 0 0 -.7808 1.625l4.4 5.5a4.973 4.973 0 0 0 3.9008 1.875h31.08a1 1 0 0 0 1-1v-3a5.0059 5.0059 0 0 0 -5-5z" fill="#ffb125"/><path d="m64 17h-32.08a2.9949 2.9949 0 0 1 -2.3385-1.1239l-5.0015-6.2521a6.9688 6.9688 0 0 0 -5.46-2.624h-14.12a5 5 0 0 0 -5 5v40a5 5 0 0 0 5 5h54a5 5 0 0 0 5-5z" fill="#fcd354"/></g></svg>
+                                                <h6 class="mb-0 ms-2 fs-15"> VIDic823.mp4 </h6>
+                                                
+                                            </div>
+                                            <div class="dropdown c-pointer">
+                                                <div class="btn-link" data-bs-toggle="dropdown">
+                                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <circle cx="12.4999" cy="3.5" r="2.5" fill="#A5A5A5"></circle>
+                                                        <circle cx="12.4999" cy="11.5" r="2.5" fill="#A5A5A5"></circle>
+                                                        <circle cx="12.4999" cy="19.5" r="2.5" fill="#A5A5A5"></circle>
+                                                    </svg>
+                                                </div>
+                                                <div class="dropdown-menu dropdown-menu-right">
+                                                    <a class="dropdown-item" href="javascript:void(0)">Delete</a>
+                                                    <a class="dropdown-item" href="javascript:void(0)">Edit</a>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        
+                                        <div class="d-flex align-items-center">
+                                            <span class="mb-0 me-2 text-dark font-w500">245 Files</span>
+                                            <small>2.0GB Usage</small>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-sm-4">
+                                    <div class="ic-folder-bx">
+                                        <div class=" d-flex align-items-center justify-content-between mb-3">
+                                            <div class=" d-flex align-items-center">
+                                                <svg height="24" viewBox="0 0 64 64" width="24" xmlns="http://www.w3.org/2000/svg"><g id="Folder2"><path d="m59 10h-34.6a1 1 0 0 0 -.7808 1.625l4.4 5.5a4.973 4.973 0 0 0 3.9008 1.875h31.08a1 1 0 0 0 1-1v-3a5.0059 5.0059 0 0 0 -5-5z" fill="#ffb125"/><path d="m64 17h-32.08a2.9949 2.9949 0 0 1 -2.3385-1.1239l-5.0015-6.2521a6.9688 6.9688 0 0 0 -5.46-2.624h-14.12a5 5 0 0 0 -5 5v40a5 5 0 0 0 5 5h54a5 5 0 0 0 5-5z" fill="#fcd354"/></g></svg>
+                                                <h6 class="mb-0 ms-2 fs-15">Foto Pantai</h6>
+                                                
+                                            </div>
+                                            <div class="dropdown c-pointer">
+                                                <div class="btn-link" data-bs-toggle="dropdown">
+                                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <circle cx="12.4999" cy="3.5" r="2.5" fill="#A5A5A5"></circle>
+                                                        <circle cx="12.4999" cy="11.5" r="2.5" fill="#A5A5A5"></circle>
+                                                        <circle cx="12.4999" cy="19.5" r="2.5" fill="#A5A5A5"></circle>
+                                                    </svg>
+                                                </div>
+                                                <div class="dropdown-menu dropdown-menu-right">
+                                                    <a class="dropdown-item" href="javascript:void(0)">Delete</a>
+                                                    <a class="dropdown-item" href="javascript:void(0)">Edit</a>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        
+                                        <div class="d-flex align-items-center">
+                                            <span class="mb-0 me-2 text-dark font-w500">245 Files</span>
+                                            <small>2.0GB Usage</small>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                                
+                                <div class="col-xl-3 col-sm-4">
+                                    <div class="ic-folder-bx">
+                                        <div class=" d-flex align-items-center justify-content-between mb-3">
+                                            <div class=" d-flex align-items-center">
+                                                <svg height="24" viewBox="0 0 64 64" width="24" xmlns="http://www.w3.org/2000/svg"><g id="Folder3"><path d="m59 10h-34.6a1 1 0 0 0 -.7808 1.625l4.4 5.5a4.973 4.973 0 0 0 3.9008 1.875h31.08a1 1 0 0 0 1-1v-3a5.0059 5.0059 0 0 0 -5-5z" fill="#ffb125"/><path d="m64 17h-32.08a2.9949 2.9949 0 0 1 -2.3385-1.1239l-5.0015-6.2521a6.9688 6.9688 0 0 0 -5.46-2.624h-14.12a5 5 0 0 0 -5 5v40a5 5 0 0 0 5 5h54a5 5 0 0 0 5-5z" fill="#fcd354"/></g></svg>
+                                                <h6 class="mb-0 ms-2 fs-15"> VIDic823.mp4 </h6>
+                                                
+                                            </div>
+                                            <div class="dropdown c-pointer">
+                                                <div class="btn-link" data-bs-toggle="dropdown">
+                                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <circle cx="12.4999" cy="3.5" r="2.5" fill="#A5A5A5"></circle>
+                                                        <circle cx="12.4999" cy="11.5" r="2.5" fill="#A5A5A5"></circle>
+                                                        <circle cx="12.4999" cy="19.5" r="2.5" fill="#A5A5A5"></circle>
+                                                    </svg>
+                                                </div>
+                                                <div class="dropdown-menu dropdown-menu-right">
+                                                    <a class="dropdown-item" href="javascript:void(0)">Delete</a>
+                                                    <a class="dropdown-item" href="javascript:void(0)">Edit</a>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        
+                                        <div class="d-flex align-items-center">
+                                            <span class="mb-0 me-2 text-dark font-w500">245 Files</span>
+                                            <small>2.0GB Usage</small>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-sm-4">
+                                    <div class="ic-folder-bx">
+                                        <div class=" d-flex align-items-center justify-content-between mb-3">
+                                            <div class=" d-flex align-items-center">
+                                                <svg height="24" viewBox="0 0 64 64" width="24" xmlns="http://www.w3.org/2000/svg"><g id="Folder4"><path d="m59 10h-34.6a1 1 0 0 0 -.7808 1.625l4.4 5.5a4.973 4.973 0 0 0 3.9008 1.875h31.08a1 1 0 0 0 1-1v-3a5.0059 5.0059 0 0 0 -5-5z" fill="#ffb125"/><path d="m64 17h-32.08a2.9949 2.9949 0 0 1 -2.3385-1.1239l-5.0015-6.2521a6.9688 6.9688 0 0 0 -5.46-2.624h-14.12a5 5 0 0 0 -5 5v40a5 5 0 0 0 5 5h54a5 5 0 0 0 5-5z" fill="#fcd354"/></g></svg>
+                                                <h6 class="mb-0 ms-2 fs-15">Foto Pantai</h6>
+                                                
+                                            </div>
+                                            <div class="dropdown c-pointer">
+                                                <div class="btn-link" data-bs-toggle="dropdown">
+                                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <circle cx="12.4999" cy="3.5" r="2.5" fill="#A5A5A5"></circle>
+                                                        <circle cx="12.4999" cy="11.5" r="2.5" fill="#A5A5A5"></circle>
+                                                        <circle cx="12.4999" cy="19.5" r="2.5" fill="#A5A5A5"></circle>
+                                                    </svg>
+                                                </div>
+                                                <div class="dropdown-menu dropdown-menu-right">
+                                                    <a class="dropdown-item" href="javascript:void(0)">Delete</a>
+                                                    <a class="dropdown-item" href="javascript:void(0)">Edit</a>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        
+                                        <div class="d-flex align-items-center">
+                                            <span class="mb-0 me-2 text-dark font-w500">245 Files</span>
+                                            <small>2.0GB Usage</small>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-sm-4">
+                                    <div class="ic-folder-bx">
+                                        <div class=" d-flex align-items-center justify-content-between mb-3">
+                                            <div class=" d-flex align-items-center">
+                                                <svg height="24" viewBox="0 0 64 64" width="24" xmlns="http://www.w3.org/2000/svg"><g id="Folder5"><path d="m59 10h-34.6a1 1 0 0 0 -.7808 1.625l4.4 5.5a4.973 4.973 0 0 0 3.9008 1.875h31.08a1 1 0 0 0 1-1v-3a5.0059 5.0059 0 0 0 -5-5z" fill="#ffb125"/><path d="m64 17h-32.08a2.9949 2.9949 0 0 1 -2.3385-1.1239l-5.0015-6.2521a6.9688 6.9688 0 0 0 -5.46-2.624h-14.12a5 5 0 0 0 -5 5v40a5 5 0 0 0 5 5h54a5 5 0 0 0 5-5z" fill="#fcd354"/></g></svg>
+                                                <h6 class="mb-0 ms-2 fs-15"> VIDic823.mp4 </h6>
+                                                
+                                            </div>
+                                            <div class="dropdown c-pointer">
+                                                <div class="btn-link" data-bs-toggle="dropdown">
+                                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <circle cx="12.4999" cy="3.5" r="2.5" fill="#A5A5A5"></circle>
+                                                        <circle cx="12.4999" cy="11.5" r="2.5" fill="#A5A5A5"></circle>
+                                                        <circle cx="12.4999" cy="19.5" r="2.5" fill="#A5A5A5"></circle>
+                                                    </svg>
+                                                </div>
+                                                <div class="dropdown-menu dropdown-menu-right">
+                                                    <a class="dropdown-item" href="javascript:void(0)">Delete</a>
+                                                    <a class="dropdown-item" href="javascript:void(0)">Edit</a>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        
+                                        <div class="d-flex align-items-center">
+                                            <span class="mb-0 me-2 text-dark font-w500">245 Files</span>
+                                            <small>2.0GB Usage</small>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-sm-6">
+                                    <div class="ic-folder-bx">
+                                        <div class=" d-flex align-items-center justify-content-between mb-3">
+                                            <div class=" d-flex align-items-center">
+                                                <svg height="24" viewBox="0 0 64 64" width="24" xmlns="http://www.w3.org/2000/svg"><g id="Folder6"><path d="m59 10h-34.6a1 1 0 0 0 -.7808 1.625l4.4 5.5a4.973 4.973 0 0 0 3.9008 1.875h31.08a1 1 0 0 0 1-1v-3a5.0059 5.0059 0 0 0 -5-5z" fill="#ffb125"/><path d="m64 17h-32.08a2.9949 2.9949 0 0 1 -2.3385-1.1239l-5.0015-6.2521a6.9688 6.9688 0 0 0 -5.46-2.624h-14.12a5 5 0 0 0 -5 5v40a5 5 0 0 0 5 5h54a5 5 0 0 0 5-5z" fill="#fcd354"/></g></svg>
+                                                <h6 class="mb-0 ms-2 fs-15">Foto Pantai</h6>
+                                                
+                                            </div>
+                                            <div class="dropdown c-pointer">
+                                                <div class="btn-link" data-bs-toggle="dropdown">
+                                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <circle cx="12.4999" cy="3.5" r="2.5" fill="#A5A5A5"></circle>
+                                                        <circle cx="12.4999" cy="11.5" r="2.5" fill="#A5A5A5"></circle>
+                                                        <circle cx="12.4999" cy="19.5" r="2.5" fill="#A5A5A5"></circle>
+                                                    </svg>
+                                                </div>
+                                                <div class="dropdown-menu dropdown-menu-right">
+                                                    <a class="dropdown-item" href="javascript:void(0)">Delete</a>
+                                                    <a class="dropdown-item" href="javascript:void(0)">Edit</a>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        
+                                        <div class="d-flex align-items-center">
+                                            <span class="mb-0 me-2 text-dark font-w500">245 Files</span>
+                                            <small>2.0GB Usage</small>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                                
+                                <div class="col-xl-3 col-sm-6">
+                                    <div class="ic-folder-bx">
+                                        <div class=" d-flex align-items-center justify-content-between mb-3">
+                                            <div class=" d-flex align-items-center">
+                                                <svg height="24" viewBox="0 0 64 64" width="24" xmlns="http://www.w3.org/2000/svg"><g id="Folder7"><path d="m59 10h-34.6a1 1 0 0 0 -.7808 1.625l4.4 5.5a4.973 4.973 0 0 0 3.9008 1.875h31.08a1 1 0 0 0 1-1v-3a5.0059 5.0059 0 0 0 -5-5z" fill="#ffb125"/><path d="m64 17h-32.08a2.9949 2.9949 0 0 1 -2.3385-1.1239l-5.0015-6.2521a6.9688 6.9688 0 0 0 -5.46-2.624h-14.12a5 5 0 0 0 -5 5v40a5 5 0 0 0 5 5h54a5 5 0 0 0 5-5z" fill="#fcd354"/></g></svg>
+                                                <h6 class="mb-0 ms-2 fs-15"> VIDic823.mp4 </h6>
+                                                
+                                            </div>
+                                            <div class="dropdown c-pointer">
+                                                <div class="btn-link" data-bs-toggle="dropdown">
+                                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <circle cx="12.4999" cy="3.5" r="2.5" fill="#A5A5A5"></circle>
+                                                        <circle cx="12.4999" cy="11.5" r="2.5" fill="#A5A5A5"></circle>
+                                                        <circle cx="12.4999" cy="19.5" r="2.5" fill="#A5A5A5"></circle>
+                                                    </svg>
+                                                </div>
+                                                <div class="dropdown-menu dropdown-menu-right">
+                                                    <a class="dropdown-item" href="javascript:void(0)">Delete</a>
+                                                    <a class="dropdown-item" href="javascript:void(0)">Edit</a>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        
+                                        <div class="d-flex align-items-center">
+                                            <span class="mb-0 me-2 text-dark font-w500">245 Files</span>
+                                            <small>2.0GB Usage</small>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- quick-access -->
+                            <div class="quick-bx">
+                                <h4 class="card-title mb-3">Quick Access</h4>
+                                <div class="row">
+                                    <div class="col-xl-3 col-lg-4 col-sm-6">
+                                        <div class="quick-bx-inner mb-lg-0 mb-3">
+                                            <div class=" d-flex align-items-center">
+                                                <i class="flaticon-document fs-18 text-primary"></i>
+                                                <h6 class="mb-0 ms-2 fs-15"> VIDic823.mp4 </h6>
+                                                
+                                            </div>
+                                            <div class="dropdown c-pointer">
+                                                <div class="btn-link" data-bs-toggle="dropdown">
+                                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <circle cx="12.4999" cy="3.5" r="2.5" fill="#A5A5A5"></circle>
+                                                        <circle cx="12.4999" cy="11.5" r="2.5" fill="#A5A5A5"></circle>
+                                                        <circle cx="12.4999" cy="19.5" r="2.5" fill="#A5A5A5"></circle>
+                                                    </svg>
+                                                </div>
+                                                <div class="dropdown-menu dropdown-menu-right">
+                                                    <a class="dropdown-item" href="javascript:void(0)">Delete</a>
+                                                    <a class="dropdown-item" href="javascript:void(0)">Edit</a>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-3 col-lg-4 col-sm-6">
+                                        <div class="quick-bx-inner mb-lg-0 mb-3">
+                                            <div class=" d-flex align-items-center">
+                                                <i class="flaticon-hard-drive fs-18 text-primary"></i>
+                                                <h6 class="mb-0 ms-2 fs-15"> yatin.dox </h6>
+                                                
+                                            </div>
+                                            <div class="dropdown c-pointer">
+                                                <div class="btn-link" data-bs-toggle="dropdown">
+                                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <circle cx="12.4999" cy="3.5" r="2.5" fill="#A5A5A5"></circle>
+                                                        <circle cx="12.4999" cy="11.5" r="2.5" fill="#A5A5A5"></circle>
+                                                        <circle cx="12.4999" cy="19.5" r="2.5" fill="#A5A5A5"></circle>
+                                                    </svg>
+                                                </div>
+                                                <div class="dropdown-menu dropdown-menu-right">
+                                                    <a class="dropdown-item" href="javascript:void(0)">Delete</a>
+                                                    <a class="dropdown-item" href="javascript:void(0)">Edit</a>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-3 col-lg-4 col-sm-6">
+                                        <div class="quick-bx-inner">
+                                            <div class=" d-flex align-items-center">
+                                                <i class="flaticon-document fs-18 text-primary"></i>
+                                                <h6 class="mb-0 ms-2 fs-15"> VIDic823.mp4 </h6>
+                                                
+                                            </div>
+                                            <div class="dropdown c-pointer">
+                                                <div class="btn-link" data-bs-toggle="dropdown">
+                                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <circle cx="12.4999" cy="3.5" r="2.5" fill="#A5A5A5"></circle>
+                                                        <circle cx="12.4999" cy="11.5" r="2.5" fill="#A5A5A5"></circle>
+                                                        <circle cx="12.4999" cy="19.5" r="2.5" fill="#A5A5A5"></circle>
+                                                    </svg>
+                                                </div>
+                                                <div class="dropdown-menu dropdown-menu-right">
+                                                    <a class="dropdown-item" href="javascript:void(0)">Delete</a>
+                                                    <a class="dropdown-item" href="javascript:void(0)">Edit</a>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-3 col-lg-4 col-sm-6">
+                                        <div class="quick-bx-inner">
+                                            <div class=" d-flex align-items-center">
+                                                <i class="flaticon-hard-drive fs-18 text-primary"></i>
+                                                <h6 class="mb-0 ms-2 fs-15"> yatin.dox </h6>
+                                                
+                                            </div>
+                                            <div class="dropdown c-pointer">
+                                                <div class="btn-link" data-bs-toggle="dropdown">
+                                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <circle cx="12.4999" cy="3.5" r="2.5" fill="#A5A5A5"></circle>
+                                                        <circle cx="12.4999" cy="11.5" r="2.5" fill="#A5A5A5"></circle>
+                                                        <circle cx="12.4999" cy="19.5" r="2.5" fill="#A5A5A5"></circle>
+                                                    </svg>
+                                                </div>
+                                                <div class="dropdown-menu dropdown-menu-right">
+                                                    <a class="dropdown-item" href="javascript:void(0)">Delete</a>
+                                                    <a class="dropdown-item" href="javascript:void(0)">Edit</a>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- reacent-table -->
+                            <div class="quick-bx" >
+                                <h4 class="card-title mb-3">Recents</h4>
+                                <div class="table-responsive">
+                                    <table id="projectlist-1" class="display">
+                                        <thead>
+                                            <tr>
+                                                
+                                                <th>File Name</th>
+                                                <th>Category</th>
+                                                <th>Size</th>
+                                                <th>Last Modified</th>
+                                                <th class="text-end">Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            
+                                            <tr>
+                                                <td>
+                                                    <div class=" d-flex align-items-center">
+                                                        <svg height="24" viewBox="0 0 64 64" width="24" xmlns="http://www.w3.org/2000/svg"><g id="Folder8"><path d="m59 10h-34.6a1 1 0 0 0 -.7808 1.625l4.4 5.5a4.973 4.973 0 0 0 3.9008 1.875h31.08a1 1 0 0 0 1-1v-3a5.0059 5.0059 0 0 0 -5-5z" fill="#ffb125"/><path d="m64 17h-32.08a2.9949 2.9949 0 0 1 -2.3385-1.1239l-5.0015-6.2521a6.9688 6.9688 0 0 0 -5.46-2.624h-14.12a5 5 0 0 0 -5 5v40a5 5 0 0 0 5 5h54a5 5 0 0 0 5-5z" fill="#fcd354"/></g></svg>
+                                                        <h6 class="mb-0 ms-2 fs-15"> VIDic823.mp4 </h6>
+                                                        
+                                                    </div>
+                                                </td>
+                                                <td>Video</td>
+                                               <td>10 MB</td>
+                                                
+                                                <td>22,Nov 2024</td>
+                                                
+                                                <td class="text-end">
+                                                    <div>
+                                                        <a href="#" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fa fa-pencil"></i></a>
+                                                        <a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class=" d-flex align-items-center">
+                                                        <svg height="24" viewBox="0 0 64 64" width="24" xmlns="http://www.w3.org/2000/svg"><g id="Folder9"><path d="m59 10h-34.6a1 1 0 0 0 -.7808 1.625l4.4 5.5a4.973 4.973 0 0 0 3.9008 1.875h31.08a1 1 0 0 0 1-1v-3a5.0059 5.0059 0 0 0 -5-5z" fill="#ffb125"/><path d="m64 17h-32.08a2.9949 2.9949 0 0 1 -2.3385-1.1239l-5.0015-6.2521a6.9688 6.9688 0 0 0 -5.46-2.624h-14.12a5 5 0 0 0 -5 5v40a5 5 0 0 0 5 5h54a5 5 0 0 0 5-5z" fill="#fcd354"/></g></svg>
+                                                        <h6 class="mb-0 ms-2 fs-15"> VIDic823.mp4 </h6>
+                                                        
+                                                    </div>
+                                                </td>
+                                                <td>Files</td>
+                                               <td>15 MB</td>
+                                                
+                                                <td>23,Nov 2024</td>
+                                                
+                                                <td class="text-end">
+                                                    <div>
+                                                        <a href="#" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fa fa-pencil"></i></a>
+                                                        <a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class=" d-flex align-items-center">
+                                                        <svg height="24" viewBox="0 0 64 64" width="24" xmlns="http://www.w3.org/2000/svg"><g id="Folder10"><path d="m59 10h-34.6a1 1 0 0 0 -.7808 1.625l4.4 5.5a4.973 4.973 0 0 0 3.9008 1.875h31.08a1 1 0 0 0 1-1v-3a5.0059 5.0059 0 0 0 -5-5z" fill="#ffb125"/><path d="m64 17h-32.08a2.9949 2.9949 0 0 1 -2.3385-1.1239l-5.0015-6.2521a6.9688 6.9688 0 0 0 -5.46-2.624h-14.12a5 5 0 0 0 -5 5v40a5 5 0 0 0 5 5h54a5 5 0 0 0 5-5z" fill="#fcd354"/></g></svg>
+                                                        <h6 class="mb-0 ms-2 fs-15"> VIDic828.jpg </h6>
+                                                        
+                                                    </div>
+                                                </td>
+                                                <td>Images</td>
+                                               <td>8 MB</td>
+                                                
+                                                <td>23,Dec 2024</td>
+                                                
+                                                <td class="text-end">
+                                                    <div>
+                                                        <a href="#" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fa fa-pencil"></i></a>
+                                                        <a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class=" d-flex align-items-center">
+                                                        <svg height="24" viewBox="0 0 64 64" width="24" xmlns="http://www.w3.org/2000/svg"><g id="Folder11"><path d="m59 10h-34.6a1 1 0 0 0 -.7808 1.625l4.4 5.5a4.973 4.973 0 0 0 3.9008 1.875h31.08a1 1 0 0 0 1-1v-3a5.0059 5.0059 0 0 0 -5-5z" fill="#ffb125"/><path d="m64 17h-32.08a2.9949 2.9949 0 0 1 -2.3385-1.1239l-5.0015-6.2521a6.9688 6.9688 0 0 0 -5.46-2.624h-14.12a5 5 0 0 0 -5 5v40a5 5 0 0 0 5 5h54a5 5 0 0 0 5-5z" fill="#fcd354"/></g></svg>
+                                                        <h6 class="mb-0 ms-2 fs-15"> VIDic823.mp4 </h6>
+                                                        
+                                                    </div>
+                                                </td>
+                                                <td>Video</td>
+                                               <td>10 MB</td>
+                                                
+                                                <td>22,Nov 2024</td>
+                                                
+                                                <td class="text-end">
+                                                    <div>
+                                                        <a href="#" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fa fa-pencil"></i></a>
+                                                        <a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class=" d-flex align-items-center">
+                                                        <svg height="24" viewBox="0 0 64 64" width="24" xmlns="http://www.w3.org/2000/svg"><g id="Folder12"><path d="m59 10h-34.6a1 1 0 0 0 -.7808 1.625l4.4 5.5a4.973 4.973 0 0 0 3.9008 1.875h31.08a1 1 0 0 0 1-1v-3a5.0059 5.0059 0 0 0 -5-5z" fill="#ffb125"/><path d="m64 17h-32.08a2.9949 2.9949 0 0 1 -2.3385-1.1239l-5.0015-6.2521a6.9688 6.9688 0 0 0 -5.46-2.624h-14.12a5 5 0 0 0 -5 5v40a5 5 0 0 0 5 5h54a5 5 0 0 0 5-5z" fill="#fcd354"/></g></svg>
+                                                        <h6 class="mb-0 ms-2 fs-15"> VIDic823.mp4 </h6>
+                                                        
+                                                    </div>
+                                                </td>
+                                                <td>Files</td>
+                                               <td>15 MB</td>
+                                                
+                                                <td>23,Nov 2024</td>
+                                                
+                                                <td class="text-end">
+                                                    <div>
+                                                        <a href="#" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fa fa-pencil"></i></a>
+                                                        <a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class=" d-flex align-items-center">
+                                                        <svg height="24" viewBox="0 0 64 64" width="24" xmlns="http://www.w3.org/2000/svg"><g id="Folder13"><path d="m59 10h-34.6a1 1 0 0 0 -.7808 1.625l4.4 5.5a4.973 4.973 0 0 0 3.9008 1.875h31.08a1 1 0 0 0 1-1v-3a5.0059 5.0059 0 0 0 -5-5z" fill="#ffb125"/><path d="m64 17h-32.08a2.9949 2.9949 0 0 1 -2.3385-1.1239l-5.0015-6.2521a6.9688 6.9688 0 0 0 -5.46-2.624h-14.12a5 5 0 0 0 -5 5v40a5 5 0 0 0 5 5h54a5 5 0 0 0 5-5z" fill="#fcd354"/></g></svg>
+                                                        <h6 class="mb-0 ms-2 fs-15"> VIDic828.jpg </h6>
+                                                        
+                                                    </div>
+                                                </td>
+                                                <td>Images</td>
+                                               <td>8 MB</td>
+                                                
+                                                <td>23,Dec 2024</td>
+                                                
+                                                <td class="text-end">
+                                                    <div>
+                                                        <a href="#" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fa fa-pencil"></i></a>
+                                                        <a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class=" d-flex align-items-center">
+                                                        <svg height="24" viewBox="0 0 64 64" width="24" xmlns="http://www.w3.org/2000/svg"><g id="Folder14"><path d="m59 10h-34.6a1 1 0 0 0 -.7808 1.625l4.4 5.5a4.973 4.973 0 0 0 3.9008 1.875h31.08a1 1 0 0 0 1-1v-3a5.0059 5.0059 0 0 0 -5-5z" fill="#ffb125"/><path d="m64 17h-32.08a2.9949 2.9949 0 0 1 -2.3385-1.1239l-5.0015-6.2521a6.9688 6.9688 0 0 0 -5.46-2.624h-14.12a5 5 0 0 0 -5 5v40a5 5 0 0 0 5 5h54a5 5 0 0 0 5-5z" fill="#fcd354"/></g></svg>
+                                                        <h6 class="mb-0 ms-2 fs-15"> VIDic823.mp4 </h6>
+                                                        
+                                                    </div>
+                                                </td>
+                                                <td>Video</td>
+                                               <td>10 MB</td>
+                                                
+                                                <td>22,Nov 2024</td>
+                                                
+                                                <td class="text-end">
+                                                    <div>
+                                                        <a href="#" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fa fa-pencil"></i></a>
+                                                        <a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class=" d-flex align-items-center">
+                                                        <svg height="24" viewBox="0 0 64 64" width="24" xmlns="http://www.w3.org/2000/svg"><g id="Folder15"><path d="m59 10h-34.6a1 1 0 0 0 -.7808 1.625l4.4 5.5a4.973 4.973 0 0 0 3.9008 1.875h31.08a1 1 0 0 0 1-1v-3a5.0059 5.0059 0 0 0 -5-5z" fill="#ffb125"/><path d="m64 17h-32.08a2.9949 2.9949 0 0 1 -2.3385-1.1239l-5.0015-6.2521a6.9688 6.9688 0 0 0 -5.46-2.624h-14.12a5 5 0 0 0 -5 5v40a5 5 0 0 0 5 5h54a5 5 0 0 0 5-5z" fill="#fcd354"/></g></svg>
+                                                        <h6 class="mb-0 ms-2 fs-15"> VIDic823.mp4 </h6>
+                                                        
+                                                    </div>
+                                                </td>
+                                                <td>Files</td>
+                                               <td>15 MB</td>
+                                                
+                                                <td>23,Nov 2024</td>
+                                                
+                                                <td class="text-end">
+                                                    <div>
+                                                        <a href="#" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fa fa-pencil"></i></a>
+                                                        <a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class=" d-flex align-items-center">
+                                                        <svg height="24" viewBox="0 0 64 64" width="24" xmlns="http://www.w3.org/2000/svg"><g id="Folder16"><path d="m59 10h-34.6a1 1 0 0 0 -.7808 1.625l4.4 5.5a4.973 4.973 0 0 0 3.9008 1.875h31.08a1 1 0 0 0 1-1v-3a5.0059 5.0059 0 0 0 -5-5z" fill="#ffb125"/><path d="m64 17h-32.08a2.9949 2.9949 0 0 1 -2.3385-1.1239l-5.0015-6.2521a6.9688 6.9688 0 0 0 -5.46-2.624h-14.12a5 5 0 0 0 -5 5v40a5 5 0 0 0 5 5h54a5 5 0 0 0 5-5z" fill="#fcd354"/></g></svg>
+                                                        <h6 class="mb-0 ms-2 fs-15"> VIDic828.jpg </h6>
+                                                        
+                                                    </div>
+                                                </td>
+                                                <td>Images</td>
+                                               <td>8 MB</td>
+                                                
+                                                <td>23,Dec 2024</td>
+                                                
+                                                <td class="text-end">
+                                                    <div>
+                                                        <a href="#" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fa fa-pencil"></i></a>
+                                                        <a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="card">
+                                <div class="card-header border-0 pb-0">
+                                    <h4 class="card-title">Stroage</h4>
+                                </div>
+                                <div class="card-body">
+                                    <div class="depostit-card-media d-flex justify-content-between ">
+                                        <div class="d-flex align-items-center">
+                                            <i class="flaticon-hard-drive fs-20 text-primary me-2"></i>
+                                            <h6>Disk C</h6>
+                                        </div>
+                                        <div>
+                                            <h6>300 MB</h6>
+                                        </div>
+                                    </div>
+                                    <div class="progress-box mt-0">
+                                        <p>Usage of 250GB</p>
+                                        <div class="progress">
+                                            <div class="progress-bar bg-primary" style="width:50%; height:8px;" role="progressbar"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-12">
+                            <div class="card">
+                                <div class="card-header border-0 pb-0">
+                                    <h4 class="card-title">Details Stroage</h4>
+                                </div>
+                            
+                                <div class="card-body">
+                                    <div class="depostit-card-media d-flex justify-content-between ">
+                                        <div class="d-flex align-items-center">
+                                            <i class="flaticon-hard-drive fs-20 text-primary me-2"></i>
+                                            <h6>Disk C</h6>
+                                        </div>
+                                        <div>
+                                            <h6>300 MB</h6>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="progress-box mt-0">
+                                        <p>Usage of 250GB</p>
+                                        <div class="progress">
+                                            <div class="progress-bar bg-primary" style="width:50%; height:8px;" role="progressbar"></div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="depostit-card-media d-flex justify-content-between ">
+                                        <div class="d-flex align-items-center">
+                                            <i class="flaticon-hard-drive fs-20 text-success me-2"></i>
+                                            <h6>Disk D</h6>
+                                        </div>
+                                        <div>
+                                            <h6>600 MB</h6>
+                                        </div>
+                                    </div>
+                                    <div class="progress-box mt-0">
+                                        <p>Usage of 250GB</p>
+                                        <div class="progress">
+                                            <div class="progress-bar bg-success" style="width:50%; height:8px;" role="progressbar"></div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="depostit-card-media d-flex justify-content-between ">
+                                        <div class="d-flex align-items-center">
+                                            <i class="flaticon-hard-drive fs-20 text-secondary me-2"></i>
+                                            <h6>Disk E</h6>
+                                        </div>
+                                        <div>
+                                            <h6>400 MB</h6>
+                                        </div>
+                                    </div>
+                                    <div class="progress-box mt-0">
+                                        <p>Usage of 250GB</p>
+                                        <div class="progress">
+                                            <div class="progress-bar bg-secondary" style="width:50%; height:8px;" role="progressbar"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Folder Name</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="mb-3">
+                  <label for="exampleFormControlInput1" class="form-label required">Email address</label>
+                  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                </div>
+            </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger light" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block additional_js %}
+<script src="{{ url_for('static', filename='codebyte/vendor/datatables/js/jquery.dataTables.min.js')}}"></script>
+<script src="{{ url_for('static', filename='codebyte/js/plugins-init/datatables.init.js')}}"></script>
+{% endblock %}

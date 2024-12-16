@@ -1,0 +1,98 @@
+FRU Device Description : Builtin FRU Device (ID 0)
+ Chassis Type          : Rack Mount Chassis
+ Chassis Serial        : SGH252XV5J
+ Board Mfg Date        : Tue Dec 27 08:00:00 2022
+ Board Mfg             : HPE
+ Board Product         : ProLiant DL380 Gen10 Plus
+ Board Serial          : SGH252XV5J
+ Board Part Number     : P05172-B21
+ Product Manufacturer  : HPE
+ Product Name          : ProLiant DL380 Gen10 Plus
+ Product Part Number   : P05172-B21
+ Product Serial        : SGH252XV5J
+
+FRU Device Description : BMC CONTROLLER (ID 238)
+ Product Manufacturer  : HPE
+ Product Name          : BMC CONTROLLER
+ Product Part Number   : iLO 5
+
+FRU Device Description : MB BIOS (ID 239)
+ Product Manufacturer  : HPE
+ Product Name          : SYSTEM BIOS
+ Product Part Number   : U46
+ Product Version       : 08/11/2022
+
+FRU Device Description : CPU 1 (ID 16)
+ Product Manufacturer  : Intel(R) Corporation
+ Product Name          : Intel(R) Xeon(R) Gold 6326 CPU @ 2.90GHz
+
+FRU Device Description : CPU 2 (ID 17)
+ Product Manufacturer  : Intel(R) Corporation
+ Product Name          : Intel(R) Xeon(R) Gold 6326 CPU @ 2.90GHz
+
+FRU Device Description : PSU 1 (ID 144)
+ Product Manufacturer  : LTEON
+ Product Name          : HpeServerPowerSupply
+ Product Part Number   : P38995-B21
+ Product Version       : 2.00
+ Product Serial        : 5XLNV0KLLHAKE7
+ Product Extra         : 800
+
+FRU Device Description : PSU 2 (ID 145)
+ Product Manufacturer  : LTEON
+ Product Name          : HpeServerPowerSupply
+ Product Part Number   : P38995-B21
+ Product Version       : 2.00
+ Product Serial        : 5XLNV0KLLHALJE
+ Product Extra         : 800
+
+FRU Device Description : Storage Slot 12 (ID 2)
+ Board Mfg Date        : Fri Oct 14 16:19:00 2022
+ Board Mfg             : HPE
+ Board Part Number     : P28335-001
+ Board Extra           : d23042
+ Product Manufacturer  : HPE
+ Product Name          : HPE MR416i-a Gen10+
+ Product Part Number   : P26279-B21
+ Product Version       : 0B
+ Product Serial        : PXBRV0B36H7TXC
+
+FRU Device Description : OCP 3.0 Slot 10 (ID 3)
+ Board Mfg Date        : Tue Aug 23 20:00:00 2022
+ Board Mfg             : Intel Corporation
+ Board Product         : Intel Eth Adptr I350T4 OCPv3
+ Board Serial          : 507C6F3153D8
+ Board Part Number     : MM#999HCV
+ Board Extra           : K53978-005
+ Board Extra           : P08447.001
+ Product Manufacturer  : Intel Corporation
+ Product Name          : Intel Eth Adptr I350T4 OCPv3
+ Product Part Number   : MM#999HCV
+ Product Version       : K53978-005
+ Product Serial        : 507C6F3153D8
+
+FRU Device Description : Embedded 0 (ID 4)
+ Board Mfg Date        : Mon May 28 08:00:00 2007
+ Board Part Number     : 878643-001
+ Product Manufacturer  : SMP  
+ Product Name          : HPE Smart Storage Battery 
+ Product Part Number   : 875241-B21
+ Product Version       : 01
+ Product Serial        : 6WQXK0NWYGN3O2
+
+FRU Device Description : PCI-E Slot 1 (ID 5)
+ Device not present (Requested sensor, data, or record not found)
+
+FRU Device Description : PCI-E Slot 2 (ID 6)
+ Device not present (Requested sensor, data, or record not found)
+
+FRU Device Description : PCI-E Slot 3 (ID 7)
+ Device not present (Requested sensor, data, or record not found)
+
+FRU Device Description : SATA Ctlr (ID 8)
+ Product Name          : Embedded SATA Controller #2
+
+FRU Device Description : Video (ID 9)
+ Product Name          : Embedded Video Controller
+
+

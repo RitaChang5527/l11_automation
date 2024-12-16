@@ -1,0 +1,291 @@
+#loading-area {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 999999999;
+	background-position:center;
+	background-repeat:no-repeat;
+	background-size:80px;
+	background:var(--card);
+	display: flex;
+    justify-content: center;
+    align-items: center;
+	
+	&.loading-page-1{
+		.loading-inner{
+			.inner{
+				text-align: center;
+			}
+			.item-circle{
+				width: 400px;
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				transform: translate(-50%, -50%);
+				
+				@include respond ('phone'){
+					width: 300px;
+				}
+			}
+			.load-text{
+				margin-top: 10px;
+				display: flex;
+				justify-content: center;
+				.text-load{
+					display: inline-block;
+					color: rgba(0, 0, 0, 0.15);
+					position: relative;
+					font-weight: 700;
+					font-size: 24px;
+					line-height: 30px;
+					text-align: center;
+					user-select: none;
+					
+					@include respond ('phone'){
+						font-size: 20px;
+					}
+	
+					&:before {
+						animation: letters-loading 4s infinite;
+						color: var(--text-dark);
+						content: attr(data-text);
+						left: 0;
+						opacity: 0;
+						top:0;
+						line-height: 30px;
+						position: absolute;
+					}
+					&:nth-child(2):before{animation-delay: 0.2s;}
+					&:nth-child(3):before{animation-delay: 0.4s;}
+					&:nth-child(4):before{animation-delay: 0.6s;}
+					&:nth-child(5):before{animation-delay: 0.8s;}
+					&:nth-child(6):before{animation-delay: 1s;}
+					&:nth-child(7):before{animation-delay: 1.2s;}
+					&:nth-child(8):before{animation-delay: 1.4s;}
+					&:nth-child(9):before{animation-delay: 1.6s;}
+					&:nth-child(10):before{animation-delay: 1.8s;}
+				}
+			}
+		}
+	}
+	
+	&.loading-page-2{
+		display:flex;
+		align-items:center;
+		justify-content: center;
+
+		&:before,
+		&:after{
+			content: "";
+			position: absolute;
+			width: 100%;
+			height: 50%;
+			left: 0;
+			top: 0;
+			background: $dark;
+			transition: all 1.5s;
+			transform-origin: left top;
+			z-index: -1;		
+		}
+		&:before{
+			top:auto;
+			bottom:0;
+			
+		}
+		&.active:before,
+		&.active:after{
+			height:0px;
+		}
+		.text{
+		    color: var(--card);
+			font-weight: 700;
+			letter-spacing: 1px;
+			font-size: 36px;
+			transform: translateY(-30px);
+			opacity: 0;
+			@include transitionSlow;
+			
+			@include respond('phone-land'){
+				font-size: 24px;
+			}
+		}
+		&.show{
+			.text{
+				opacity: 1;
+				transform: translateY(0);
+			}
+		}
+		&.active{
+			.text{
+				opacity: 0;
+				transform: translateY(30px);
+			}
+		}
+	}
+	
+	&.loading-page-3{
+		background-color: var(--card);
+		
+		.loading-inner{
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+			width: 100%;
+			direction: ltr;
+			text-align: center;
+	
+			.load-text .text-load{
+				font-weight: 700;
+				display: inline-block;
+				color: rgba(0, 0, 0, 0.15);
+				position: relative;
+				font-size: 70px;
+				line-height: 70px;
+				font-size: 60px; 
+				letter-spacing: -1px;
+				text-align: center;
+				user-select: none;
+				text-transform: uppercase;
+				
+				&:before {
+					animation: letters-loading 4s infinite;
+					color: var(--text-dark);
+					content: attr(data-text);
+					left: 0;
+					opacity: 0;
+					top:0;
+					line-height: 70px;
+					position: absolute;
+					text-transform: uppercase;
+				}
+				&:nth-child(2):before {animation-delay: 0.2s;}
+				&:nth-child(3):before {animation-delay: 0.4s;}
+				&:nth-child(4):before {animation-delay: 0.6s;}
+				&:nth-child(5):before {animation-delay: 0.8s;}
+				&:nth-child(6):before {animation-delay: 1s;}
+				&:nth-child(7):before {animation-delay: 1.2s;}
+				&:nth-child(8):before {animation-delay: 1.4s;}
+			}
+			@include respond('phone'){
+				.load-text .text-load{
+					font-size: 30px;
+				}
+				.wrapper{
+					height: 80px;
+					width: 80px;
+				}
+			}
+		}
+	}
+	
+}
+
+@keyframes dzTextAnimate{
+	10%{
+		opacity: 0.5;
+	}
+	20%{
+		opacity: 1;
+		top: 0;
+		transform: rotateX(-360deg);
+	}
+	80%{
+		opacity: 1;
+		transform: rotateX(-360deg);
+		top: 0;
+	}
+	90%{
+		opacity: 0.5;
+	}
+	100%{
+		opacity: 0;
+		top: 100px;
+	}
+}
+
+@keyframes dzCircleBounceLeft{
+	0%{
+		left:20%;
+	}
+	50%{
+		left:50%;
+	}
+	100%{
+		left:20%;
+	}
+}
+@keyframes dzCircleBounceRight{
+	0%{
+		left:80%;
+	}
+	50%{
+		left:50%;
+	}
+	100%{
+		left:80%;
+	}
+}
+
+@keyframes letters-loading{
+	0%,
+	75%,
+	100% {
+		opacity: 0;
+		transform: rotateY(-90deg);
+	}
+	25%,
+	50% {
+		opacity: 1;
+		transform: rotateY(0deg);
+	}
+}
+@keyframes dzBlinkEffect{
+	0%,
+	100% {
+		transform: translate(0, 0);
+	}
+	8%{
+		transform: translate(-5%, -10%);
+	}
+	18%{
+		transform: translate(-15%, 5%);
+	}
+	27% {
+		transform: translate(7%, -25%);
+	}
+	42% {
+		transform: translate(-5%, 25%);
+	}
+	48% {
+		transform: translate(-15%, 10%);
+	}
+	55% {
+		transform: translate(15%, 0);
+	}
+	68% {
+		transform: translate(0, 15%);
+	}
+	82% {
+		transform: translate(3%, 25%);
+	}
+	92% {
+		transform: translate(-10%, 10%);
+	}
+}
+
+@keyframes letters-loading{
+	0%,
+	75%,
+	100% {
+		opacity: 0;
+		transform: rotateY(-90deg);
+	}
+	25%,
+	50% {
+		opacity: 1;
+		transform: rotateY(0deg);
+	}
+}
